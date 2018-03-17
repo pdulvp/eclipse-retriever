@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated retriever -->
+      <package
+            uri="http://org.pdulvp/retriever"
+            class="org.pdulvp.retriever.RetrieverPackage"
+            genModel="model/retriever.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <!-- @generated retriever -->
+      <parser
+            type="retriever"
+            class="org.pdulvp.retriever.util.RetrieverResourceFactoryImpl"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated retriever -->
+      <package
+            uri="http://org.pdulvp/retriever/result"
+            class="org.pdulvp.retriever.result.ResultPackage"
+            genModel="model/retriever.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <!-- @generated retriever -->
+      <parser
+            type="result"
+            class="org.pdulvp.retriever.result.util.ResultResourceFactoryImpl"/>
+   </extension>
+
+</plugin>

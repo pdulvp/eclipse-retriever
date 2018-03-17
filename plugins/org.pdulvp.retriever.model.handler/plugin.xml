@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+    
+    <extension
+         point="org.eclipse.emf.transaction.editingDomains">
+      <editingDomain
+            factory="org.pdulvp.retriever.model.handler.RetrieverEditingDomainFactory"
+            id="org.pdulvp.retriever.model.handler.RetrieverEditingDomainFactory">
+      </editingDomain>
+   </extension>
+   
+   
+   <extension
+         id="capellaEditingDomainFactoryId"
+         name="Capella Editing Domain Factory"
+         point="org.eclipse.sirius.common.editingDomainFactory">
+      <editingDomainFactory
+            class="org.pdulvp.retriever.model.handler.RetrieverEditingDomainFactory"
+            override="org.eclipse.sirius.LocalSessionEditingDomainFactory">
+      </editingDomainFactory>
+   </extension>
+   <extension
+         id="id1"
+         point="org.eclipse.sirius.common.expressionInterpreter">
+      <expressionInterpreterProvider
+            interpreterProviderClass="org.pdulvp.retriever.model.handler.interpreter.XPathInterpreter">
+      </expressionInterpreterProvider>
+      
+   </extension>
+   
+  <extension
+         id="id2"
+         point="org.eclipse.sirius.common.expressionInterpreter">
+      
+      <expressionInterpreterProvider
+            interpreterProviderClass="org.pdulvp.retriever.model.handler.interpreter.PQLInterpreter">
+      </expressionInterpreterProvider>
+   </extension>
+   
+   
+  <extension
+         id="id2"
+         point="org.eclipse.sirius.common.expressionInterpreter">
+      
+      <expressionInterpreterProvider
+            interpreterProviderClass="org.pdulvp.retriever.model.handler.interpreter.DefinitionInterpreter">
+      </expressionInterpreterProvider>
+   </extension>
+   
+   
+   
+  <extension
+         id="id2"
+         point="org.eclipse.sirius.common.expressionInterpreter">
+      
+      <expressionInterpreterProvider
+            interpreterProviderClass="org.pdulvp.retriever.model.handler.interpreter.AttributeResultInterpreter">
+      </expressionInterpreterProvider>
+   </extension>
+   
+  <extension
+         id="id2"
+         point="org.eclipse.sirius.common.expressionInterpreter">
+      
+      <expressionInterpreterProvider
+            interpreterProviderClass="org.pdulvp.retriever.model.handler.interpreter.ResourceInterpreter">
+      </expressionInterpreterProvider>
+   </extension>
+     
+  <extension
+         id="id2"
+         point="org.eclipse.sirius.common.expressionInterpreter">
+      
+      <expressionInterpreterProvider
+            interpreterProviderClass="org.pdulvp.retriever.model.handler.interpreter.EvalInterpreter">
+      </expressionInterpreterProvider>
+   </extension>
+   
+  <extension
+         id="id2"
+         point="org.eclipse.sirius.common.expressionInterpreter">
+      
+      <expressionInterpreterProvider
+            interpreterProviderClass="org.pdulvp.retriever.model.handler.interpreter.JavaInterpreter">
+      </expressionInterpreterProvider>
+   </extension>
+     
+  <extension
+         id="id2"
+         point="org.eclipse.sirius.common.expressionInterpreter">
+      
+      <expressionInterpreterProvider
+            interpreterProviderClass="org.pdulvp.retriever.model.handler.interpreter.VariableInterpreter">
+      </expressionInterpreterProvider>
+   </extension>
+   
+   <extension
+         id="id3"
+         point="org.eclipse.sirius.common.expressionInterpreter">
+      
+      <expressionInterpreterProvider
+            interpreterProviderClass="org.pdulvp.retriever.model.handler.interpreter.IncrementInterpreter">
+      </expressionInterpreterProvider>
+   </extension>
+   <extension
+        point="org.eclipse.sirius.sessionManagerListener">
+     <listener
+           class="org.pdulvp.retriever.model.handler.sirius.DataSessionManagerListener">
+     </listener>
+  </extension>
+</plugin>

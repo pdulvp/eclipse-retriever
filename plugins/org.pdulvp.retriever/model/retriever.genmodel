@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.pdulvp.retriever/src-gen" creationIcons="false"
+    editDirectory="/org.pdulvp.retriever.edit/src" modelPluginID="org.pdulvp.retriever"
+    modelName="Retriever" modelPluginClass="" editPluginClass="org.pdulvp.retriever.provider.RetrieverEditPlugin"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="8.0" copyrightFields="false" editPluginID="org.pdulvp.retriever.edit"
+    usedGenPackages="../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore" operationReflection="true"
+    importOrganizing="true">
+  <foreignModel>retriever.ecore</foreignModel>
+  <genPackages prefix="Retriever" basePackage="org.pdulvp" resource="XMI" disposableProviderFactory="true"
+      ecorePackage="retriever.ecore#/">
+    <genClasses ecoreClass="retriever.ecore#//RetrieverRoot"/>
+    <genClasses ecoreClass="retriever.ecore#//RetrieverPkg"/>
+    <genClasses ecoreClass="retriever.ecore#//RetrieverContainer">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference retriever.ecore#//RetrieverContainer/ownedElements"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference retriever.ecore#//RetrieverContainer/ownedServices"/>
+    </genClasses>
+    <genClasses ecoreClass="retriever.ecore#//Retriever">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute retriever.ecore#//Retriever/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute retriever.ecore#//Retriever/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute retriever.ecore#//Retriever/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute retriever.ecore#//Retriever/dynamic"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute retriever.ecore#//Retriever/dynamicPreconditionExpression"/>
+    </genClasses>
+    <genClasses ecoreClass="retriever.ecore#//URLRetriever">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference retriever.ecore#//URLRetriever/ownedVariables"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute retriever.ecore#//URLRetriever/uriExpression"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute retriever.ecore#//URLRetriever/cacheControl"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute retriever.ecore#//URLRetriever/asSemantic"/>
+    </genClasses>
+    <genClasses ecoreClass="retriever.ecore#//URIVariable">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute retriever.ecore#//URIVariable/name"/>
+    </genClasses>
+    <genClasses ecoreClass="retriever.ecore#//ElementRetriever">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute retriever.ecore#//ElementRetriever/retrieverExpression"/>
+    </genClasses>
+    <genClasses ecoreClass="retriever.ecore#//AttributeRetriever">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute retriever.ecore#//AttributeRetriever/valueExpression"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference retriever.ecore#//AttributeRetriever/alternative"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference retriever.ecore#//AttributeRetriever/service"/>
+    </genClasses>
+    <genClasses ecoreClass="retriever.ecore#//TransformationRetriever">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference retriever.ecore#//TransformationRetriever/service"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute retriever.ecore#//TransformationRetriever/input"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute retriever.ecore#//TransformationRetriever/variable"/>
+    </genClasses>
+    <genClasses ecoreClass="retriever.ecore#//TransformationService">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute retriever.ecore#//TransformationService/classname"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute retriever.ecore#//TransformationService/method"/>
+    </genClasses>
+    <genClasses ecoreClass="retriever.ecore#//ReferencedRetriever">
+      <genFeatures createChild="false" ecoreFeature="ecore:EReference retriever.ecore#//ReferencedRetriever/referencedElement"/>
+    </genClasses>
+    <genClasses ecoreClass="retriever.ecore#//SetVariable">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute retriever.ecore#//SetVariable/expression"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute retriever.ecore#//SetVariable/log"/>
+    </genClasses>
+    <genClasses ecoreClass="retriever.ecore#//CreateEObject">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute retriever.ecore#//CreateEObject/containerExpression"/>
+    </genClasses>
+    <genClasses ecoreClass="retriever.ecore#//CreateDirectEObject">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference retriever.ecore#//CreateDirectEObject/class"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference retriever.ecore#//CreateDirectEObject/containingFeature"/>
+    </genClasses>
+    <genClasses ecoreClass="retriever.ecore#//CreateEReference">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference retriever.ecore#//CreateEReference/feature"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute retriever.ecore#//CreateEReference/valueExpression"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute retriever.ecore#//CreateEReference/deferred"/>
+    </genClasses>
+    <genClasses ecoreClass="retriever.ecore#//CreateEAttribute">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference retriever.ecore#//CreateEAttribute/feature"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute retriever.ecore#//CreateEAttribute/valueExpression"/>
+    </genClasses>
+    <genClasses ecoreClass="retriever.ecore#//CreateFile">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute retriever.ecore#//CreateFile/uri"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="retriever.ecore#//CreateNotifier"/>
+    <genClasses ecoreClass="retriever.ecore#//LoadResource">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute retriever.ecore#//LoadResource/uri"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute retriever.ecore#//LoadResource/create"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute retriever.ecore#//LoadResource/clearContents"/>
+    </genClasses>
+    <genClasses ecoreClass="retriever.ecore#//If">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute retriever.ecore#//If/conditionExpression"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="retriever.ecore#//IVariableElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute retriever.ecore#//IVariableElement/variable"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="retriever.ecore#//IVariableResultElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute retriever.ecore#//IVariableResultElement/variableResult"/>
+    </genClasses>
+    <nestedGenPackages prefix="Result" basePackage="org.pdulvp.retriever" resource="XMI"
+        disposableProviderFactory="true" ecorePackage="retriever.ecore#//result">
+      <genClasses ecoreClass="retriever.ecore#//result/ResultRoot"/>
+      <genClasses ecoreClass="retriever.ecore#//result/Result">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute retriever.ecore#//result/Result/id"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference retriever.ecore#//result/Result/ownedResults"/>
+      </genClasses>
+      <genClasses ecoreClass="retriever.ecore#//result/URIResult">
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference retriever.ecore#//result/URIResult/definition"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute retriever.ecore#//result/URIResult/uri"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute retriever.ecore#//result/URIResult/element"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute retriever.ecore#//result/URIResult/externalUri"/>
+      </genClasses>
+      <genClasses ecoreClass="retriever.ecore#//result/ElementResult">
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference retriever.ecore#//result/ElementResult/definition"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute retriever.ecore#//result/ElementResult/element"/>
+      </genClasses>
+      <genClasses ecoreClass="retriever.ecore#//result/AttributeResult">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute retriever.ecore#//result/AttributeResult/element"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference retriever.ecore#//result/AttributeResult/definition"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute retriever.ecore#//result/AttributeResult/value"/>
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute retriever.ecore#//result/AttributeResult/name"/>
+      </genClasses>
+    </nestedGenPackages>
+  </genPackages>
+</genmodel:GenModel>

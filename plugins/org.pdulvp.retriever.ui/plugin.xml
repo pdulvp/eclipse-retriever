@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            defaultHandler="org.pdulvp.retriever.ui.commands.Fetch"
+            id="org.pdulvp.retriever.ui.commands.Fetch"
+            name="Fetch">
+      </command>
+      
+   </extension>
+   
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+         allPopups="true"
+         locationURI="popup:org.eclipse.ui.popup.any?after=additions">
+         
+         
+          <menu
+               label="Retriever">
+               
+         <command commandId="org.pdulvp.retriever.ui.commands.Fetch">
+         </command>
+         </menu>
+         
+         
+      </menuContribution>
+   </extension>
+      
+   <extension
+         point="org.eclipse.ui.views">
+         <view
+         	id="org.pdulvp.retriever.ui.view"
+         	name="Analysis"
+			icon="icons/eview16/icon.png"
+			category="org.pdulvp.retriever.ui.category"
+			class="org.pdulvp.retriever.ui.AnalysisView">
+		</view>
+		
+         <category
+         	id="org.pdulvp.retriever.ui.category"
+         	name="Retriever">
+         </category>
+   </extension>
+   
+  <extension
+        id="uiSessionFactory"
+        point="org.eclipse.sirius.ui.uiSessionFactory">
+     <uiSessionFactory
+           class="org.pdulvp.retriever.ui.sirius.UISessionFactory">
+     </uiSessionFactory>
+  </extension>
+   
+</plugin>

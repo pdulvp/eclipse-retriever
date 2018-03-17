@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="retriever" nsURI="http://org.pdulvp/retriever" nsPrefix="retriever">
+  <eClassifiers xsi:type="ecore:EClass" name="RetrieverRoot" eSuperTypes="#//RetrieverContainer"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RetrieverPkg" eSuperTypes="#//RetrieverContainer"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RetrieverContainer" eSuperTypes="#//Retriever">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedElements" upperBound="-1"
+        eType="#//Retriever" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedServices" upperBound="-1"
+        eType="#//TransformationService" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Retriever" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dynamic" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="false"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dynamicPreconditionExpression"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="URLRetriever" eSuperTypes="#//Retriever #//RetrieverContainer #//IVariableElement #//IVariableResultElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedVariables" upperBound="-1"
+        eType="#//URIVariable" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="uriExpression" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="cacheControl" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="asSemantic" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="URIVariable">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ElementRetriever" eSuperTypes="#//Retriever #//RetrieverContainer #//IVariableElement #//IVariableResultElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="retrieverExpression" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AttributeRetriever" eSuperTypes="#//Retriever">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="valueExpression" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="alternative" eType="#//AttributeRetriever"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="service" eType="#//TransformationService"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TransformationRetriever" eSuperTypes="#//Retriever #//RetrieverContainer">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="service" eType="#//TransformationService"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="input" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="variable" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TransformationService">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="classname" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="method" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ReferencedRetriever" eSuperTypes="#//Retriever">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="referencedElement" eType="#//Retriever"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SetVariable" eSuperTypes="#//CreateNotifier">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="expression" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="log" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CreateEObject" eSuperTypes="#//CreateDirectEObject">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="containerExpression" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CreateDirectEObject" eSuperTypes="#//CreateNotifier">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="class" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EClass"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="containingFeature" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EReference"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CreateEReference" eSuperTypes="#//Retriever">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="feature" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EReference"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="valueExpression" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="deferred" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="false"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CreateEAttribute" eSuperTypes="#//Retriever">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="feature" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EAttribute"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="valueExpression" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CreateFile" eSuperTypes="#//CreateNotifier">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="uri" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CreateNotifier" abstract="true" eSuperTypes="#//Retriever #//RetrieverContainer #//IVariableElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="LoadResource" eSuperTypes="#//CreateNotifier">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="uri" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="create" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="clearContents" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="false"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="If" eSuperTypes="#//Retriever #//RetrieverContainer">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="conditionExpression" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IVariableElement" abstract="true" interface="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="variable" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IVariableResultElement" abstract="true"
+      interface="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="variableResult" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eSubpackages name="result" nsURI="http://org.pdulvp/retriever/result" nsPrefix="result">
+    <eClassifiers xsi:type="ecore:EClass" name="ResultRoot" eSuperTypes="#//result/Result"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Result">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          iD="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="ownedResults" upperBound="-1"
+          eType="#//result/Result" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="URIResult" eSuperTypes="#//result/Result">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="definition" eType="#//URLRetriever"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="uri" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="element" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"
+          transient="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="externalUri" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          defaultValueLiteral=""/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ElementResult" eSuperTypes="#//result/Result">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="definition" eType="#//ElementRetriever"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="element" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"
+          transient="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="AttributeResult" eSuperTypes="#//result/Result">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="element" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"
+          transient="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="definition" eType="#//AttributeRetriever"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          changeable="false" defaultValueLiteral="" derived="true"/>
+    </eClassifiers>
+  </eSubpackages>
+</ecore:EPackage>
