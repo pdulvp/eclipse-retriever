@@ -26,7 +26,7 @@ public class RetrieverResourceFactoryRegistry implements Resource.Factory.Regist
     if (uri.scheme().equals(RetrieverScheme.RETRIEVER)) {
       return new RetrieverSchemeResourceFactory(domain);
     }
-    if (uri.fileExtension().equals("ecore")) {
+    if ("ecore".equals(uri.fileExtension())) {
       return new EcoreFileResourceFactory(domain);
     }
     return delegated.getFactory(uri, contentType);

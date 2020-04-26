@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Htmlcleaner
+Bundle-SymbolicName: org.htmlcleaner
+Bundle-Version: 2.1.6.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ClassPath: lib/htmlcleaner-2.16.jar,
+ .
+Export-Package: org.htmlcleaner,
+ org.htmlcleaner.audit,
+ org.htmlcleaner.conditional

@@ -5,6 +5,7 @@ import java.util.Collection;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.sirius.business.api.session.Session;
 import org.eclipse.sirius.ui.business.api.dialect.DialectEditor;
+import org.eclipse.sirius.ui.business.api.editor.ISiriusEditor;
 import org.eclipse.sirius.ui.business.api.session.EditingSessionEvent;
 import org.eclipse.sirius.ui.business.api.session.IEditingSession;
 import org.eclipse.sirius.viewpoint.DRepresentation;
@@ -22,13 +23,7 @@ public class UIEditingSession implements IEditingSession {
 	public Session getSession() {
 		return session;
 	}
-
-	@Override
-	public void attachEditor(DialectEditor editor) {
-		// TODO Auto-generated method stub
-
-	}
-
+	
 	@Override
 	public boolean handleEditor(IEditorPart editor) {
 		// TODO Auto-generated method stub
@@ -36,33 +31,9 @@ public class UIEditingSession implements IEditingSession {
 	}
 
 	@Override
-	public void detachEditor(DialectEditor editor) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void detachEditor(DialectEditor dialectEditor, boolean revertChanges) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
 	public Collection<DialectEditor> getEditors() {
 		// TODO Auto-generated method stub
 		return null;
-	}
-
-	@Override
-	public void closeEditors(boolean save, Collection<? extends DialectEditor> editors) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void closeEditors(boolean save, DialectEditor... editors) {
-		// TODO Auto-generated method stub
-
 	}
 
 	@Override
@@ -130,6 +101,36 @@ public class UIEditingSession implements IEditingSession {
 	public void notify(EditingSessionEvent event) {
 		// TODO Auto-generated method stub
 
+	}
+	@Override
+	public void attachEditor(ISiriusEditor arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void closeEditors(boolean arg0, Collection<? extends ISiriusEditor> arg1) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void closeEditors(boolean arg0, ISiriusEditor... arg1) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void detachEditor(ISiriusEditor arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void detachEditor(ISiriusEditor arg0, boolean arg1) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public Collection<ISiriusEditor> getSiriusEditors() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

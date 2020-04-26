@@ -4,14 +4,11 @@ import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 import java.util.Collection;
 
-import org.apache.batik.bridge.BridgeContext;
-import org.apache.batik.bridge.svg12.SVG12BridgeContext;
 import org.apache.batik.transcoder.TranscoderInput;
 import org.apache.batik.transcoder.TranscoderOutput;
 import org.apache.batik.transcoder.image.PNGTranscoder;
 import org.eclipse.sirius.common.tools.api.interpreter.EvaluationException;
 import org.eclipse.sirius.tools.api.interpreter.InterpreterUtil;
-import org.pdulvp.retriever.model.handler.batik.SVGPatternElementBridgePatched;
 import org.pdulvp.retriever.result.URIResult;
 import org.w3c.dom.Node;
 
@@ -23,7 +20,7 @@ public class ImageExt {
       // Transcode the file.
       TranscoderInput input = new TranscoderInput(stream);
 
-      PNGTranscoder trans = new PNGTranscoder() {
+      PNGTranscoder trans = new PNGTranscoder(); /*{
         // temporary workaround for https://issues.apache.org/jira/browse/BATIK-1051
         @Override
         protected BridgeContext createBridgeContext(String svgVersion) {
@@ -32,7 +29,7 @@ public class ImageExt {
               @Override
               public void registerSVGBridges() {
                 super.registerSVGBridges();
-                this.putBridge(new SVGPatternElementBridgePatched());
+           //     this.putBridge(new SVGPatternElementBridgePatched());
               }
             };
           }
@@ -40,11 +37,11 @@ public class ImageExt {
             @Override
             public void registerSVGBridges() {
               super.registerSVGBridges();
-              this.putBridge(new SVGPatternElementBridgePatched());
+           //   this.putBridge(new SVGPatternElementBridgePatched());
             }
           };
         }
-      };
+      };*/
 
       trans.addTranscodingHint(PNGTranscoder.KEY_WIDTH, new Float(500));
 
