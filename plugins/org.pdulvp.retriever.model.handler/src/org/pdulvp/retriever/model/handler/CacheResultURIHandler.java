@@ -27,6 +27,12 @@ public class CacheResultURIHandler extends ResultURIHandler {
   }
 
   @Override
+	public Map<String, ?> getAttributes(URI uri, Map<?, ?> options) {
+	    URI a = URI.createPlatformResourceURI(RetrieverScheme.getFilename(uri, domain), true);
+		return super.getAttributes(a, options);
+	}
+  
+  @Override
   public OutputStream createOutputStream(URI uri, Map<?, ?> options) throws IOException {
     URI a = URI.createPlatformResourceURI(RetrieverScheme.getFilename(uri, domain), true);
     return super.createOutputStream(a, options);

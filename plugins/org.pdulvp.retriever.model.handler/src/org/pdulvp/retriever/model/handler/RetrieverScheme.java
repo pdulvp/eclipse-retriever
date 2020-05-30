@@ -37,13 +37,15 @@ public class RetrieverScheme {
   }
 
   public static String getFilename(URI filename, TransactionalEditingDomain domain) {
+	String project = domain.getResourceSet().getResources().get(0).getURI().segment(1);
     String a = URI.decode(filename.segment(filename.segmentCount() - 1));
     a = a.substring(0, a.lastIndexOf("."));
-    return "/base/" + RETRIEVER + "/" + a + "/" + filename.fragment() + "." + "result";
+    return "/"+project+"/." + RETRIEVER + "/" + a + "/" + filename.fragment() + "." + "result";
   }
 
   public static String getExternalFilename(URIResult result, TransactionalEditingDomain domain) {
-    return "/base/" + RETRIEVER + "/" + result.getDefinition().getName() + "/"
+	String project = domain.getResourceSet().getResources().get(0).getURI().segment(1);
+    return "/"+project+"/." + RETRIEVER + "/" + result.getDefinition().getName() + "/"
         + MD5(result.getUri() + result.getDefinition().getName()) + ".external";
   }
 

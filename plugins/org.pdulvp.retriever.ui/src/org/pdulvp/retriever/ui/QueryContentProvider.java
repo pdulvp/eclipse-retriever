@@ -109,6 +109,7 @@ public class QueryContentProvider implements ITreeContentProvider {
     }
     if (parentElement instanceof ElementRetriever) {
       Collection<Object> result = new ArrayList<Object>();
+      if (!((Collection) input).isEmpty()) {
       Object aaa = ((Collection) input).iterator().next();
       if (aaa instanceof EObject) {
         domain.getCommandStack().execute(new RecordingCommand(domain) {
@@ -126,6 +127,7 @@ public class QueryContentProvider implements ITreeContentProvider {
             }
           }
         });
+      }
       }
       children = result.toArray();
 

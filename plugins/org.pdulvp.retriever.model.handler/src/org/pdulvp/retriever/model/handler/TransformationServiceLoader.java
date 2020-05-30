@@ -4,6 +4,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.HashMap;
 
+import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.ecore.EObject;
 import org.osgi.framework.Bundle;
 import org.pdulvp.retriever.TransformationService;
@@ -15,6 +16,8 @@ public class TransformationServiceLoader {
 	protected Bundle getBundle(TransformationService service) {
 		if (!bundles.containsKey(service)) {
 			Bundle bundle = Activator.getDefault().getBundle();
+			Bundle bun = Platform.getBundle(service.getClassname().substring(0, service.getClassname().lastIndexOf(".")));
+			
 			// TODO use better way to find a ClassLoader
 			for (Bundle b : Activator.getDefault().getBundle().getBundleContext().getBundles()) {
 				if (b != null && service.getClassname().startsWith(b.getSymbolicName())) {
@@ -22,7 +25,7 @@ public class TransformationServiceLoader {
 					break;
 				}
 			}
-			bundles.put(service, bundle);
+			bundles.put(service, bun);
 		}
 
 		return bundles.get(service);

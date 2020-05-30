@@ -55,7 +55,7 @@ import org.eclipse.jface.viewers.TableLayout;
 import org.eclipse.jface.viewers.TableViewer;
 import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.jface.viewers.Viewer;
-
+import org.eclipse.sirius.business.api.session.SessionManager;
 import org.eclipse.swt.SWT;
 
 import org.eclipse.swt.custom.CTabFolder;
@@ -683,20 +683,20 @@ public class ResultEditor
    * This creates a model editor.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
+   * @generated NOT
    */
   public ResultEditor() {
     super();
-    initializeEditingDomain();
   }
 
   /**
    * This sets up the editing domain for the model editor.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
+ * @param editorInput 
+   * @generated NOT
    */
-  protected void initializeEditingDomain() {
+  protected void initializeEditingDomain(IEditorInput editorInput) {
     // Create an adapter factory that yields item providers.
     //
     adapterFactory = new ComposedAdapterFactory(ComposedAdapterFactory.Descriptor.Registry.INSTANCE);
@@ -743,6 +743,8 @@ public class ResultEditor
 
     // Create the editing domain with a special command stack.
     //
+    System.out.println(editorInput);
+    //SessionManager.INSTANCE.getSessions().stream().filter(x -> x.getAllSessionResources().stream().map(x -> x.getURI()).anyMatch(x -> ))
     editingDomain = new AdapterFactoryEditingDomain(adapterFactory, commandStack, new HashMap<Resource, Boolean>());
   }
 
@@ -1620,6 +1622,7 @@ public class ResultEditor
    */
   @Override
   public void init(IEditorSite site, IEditorInput editorInput) {
+	initializeEditingDomain(editorInput);
     setSite(site);
     setInputWithNotify(editorInput);
     setPartName(editorInput.getName());

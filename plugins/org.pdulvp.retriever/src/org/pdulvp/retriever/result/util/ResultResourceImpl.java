@@ -29,7 +29,6 @@ public class ResultResourceImpl extends XMIResourceImpl {
 
   @Override
   public EObject getEObject(String uriFragment) {
-    // TODO Auto-generated method stub
     if (uriFragment == null) {
       return getContents().get(0);
     }
@@ -38,7 +37,6 @@ public class ResultResourceImpl extends XMIResourceImpl {
 
   @Override
   public void save(Map<?, ?> options) throws IOException {
-    // TODO Auto-generated method stub
     super.save(options);
   }
 

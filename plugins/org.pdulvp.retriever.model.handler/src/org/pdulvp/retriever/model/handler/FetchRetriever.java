@@ -5,8 +5,10 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 import org.apache.commons.io.IOUtils;
 import org.eclipse.core.resources.IContainer;
@@ -259,7 +261,6 @@ public class FetchRetriever {
     // URI uriRes = RetrieverScheme.createURI(retriever, context, ur222);
     Resource res = context.getResourceSet().getResource(uriRes, true);
 
-    
     Session session = getSession(context);
     session.addSemanticResource(((ResultResourceImpl) res).getURI(), new NullProgressMonitor());
 
@@ -352,7 +353,7 @@ public class FetchRetriever {
 
     __retrievers(definition, result, context);
     for (ReferenceCreate create : refs) {
-      createEReference(create.created, create.child, create.context);
+      createEReference(create.created, create.child, create.result, create.context);
     }
   }
 
@@ -379,7 +380,7 @@ public class FetchRetriever {
         if (((CreateEReference) retriever).isDeferred()) {
           refs.add(new ReferenceCreate((EObject) container, (CreateEReference) retriever, result, context));
         } else {
-          createEReference((EObject) container, (CreateEReference) retriever, context);
+          createEReference((EObject) container, (CreateEReference) retriever, result, context);
         }
 
       } else if (retriever instanceof URLRetriever) {
@@ -412,7 +413,6 @@ public class FetchRetriever {
       if (result != null) {
         result.getOwnedResults().add(newElement);
       }
-
       __retrievers(definition, newElement, context);
     }
 
@@ -439,13 +439,11 @@ public class FetchRetriever {
     }
 
     if (!nodes.isEmpty()) {
-      Object value = nodes.iterator().next();
-      if (value instanceof Node) {
-        value = ((Node) value).getTextContent();
-      }
+      String value = nodes.stream().map(x -> x instanceof Node ? ((Node) x).getTextContent() : x).map(x -> x.toString()).collect(Collectors.joining("\n"));
       AttributeResult attribute = ResultFactory.eINSTANCE.createAttributeResult();
       attribute.setDefinition(definition);
-      attribute.setValue(value.toString());
+      attribute.setValue(value);
+      
       result.getOwnedResults().add(attribute);
       if (definition.getService() != null) {
         transform(definition.getService(), attribute);
@@ -509,7 +507,7 @@ public class FetchRetriever {
   public void createEObject(CreateEObject object, Result container, IContext context) {
     try {
       String containerValue = object.getContainerExpression();
-      Collection<Object> aaa = evaluateExpression(context.getSource(), containerValue, context);
+      Collection<Object> aaa = evaluateExpression(container, containerValue, context);
       if (aaa.isEmpty()) {
         LogHelper.error("no parent found");
       }
@@ -550,32 +548,32 @@ public class FetchRetriever {
 
   }
 
-  public void setVariable(SetVariable object, Notifier container, Result container2, IContext context) {
-    Collection<Object> a = evaluateExpression(context.getSource(), object.getExpression(), context);
+  public void setVariable(SetVariable object, Notifier retriever, Result result, IContext context) {
+    Collection<Object> a = evaluateExpression(result, object.getExpression(), context);
     if (a != null && !(a.isEmpty())) {
       if (a.iterator().next() instanceof Notifier) {
-        container = (EObject) a.iterator().next();
+        retriever = (EObject) a.iterator().next();
       }
       if (a.iterator().next() instanceof Result) {
-        container2 = (Result) a.iterator().next();
+        result = (Result) a.iterator().next();
       }
       context.setVariable(object.getVariable(), a.iterator().next());
       if (object.isLog()) {
-        LogHelper.info(object.getName() + " " + object.getVariable() + "=" + a.iterator().next());
+        LogHelper.info("Set variable:"+object.getName() + " " + object.getVariable() + "=" + a.iterator().next());
       }
     } else {
       context.setVariable(object.getVariable(), null);
       if (object.isLog()) {
-        LogHelper.info(object.getName() + " " + object.getVariable() + "=null");
+        LogHelper.info("Set variable:"+object.getName() + " " + object.getVariable() + "=null");
       }
     }
 
-    __retrievers(object, container, container2, context);
+    __retrievers(object, retriever, result, context);
   }
 
   public void ifRetriever(If object, Notifier container, Result container2, IContext context) {
 
-    Collection<Object> a = evaluateExpression(context.getSource(), object.getConditionExpression(), context);
+    Collection<Object> a = evaluateExpression(container2, object.getConditionExpression(), context);
     if (a != null && !(a.isEmpty())) {
       if (a.iterator().next() instanceof Boolean) {
         // System.out.println("if:" + object.getConditionExpression() + "=" + a.iterator().next());
@@ -605,9 +603,9 @@ public class FetchRetriever {
     }
   }
 
-  public void createEReference(EObject created, CreateEReference child, IContext context) {
+  public void createEReference(EObject created, CreateEReference child, Result result, IContext context) {
     String exp = child.getValueExpression();
-    Collection<Object> a = evaluateExpression(context.getSource(), exp, context);
+    Collection<Object> a = evaluateExpression(result, exp, context);
     if (a != null && !a.isEmpty()) {
 
       EObject object = (EObject) context.getVariable(((IVariableElement) child.eContainer()).getVariable());
@@ -627,8 +625,8 @@ public class FetchRetriever {
 
   }
 
-  public void createEAttribute(EObject created, CreateEAttribute child, Result container2, IContext context) {
-    Collection<Object> a = evaluateExpression(context.getSource(), child.getValueExpression(), context);
+  public void createEAttribute(EObject created, CreateEAttribute child, Result result, IContext context) {
+    Collection<Object> a = evaluateExpression(result, child.getValueExpression(), context);
     if (a != null && !a.isEmpty()) {
       // EObject object = (EObject) context.getVariable(((IVariableElement) child.eContainer()).getVariable());
       if (created == null) {
@@ -655,9 +653,12 @@ public class FetchRetriever {
   }
 
   public void saveResources(IContext context) {
+	  Session session = SessionManager.INSTANCE.getSessions().iterator().next();
+	  session.save(new NullProgressMonitor());	  
+	  /*
     for (Resource res : new ArrayList<Resource>(context.getResourceSet().getResources())) {
       try {
-        if (res.getURI().isPlatformResource()) {
+        if (res.getURI().isPlatformResource() || res instanceof ResultResourceImpl) {
           ((ResourceImpl) res).save(null);
           // Session session = SessionManager.INSTANCE.getSessions().iterator().next();
           // session.addSemanticResource(((ResourceImpl) res).getURI(), new NullProgressMonitor());
@@ -665,11 +666,18 @@ public class FetchRetriever {
       } catch (IOException e) {
         e.printStackTrace();
       }
-    }
+    }//*/
   }
 
   public void init(IContext context) {
     refs.clear();
+    
+    for (Resource res : new ArrayList<Resource>(context.getResourceSet().getResources())) {
+             Session session = SessionManager.INSTANCE.getSessions().iterator().next();
+             if (res instanceof ResultResourceImpl) {
+            	session.removeSemanticResource(res, new NullProgressMonitor(), true); 
+             }
+      }
   }
 
 }

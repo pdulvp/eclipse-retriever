@@ -8,6 +8,7 @@ import org.pdulvp.retriever.result.Result;
 public class ReferenceCreate {
   public EObject created;
   public CreateEReference child;
+  public Result result;
   public IContext context;
 
   public ReferenceCreate(EObject created, CreateEReference child, Result container2, IContext context) {
@@ -15,6 +16,7 @@ public class ReferenceCreate {
     this.created = created;
     this.child = child;
     this.context = context;
+    this.result = container2;
   }
 
 }

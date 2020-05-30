@@ -54,5 +54,30 @@
            class="org.pdulvp.retriever.ui.sirius.UISessionFactory">
      </uiSessionFactory>
   </extension>
+  <extension
+        point="org.eclipse.ui.newWizards">
+     <wizard
+           class="org.pdulvp.retriever.ui.NewWizard"
+           id="org.pdulvp.retriever.ui.wizard"
+           name="Retriever Project">
+     </wizard>
+  </extension>
+  <extension
+        id="RetrieverNature"
+        point="org.eclipse.core.resources.natures">
+     <runtime>
+        <run
+              class="org.pdulvp.retriever.ui.RetrieverNature">
+        </run>
+     </runtime>
+  </extension>
+  <extension
+        point="org.eclipse.ui.ide.projectNatureImages">
+     <image
+           icon="icons/obj16/dot.png"
+           id="org.pdulvp.retriever.ui.image1"
+           natureId="org.pdulvp.retriever.ui.RetrieverNature">
+     </image>
+  </extension>
    
 </plugin>
