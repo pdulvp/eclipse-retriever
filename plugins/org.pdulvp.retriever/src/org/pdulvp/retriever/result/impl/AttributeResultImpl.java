@@ -116,7 +116,8 @@ public class AttributeResultImpl extends ResultImpl implements AttributeResult {
    * <!-- begin-user-doc --> <!-- end-user-doc -->
    * @generated
    */
-  public Object getElement() {
+  @Override
+		public Object getElement() {
     return element;
   }
 
@@ -124,7 +125,8 @@ public class AttributeResultImpl extends ResultImpl implements AttributeResult {
    * <!-- begin-user-doc --> <!-- end-user-doc -->
    * @generated
    */
-  public void setElement(Object newElement) {
+  @Override
+		public void setElement(Object newElement) {
     Object oldElement = element;
     element = newElement;
     if (eNotificationRequired())
@@ -135,7 +137,8 @@ public class AttributeResultImpl extends ResultImpl implements AttributeResult {
    * <!-- begin-user-doc --> <!-- end-user-doc -->
    * @generated
    */
-  public AttributeRetriever getDefinition() {
+  @Override
+		public AttributeRetriever getDefinition() {
     if (definition != null && definition.eIsProxy()) {
       InternalEObject oldDefinition = (InternalEObject)definition;
       definition = (AttributeRetriever)eResolveProxy(oldDefinition);
@@ -159,7 +162,8 @@ public class AttributeResultImpl extends ResultImpl implements AttributeResult {
    * <!-- begin-user-doc --> <!-- end-user-doc -->
    * @generated
    */
-  public void setDefinition(AttributeRetriever newDefinition) {
+  @Override
+		public void setDefinition(AttributeRetriever newDefinition) {
     AttributeRetriever oldDefinition = definition;
     definition = newDefinition;
     if (eNotificationRequired())
@@ -170,7 +174,8 @@ public class AttributeResultImpl extends ResultImpl implements AttributeResult {
    * <!-- begin-user-doc --> <!-- end-user-doc -->
    * @generated
    */
-  public String getValue() {
+  @Override
+		public String getValue() {
     return value;
   }
 
@@ -178,7 +183,8 @@ public class AttributeResultImpl extends ResultImpl implements AttributeResult {
    * <!-- begin-user-doc --> <!-- end-user-doc -->
    * @generated
    */
-  public void setValue(String newValue) {
+  @Override
+		public void setValue(String newValue) {
     String oldValue = value;
     value = newValue;
     if (eNotificationRequired())
@@ -284,7 +290,7 @@ public class AttributeResultImpl extends ResultImpl implements AttributeResult {
   public String toString() {
     if (eIsProxy()) return super.toString();
 
-    StringBuffer result = new StringBuffer(super.toString());
+    StringBuilder result = new StringBuilder(super.toString());
     result.append(" (element: ");
     result.append(element);
     result.append(", value: ");

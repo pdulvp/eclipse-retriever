@@ -55,6 +55,7 @@ public class RetrieverItemProvider
       addNamePropertyDescriptor(object);
       addDescriptionPropertyDescriptor(object);
       addDynamicPropertyDescriptor(object);
+      addDynamicPreconditionExpressionPropertyDescriptor(object);
     }
     return itemPropertyDescriptors;
   }
@@ -148,6 +149,28 @@ public class RetrieverItemProvider
   }
 
   /**
+   * This adds a property descriptor for the Dynamic Precondition Expression feature.
+   * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+   * @generated
+   */
+	protected void addDynamicPreconditionExpressionPropertyDescriptor(Object object) {
+    itemPropertyDescriptors.add
+      (createItemPropertyDescriptor
+        (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+         getResourceLocator(),
+         getString("_UI_Retriever_dynamicPreconditionExpression_feature"),
+         getString("_UI_PropertyDescriptor_description", "_UI_Retriever_dynamicPreconditionExpression_feature", "_UI_Retriever_type"),
+         RetrieverPackage.Literals.RETRIEVER__DYNAMIC_PRECONDITION_EXPRESSION,
+         true,
+         false,
+         false,
+         ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+         null,
+         null));
+  }
+
+		/**
    * This returns Retriever.gif.
    * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -199,6 +222,7 @@ public class RetrieverItemProvider
       case RetrieverPackage.RETRIEVER__NAME:
       case RetrieverPackage.RETRIEVER__DESCRIPTION:
       case RetrieverPackage.RETRIEVER__DYNAMIC:
+      case RetrieverPackage.RETRIEVER__DYNAMIC_PRECONDITION_EXPRESSION:
         fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
         return;
     }

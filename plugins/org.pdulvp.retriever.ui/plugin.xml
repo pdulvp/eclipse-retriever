@@ -19,7 +19,6 @@
          allPopups="true"
          locationURI="popup:org.eclipse.ui.popup.any?after=additions">
          
-         
           <menu
                label="Retriever">
                
@@ -56,10 +55,16 @@
   </extension>
   <extension
         point="org.eclipse.ui.newWizards">
+        <category
+       		name="Scraper"
+            id="org.pdulvp.retriever.ui.category">
+        </category>
      <wizard
            class="org.pdulvp.retriever.ui.NewWizard"
+           category="org.pdulvp.retriever.ui.category"
            id="org.pdulvp.retriever.ui.wizard"
-           name="Retriever Project">
+           icon="icons/obj16/project.gif"
+           name="Scraping Project">
      </wizard>
   </extension>
   <extension

@@ -95,7 +95,8 @@ public abstract class CreateNotifierImpl extends RetrieverImpl implements Create
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Retriever> getOwnedElements() {
+  @Override
+		public EList<Retriever> getOwnedElements() {
     if (ownedElements == null) {
       ownedElements = new EObjectContainmentEList<Retriever>(Retriever.class, this, RetrieverPackage.CREATE_NOTIFIER__OWNED_ELEMENTS);
     }
@@ -107,7 +108,8 @@ public abstract class CreateNotifierImpl extends RetrieverImpl implements Create
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<TransformationService> getOwnedServices() {
+  @Override
+		public EList<TransformationService> getOwnedServices() {
     if (ownedServices == null) {
       ownedServices = new EObjectContainmentEList<TransformationService>(TransformationService.class, this, RetrieverPackage.CREATE_NOTIFIER__OWNED_SERVICES);
     }
@@ -119,7 +121,8 @@ public abstract class CreateNotifierImpl extends RetrieverImpl implements Create
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getVariable() {
+  @Override
+		public String getVariable() {
     return variable;
   }
 
@@ -128,7 +131,8 @@ public abstract class CreateNotifierImpl extends RetrieverImpl implements Create
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setVariable(String newVariable) {
+  @Override
+		public void setVariable(String newVariable) {
     String oldVariable = variable;
     variable = newVariable;
     if (eNotificationRequired())
@@ -287,7 +291,7 @@ public abstract class CreateNotifierImpl extends RetrieverImpl implements Create
   public String toString() {
     if (eIsProxy()) return super.toString();
 
-    StringBuffer result = new StringBuffer(super.toString());
+    StringBuilder result = new StringBuilder(super.toString());
     result.append(" (variable: ");
     result.append(variable);
     result.append(')');

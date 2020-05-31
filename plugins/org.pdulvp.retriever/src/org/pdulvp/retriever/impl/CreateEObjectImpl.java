@@ -66,7 +66,8 @@ public class CreateEObjectImpl extends CreateDirectEObjectImpl implements Create
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getContainerExpression() {
+  @Override
+		public String getContainerExpression() {
     return containerExpression;
   }
 
@@ -75,7 +76,8 @@ public class CreateEObjectImpl extends CreateDirectEObjectImpl implements Create
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setContainerExpression(String newContainerExpression) {
+  @Override
+		public void setContainerExpression(String newContainerExpression) {
     String oldContainerExpression = containerExpression;
     containerExpression = newContainerExpression;
     if (eNotificationRequired())
@@ -150,7 +152,7 @@ public class CreateEObjectImpl extends CreateDirectEObjectImpl implements Create
 	public String toString() {
     if (eIsProxy()) return super.toString();
 
-    StringBuffer result = new StringBuffer(super.toString());
+    StringBuilder result = new StringBuilder(super.toString());
     result.append(" (containerExpression: ");
     result.append(containerExpression);
     result.append(')');

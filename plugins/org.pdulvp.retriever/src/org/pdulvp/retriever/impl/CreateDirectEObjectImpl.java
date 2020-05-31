@@ -70,7 +70,8 @@ public class CreateDirectEObjectImpl extends CreateNotifierImpl implements Creat
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getClass_() {
+  @Override
+		public EClass getClass_() {
     if (class_ != null && class_.eIsProxy()) {
       InternalEObject oldClass = (InternalEObject)class_;
       class_ = (EClass)eResolveProxy(oldClass);
@@ -96,7 +97,8 @@ public class CreateDirectEObjectImpl extends CreateNotifierImpl implements Creat
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setClass(EClass newClass) {
+  @Override
+		public void setClass(EClass newClass) {
     EClass oldClass = class_;
     class_ = newClass;
     if (eNotificationRequired())
@@ -108,7 +110,8 @@ public class CreateDirectEObjectImpl extends CreateNotifierImpl implements Creat
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getContainingFeature() {
+  @Override
+		public EReference getContainingFeature() {
     if (containingFeature != null && containingFeature.eIsProxy()) {
       InternalEObject oldContainingFeature = (InternalEObject)containingFeature;
       containingFeature = (EReference)eResolveProxy(oldContainingFeature);
@@ -134,7 +137,8 @@ public class CreateDirectEObjectImpl extends CreateNotifierImpl implements Creat
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setContainingFeature(EReference newContainingFeature) {
+  @Override
+		public void setContainingFeature(EReference newContainingFeature) {
     EReference oldContainingFeature = containingFeature;
     containingFeature = newContainingFeature;
     if (eNotificationRequired())

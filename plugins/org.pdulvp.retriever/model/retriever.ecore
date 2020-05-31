@@ -100,6 +100,8 @@
           iD="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ownedResults" upperBound="-1"
           eType="#//result/Result" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="orderedResults" upperBound="-1"
+          eType="#//result/Result"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="URIResult" eSuperTypes="#//result/Result">
       <eStructuralFeatures xsi:type="ecore:EReference" name="definition" eType="#//URLRetriever"/>

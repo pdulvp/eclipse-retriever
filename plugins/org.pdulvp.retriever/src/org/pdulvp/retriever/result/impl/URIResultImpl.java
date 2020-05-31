@@ -123,6 +123,7 @@ public class URIResultImpl extends ResultImpl implements URIResult {
 	 * <!-- end-user-doc -->
    * @generated
    */
+	@Override
 	public URLRetriever getDefinition() {
     if (definition != null && definition.eIsProxy()) {
       InternalEObject oldDefinition = (InternalEObject)definition;
@@ -149,6 +150,7 @@ public class URIResultImpl extends ResultImpl implements URIResult {
 	 * <!-- end-user-doc -->
    * @generated
    */
+	@Override
 	public void setDefinition(URLRetriever newDefinition) {
     URLRetriever oldDefinition = definition;
     definition = newDefinition;
@@ -161,6 +163,7 @@ public class URIResultImpl extends ResultImpl implements URIResult {
 	 * <!-- end-user-doc -->
    * @generated
    */
+	@Override
 	public String getUri() {
     return uri;
   }
@@ -170,6 +173,7 @@ public class URIResultImpl extends ResultImpl implements URIResult {
 	 * <!-- end-user-doc -->
    * @generated
    */
+	@Override
 	public void setUri(String newUri) {
     String oldUri = uri;
     uri = newUri;
@@ -182,6 +186,7 @@ public class URIResultImpl extends ResultImpl implements URIResult {
 	 * <!-- end-user-doc -->
    * @generated
    */
+	@Override
 	public Object getElement() {
     return element;
   }
@@ -191,6 +196,7 @@ public class URIResultImpl extends ResultImpl implements URIResult {
 	 * <!-- end-user-doc -->
    * @generated
    */
+	@Override
 	public void setElement(Object newElement) {
     Object oldElement = element;
     element = newElement;
@@ -203,6 +209,7 @@ public class URIResultImpl extends ResultImpl implements URIResult {
 	 * <!-- end-user-doc -->
    * @generated
    */
+	@Override
 	public String getExternalUri() {
     return externalUri;
   }
@@ -212,6 +219,7 @@ public class URIResultImpl extends ResultImpl implements URIResult {
 	 * <!-- end-user-doc -->
    * @generated
    */
+	@Override
 	public void setExternalUri(String newExternalUri) {
     String oldExternalUri = externalUri;
     externalUri = newExternalUri;
@@ -317,7 +325,7 @@ public class URIResultImpl extends ResultImpl implements URIResult {
 	public String toString() {
     if (eIsProxy()) return super.toString();
 
-    StringBuffer result = new StringBuffer(super.toString());
+    StringBuilder result = new StringBuilder(super.toString());
     result.append(" (uri: ");
     result.append(uri);
     result.append(", element: ");

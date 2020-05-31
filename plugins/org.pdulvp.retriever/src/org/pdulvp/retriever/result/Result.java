@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link org.pdulvp.retriever.result.Result#getId <em>Id</em>}</li>
  *   <li>{@link org.pdulvp.retriever.result.Result#getOwnedResults <em>Owned Results</em>}</li>
+ *   <li>{@link org.pdulvp.retriever.result.Result#getOrderedResults <em>Ordered Results</em>}</li>
  * </ul>
  *
  * @see org.pdulvp.retriever.result.ResultPackage#getResult()
@@ -65,5 +66,17 @@ public interface Result extends EObject {
    * @generated
    */
 	EList<Result> getOwnedResults();
+
+		/**
+   * Returns the value of the '<em><b>Ordered Results</b></em>' reference list.
+   * The list contents are of type {@link org.pdulvp.retriever.result.Result}.
+   * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+   * @return the value of the '<em>Ordered Results</em>' reference list.
+   * @see org.pdulvp.retriever.result.ResultPackage#getResult_OrderedResults()
+   * @model
+   * @generated
+   */
+	EList<Result> getOrderedResults();
 
 } // Result

@@ -3,10 +3,10 @@
 package org.pdulvp.retriever.presentation;
 
 
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.MalformedURLException;
-import java.net.URL;
+import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -17,11 +17,11 @@ import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IMarker;
+import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.IResourceChangeEvent;
 import org.eclipse.core.resources.IResourceChangeListener;
@@ -29,11 +29,9 @@ import org.eclipse.core.resources.IResourceDelta;
 import org.eclipse.core.resources.IResourceDeltaVisitor;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
-import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.NullProgressMonitor;
-import org.eclipse.core.runtime.Path;
 import org.eclipse.emf.common.command.BasicCommandStack;
 import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.common.command.CommandStack;
@@ -70,6 +68,7 @@ import org.eclipse.emf.edit.ui.provider.UnwrappingSelectionProvider;
 import org.eclipse.emf.edit.ui.util.EditUIMarkerHelper;
 import org.eclipse.emf.edit.ui.util.EditUIUtil;
 import org.eclipse.emf.edit.ui.view.ExtendedPropertySheetPage;
+import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.jface.action.IMenuListener;
 import org.eclipse.jface.action.IMenuManager;
 import org.eclipse.jface.action.IStatusLineManager;
@@ -79,7 +78,8 @@ import org.eclipse.jface.action.Separator;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.dialogs.ProgressMonitorDialog;
 import org.eclipse.jface.util.LocalSelectionTransfer;
-import org.eclipse.jface.viewers.ColumnWeightData;
+import org.eclipse.jface.viewers.DoubleClickEvent;
+import org.eclipse.jface.viewers.IDoubleClickListener;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.ISelectionProvider;
@@ -88,7 +88,6 @@ import org.eclipse.jface.viewers.ListViewer;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.viewers.StructuredViewer;
-import org.eclipse.jface.viewers.TableLayout;
 import org.eclipse.jface.viewers.TableViewer;
 import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.jface.viewers.Viewer;
@@ -104,13 +103,9 @@ import org.eclipse.swt.dnd.Transfer;
 import org.eclipse.swt.events.ControlAdapter;
 import org.eclipse.swt.events.ControlEvent;
 import org.eclipse.swt.graphics.Point;
-import org.eclipse.swt.layout.FillLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Menu;
-import org.eclipse.swt.widgets.Table;
-import org.eclipse.swt.widgets.TableColumn;
 import org.eclipse.swt.widgets.Tree;
-import org.eclipse.swt.widgets.TreeColumn;
 import org.eclipse.ui.IActionBars;
 import org.eclipse.ui.IEditorInput;
 import org.eclipse.ui.IEditorPart;
@@ -118,8 +113,10 @@ import org.eclipse.ui.IEditorSite;
 import org.eclipse.ui.IPartListener;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.PartInitException;
+import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
 import org.eclipse.ui.dialogs.SaveAsDialog;
+import org.eclipse.ui.ide.IDE;
 import org.eclipse.ui.ide.IGotoMarker;
 import org.eclipse.ui.part.FileEditorInput;
 import org.eclipse.ui.part.MultiPageEditorPart;
@@ -131,9 +128,14 @@ import org.eclipse.ui.views.properties.PropertySheet;
 import org.eclipse.ui.views.properties.PropertySheetPage;
 import org.pdulvp.retriever.model.handler.RetrieverScheme;
 import org.pdulvp.retriever.provider.RetrieverItemProviderAdapterFactory;
-import org.pdulvp.retriever.result.impl.URIResultImpl;
+import org.pdulvp.retriever.result.Result;
 import org.pdulvp.retriever.result.provider.ResultItemProviderAdapterFactory;
 import org.pdulvp.retriever.result.util.ResultResourceImpl;
+import org.pdulvp.retriever.util.RetrieverResourceImpl;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonElement;
 
 
 /**
@@ -144,7 +146,7 @@ import org.pdulvp.retriever.result.util.ResultResourceImpl;
  */
 public class RetrieverEditor
   extends MultiPageEditorPart
-  implements IEditingDomainProvider, ISelectionProvider, IMenuListener, IViewerProvider, IGotoMarker {
+  implements IEditingDomainProvider, ISelectionProvider, IMenuListener, IViewerProvider, IGotoMarker, IDoubleClickListener {
   /**
    * This keeps track of the editing domain that is used to track all changes to the model.
    * <!-- begin-user-doc -->
@@ -1033,6 +1035,7 @@ public class RetrieverEditor
             public Viewer createViewer(Composite composite) {
               Tree tree = new Tree(composite, SWT.MULTI);
               TreeViewer newTreeViewer = new TreeViewer(tree);
+              newTreeViewer.addDoubleClickListener(RetrieverEditor.this);
               return newTreeViewer;
             }
             @Override
@@ -1059,7 +1062,13 @@ public class RetrieverEditor
         selectionViewer.setLabelProvider(new AdapterFactoryLabelProvider(adapterFactory) {
         	@Override
         	public String getText(Object object) {
-        		if (object instanceof ResultResourceImpl) {
+        	  if (object instanceof ResourceSet) {
+              return "Scraper Editor";
+            }
+        	  if (object instanceof RetrieverResourceImpl) {
+              return getPartName();
+            }
+        	  if (object instanceof ResultResourceImpl) {
         			return RetrieverScheme.getURI(((ResultResourceImpl) object).getURI());
         		}
         		return super.getText(object);
@@ -1486,7 +1495,9 @@ public class RetrieverEditor
 	initializeEditingDomain(editorInput);
     setSite(site);
     setInputWithNotify(editorInput);
-    setPartName(editorInput.getName());
+    
+    setPartName(((FileEditorInput)editorInput).getFile().getProject().getName());
+    
     site.setSelectionProvider(this);
     site.getPage().addPartListener(partListener);
     ResourcesPlugin.getWorkspace().addResourceChangeListener(resourceChangeListener, IResourceChangeEvent.POST_CHANGE);
@@ -1691,5 +1702,42 @@ public class RetrieverEditor
    */
   protected boolean showOutlineView() {
     return true;
+  }
+
+  @Override
+  public void doubleClick(DoubleClickEvent event) {
+    IStructuredSelection selection = (IStructuredSelection)event.getSelection();
+    Object item = selection.getFirstElement();
+    if (item instanceof Result) {
+      Result ite = (Result)item;
+      JsonElement object = new EObjectJsonAdapter().toJsonElement(ite);
+      
+      
+      URI uri = URI.createFileURI(RetrieverScheme.getFilename(((Result) item).eResource().getURI(), TransactionUtil.getEditingDomain(item)));
+      IProject project = ResourcesPlugin.getWorkspace().getRoot().getProject(uri.segment(0));
+      IFile file = project.getFile("output.json");
+      if (!file.exists()) {
+        try {
+          file.create(new ByteArrayInputStream("".getBytes(Charset.forName("UTF-8"))), 0, new NullProgressMonitor());
+        } catch (CoreException e) {
+          // TODO Auto-generated catch block
+          e.printStackTrace();
+        }
+      }
+
+      Gson gson = new GsonBuilder().setPrettyPrinting().create();
+      System.out.println("Result:");
+      System.out.println();
+      
+      try {
+         file.setContents(new ByteArrayInputStream(gson.toJson(object).getBytes(Charset.forName("UTF-8"))), 0, new NullProgressMonitor());
+          IDE.openEditor(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage(), file);
+        } catch (CoreException e) {
+          // TODO Auto-generated catch block
+          e.printStackTrace();
+        }
+        
+      System.out.println();
+    }
   }
 }

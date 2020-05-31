@@ -225,7 +225,7 @@ public class RetrieverPackageImpl extends EPackageImpl implements RetrieverPacka
 
   /**
    * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-   * 
+   *
    * <p>This method is used to initialize {@link RetrieverPackage#eINSTANCE} when that field is accessed.
    * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
    * <!-- begin-user-doc -->
@@ -239,7 +239,8 @@ public class RetrieverPackageImpl extends EPackageImpl implements RetrieverPacka
     if (isInited) return (RetrieverPackage)EPackage.Registry.INSTANCE.getEPackage(RetrieverPackage.eNS_URI);
 
     // Obtain or create and register package
-    RetrieverPackageImpl theRetrieverPackage = (RetrieverPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof RetrieverPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new RetrieverPackageImpl());
+    Object registeredRetrieverPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+    RetrieverPackageImpl theRetrieverPackage = registeredRetrieverPackage instanceof RetrieverPackageImpl ? (RetrieverPackageImpl)registeredRetrieverPackage : new RetrieverPackageImpl();
 
     isInited = true;
 
@@ -247,7 +248,8 @@ public class RetrieverPackageImpl extends EPackageImpl implements RetrieverPacka
     EcorePackage.eINSTANCE.eClass();
 
     // Obtain or create and register interdependencies
-    ResultPackageImpl theResultPackage = (ResultPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ResultPackage.eNS_URI) instanceof ResultPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ResultPackage.eNS_URI) : ResultPackage.eINSTANCE);
+    Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ResultPackage.eNS_URI);
+    ResultPackageImpl theResultPackage = (ResultPackageImpl)(registeredPackage instanceof ResultPackageImpl ? registeredPackage : ResultPackage.eINSTANCE);
 
     // Create package meta-data objects
     theRetrieverPackage.createPackageContents();
@@ -260,7 +262,6 @@ public class RetrieverPackageImpl extends EPackageImpl implements RetrieverPacka
     // Mark meta-data to indicate it can't be changed
     theRetrieverPackage.freeze();
 
-  
     // Update the registry and return the package
     EPackage.Registry.INSTANCE.put(RetrieverPackage.eNS_URI, theRetrieverPackage);
     return theRetrieverPackage;
@@ -271,7 +272,8 @@ public class RetrieverPackageImpl extends EPackageImpl implements RetrieverPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getRetrieverRoot() {
+  @Override
+		public EClass getRetrieverRoot() {
     return retrieverRootEClass;
   }
 
@@ -280,7 +282,8 @@ public class RetrieverPackageImpl extends EPackageImpl implements RetrieverPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getRetrieverPkg() {
+  @Override
+		public EClass getRetrieverPkg() {
     return retrieverPkgEClass;
   }
 
@@ -289,7 +292,8 @@ public class RetrieverPackageImpl extends EPackageImpl implements RetrieverPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getRetrieverContainer() {
+  @Override
+		public EClass getRetrieverContainer() {
     return retrieverContainerEClass;
   }
 
@@ -298,7 +302,8 @@ public class RetrieverPackageImpl extends EPackageImpl implements RetrieverPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getRetrieverContainer_OwnedElements() {
+  @Override
+		public EReference getRetrieverContainer_OwnedElements() {
     return (EReference)retrieverContainerEClass.getEStructuralFeatures().get(0);
   }
 
@@ -307,7 +312,8 @@ public class RetrieverPackageImpl extends EPackageImpl implements RetrieverPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getRetrieverContainer_OwnedServices() {
+  @Override
+		public EReference getRetrieverContainer_OwnedServices() {
     return (EReference)retrieverContainerEClass.getEStructuralFeatures().get(1);
   }
 
@@ -316,7 +322,8 @@ public class RetrieverPackageImpl extends EPackageImpl implements RetrieverPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getRetriever() {
+  @Override
+		public EClass getRetriever() {
     return retrieverEClass;
   }
 
@@ -325,7 +332,8 @@ public class RetrieverPackageImpl extends EPackageImpl implements RetrieverPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getRetriever_Id() {
+  @Override
+		public EAttribute getRetriever_Id() {
     return (EAttribute)retrieverEClass.getEStructuralFeatures().get(0);
   }
 
@@ -334,7 +342,8 @@ public class RetrieverPackageImpl extends EPackageImpl implements RetrieverPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getRetriever_Name() {
+  @Override
+		public EAttribute getRetriever_Name() {
     return (EAttribute)retrieverEClass.getEStructuralFeatures().get(1);
   }
 
@@ -343,7 +352,8 @@ public class RetrieverPackageImpl extends EPackageImpl implements RetrieverPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getRetriever_Description() {
+  @Override
+		public EAttribute getRetriever_Description() {
     return (EAttribute)retrieverEClass.getEStructuralFeatures().get(2);
   }
 
@@ -352,16 +362,28 @@ public class RetrieverPackageImpl extends EPackageImpl implements RetrieverPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getRetriever_Dynamic() {
+  @Override
+		public EAttribute getRetriever_Dynamic() {
     return (EAttribute)retrieverEClass.getEStructuralFeatures().get(3);
   }
 
   /**
    * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+   * @generated
+   */
+	@Override
+	public EAttribute getRetriever_DynamicPreconditionExpression() {
+    return (EAttribute)retrieverEClass.getEStructuralFeatures().get(4);
+  }
+
+		/**
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getURLRetriever() {
+  @Override
+		public EClass getURLRetriever() {
     return urlRetrieverEClass;
   }
 
@@ -370,7 +392,8 @@ public class RetrieverPackageImpl extends EPackageImpl implements RetrieverPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getURLRetriever_OwnedVariables() {
+  @Override
+		public EReference getURLRetriever_OwnedVariables() {
     return (EReference)urlRetrieverEClass.getEStructuralFeatures().get(0);
   }
 
@@ -379,7 +402,8 @@ public class RetrieverPackageImpl extends EPackageImpl implements RetrieverPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getURLRetriever_UriExpression() {
+  @Override
+		public EAttribute getURLRetriever_UriExpression() {
     return (EAttribute)urlRetrieverEClass.getEStructuralFeatures().get(1);
   }
 
@@ -388,7 +412,8 @@ public class RetrieverPackageImpl extends EPackageImpl implements RetrieverPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getURLRetriever_CacheControl() {
+  @Override
+		public EAttribute getURLRetriever_CacheControl() {
     return (EAttribute)urlRetrieverEClass.getEStructuralFeatures().get(2);
   }
 
@@ -397,7 +422,8 @@ public class RetrieverPackageImpl extends EPackageImpl implements RetrieverPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getURLRetriever_AsSemantic() {
+  @Override
+		public EAttribute getURLRetriever_AsSemantic() {
     return (EAttribute)urlRetrieverEClass.getEStructuralFeatures().get(3);
   }
 
@@ -406,7 +432,8 @@ public class RetrieverPackageImpl extends EPackageImpl implements RetrieverPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getURIVariable() {
+  @Override
+		public EClass getURIVariable() {
     return uriVariableEClass;
   }
 
@@ -415,7 +442,8 @@ public class RetrieverPackageImpl extends EPackageImpl implements RetrieverPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getURIVariable_Name() {
+  @Override
+		public EAttribute getURIVariable_Name() {
     return (EAttribute)uriVariableEClass.getEStructuralFeatures().get(0);
   }
 
@@ -424,7 +452,8 @@ public class RetrieverPackageImpl extends EPackageImpl implements RetrieverPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getElementRetriever() {
+  @Override
+		public EClass getElementRetriever() {
     return elementRetrieverEClass;
   }
 
@@ -433,7 +462,8 @@ public class RetrieverPackageImpl extends EPackageImpl implements RetrieverPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getElementRetriever_RetrieverExpression() {
+  @Override
+		public EAttribute getElementRetriever_RetrieverExpression() {
     return (EAttribute)elementRetrieverEClass.getEStructuralFeatures().get(0);
   }
 
@@ -442,7 +472,8 @@ public class RetrieverPackageImpl extends EPackageImpl implements RetrieverPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getAttributeRetriever() {
+  @Override
+		public EClass getAttributeRetriever() {
     return attributeRetrieverEClass;
   }
 
@@ -451,7 +482,8 @@ public class RetrieverPackageImpl extends EPackageImpl implements RetrieverPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getAttributeRetriever_ValueExpression() {
+  @Override
+		public EAttribute getAttributeRetriever_ValueExpression() {
     return (EAttribute)attributeRetrieverEClass.getEStructuralFeatures().get(0);
   }
 
@@ -460,7 +492,8 @@ public class RetrieverPackageImpl extends EPackageImpl implements RetrieverPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getAttributeRetriever_Alternative() {
+  @Override
+		public EReference getAttributeRetriever_Alternative() {
     return (EReference)attributeRetrieverEClass.getEStructuralFeatures().get(1);
   }
 
@@ -469,7 +502,8 @@ public class RetrieverPackageImpl extends EPackageImpl implements RetrieverPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getAttributeRetriever_Service() {
+  @Override
+		public EReference getAttributeRetriever_Service() {
     return (EReference)attributeRetrieverEClass.getEStructuralFeatures().get(2);
   }
 
@@ -478,7 +512,8 @@ public class RetrieverPackageImpl extends EPackageImpl implements RetrieverPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getTransformationRetriever() {
+  @Override
+		public EClass getTransformationRetriever() {
     return transformationRetrieverEClass;
   }
 
@@ -487,7 +522,8 @@ public class RetrieverPackageImpl extends EPackageImpl implements RetrieverPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getTransformationRetriever_Service() {
+  @Override
+		public EReference getTransformationRetriever_Service() {
     return (EReference)transformationRetrieverEClass.getEStructuralFeatures().get(0);
   }
 
@@ -496,7 +532,8 @@ public class RetrieverPackageImpl extends EPackageImpl implements RetrieverPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getTransformationRetriever_Input() {
+  @Override
+		public EAttribute getTransformationRetriever_Input() {
     return (EAttribute)transformationRetrieverEClass.getEStructuralFeatures().get(1);
   }
 
@@ -505,7 +542,8 @@ public class RetrieverPackageImpl extends EPackageImpl implements RetrieverPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getTransformationRetriever_Variable() {
+  @Override
+		public EAttribute getTransformationRetriever_Variable() {
     return (EAttribute)transformationRetrieverEClass.getEStructuralFeatures().get(2);
   }
 
@@ -514,7 +552,8 @@ public class RetrieverPackageImpl extends EPackageImpl implements RetrieverPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getTransformationService() {
+  @Override
+		public EClass getTransformationService() {
     return transformationServiceEClass;
   }
 
@@ -523,7 +562,8 @@ public class RetrieverPackageImpl extends EPackageImpl implements RetrieverPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getTransformationService_Classname() {
+  @Override
+		public EAttribute getTransformationService_Classname() {
     return (EAttribute)transformationServiceEClass.getEStructuralFeatures().get(0);
   }
 
@@ -532,7 +572,8 @@ public class RetrieverPackageImpl extends EPackageImpl implements RetrieverPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getTransformationService_Method() {
+  @Override
+		public EAttribute getTransformationService_Method() {
     return (EAttribute)transformationServiceEClass.getEStructuralFeatures().get(1);
   }
 
@@ -541,7 +582,8 @@ public class RetrieverPackageImpl extends EPackageImpl implements RetrieverPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getReferencedRetriever() {
+  @Override
+		public EClass getReferencedRetriever() {
     return referencedRetrieverEClass;
   }
 
@@ -550,7 +592,8 @@ public class RetrieverPackageImpl extends EPackageImpl implements RetrieverPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getReferencedRetriever_ReferencedElement() {
+  @Override
+		public EReference getReferencedRetriever_ReferencedElement() {
     return (EReference)referencedRetrieverEClass.getEStructuralFeatures().get(0);
   }
 
@@ -559,7 +602,8 @@ public class RetrieverPackageImpl extends EPackageImpl implements RetrieverPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getSetVariable() {
+  @Override
+		public EClass getSetVariable() {
     return setVariableEClass;
   }
 
@@ -568,7 +612,8 @@ public class RetrieverPackageImpl extends EPackageImpl implements RetrieverPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getSetVariable_Expression() {
+  @Override
+		public EAttribute getSetVariable_Expression() {
     return (EAttribute)setVariableEClass.getEStructuralFeatures().get(0);
   }
 
@@ -577,6 +622,7 @@ public class RetrieverPackageImpl extends EPackageImpl implements RetrieverPacka
 	 * <!-- end-user-doc -->
    * @generated
    */
+	@Override
 	public EAttribute getSetVariable_Log() {
     return (EAttribute)setVariableEClass.getEStructuralFeatures().get(1);
   }
@@ -586,7 +632,8 @@ public class RetrieverPackageImpl extends EPackageImpl implements RetrieverPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getCreateEObject() {
+  @Override
+		public EClass getCreateEObject() {
     return createEObjectEClass;
   }
 
@@ -595,7 +642,8 @@ public class RetrieverPackageImpl extends EPackageImpl implements RetrieverPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getCreateEObject_ContainerExpression() {
+  @Override
+		public EAttribute getCreateEObject_ContainerExpression() {
     return (EAttribute)createEObjectEClass.getEStructuralFeatures().get(0);
   }
 
@@ -604,7 +652,8 @@ public class RetrieverPackageImpl extends EPackageImpl implements RetrieverPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getCreateDirectEObject() {
+  @Override
+		public EClass getCreateDirectEObject() {
     return createDirectEObjectEClass;
   }
 
@@ -613,7 +662,8 @@ public class RetrieverPackageImpl extends EPackageImpl implements RetrieverPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getCreateDirectEObject_Class() {
+  @Override
+		public EReference getCreateDirectEObject_Class() {
     return (EReference)createDirectEObjectEClass.getEStructuralFeatures().get(0);
   }
 
@@ -622,7 +672,8 @@ public class RetrieverPackageImpl extends EPackageImpl implements RetrieverPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getCreateDirectEObject_ContainingFeature() {
+  @Override
+		public EReference getCreateDirectEObject_ContainingFeature() {
     return (EReference)createDirectEObjectEClass.getEStructuralFeatures().get(1);
   }
 
@@ -631,7 +682,8 @@ public class RetrieverPackageImpl extends EPackageImpl implements RetrieverPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getCreateEReference() {
+  @Override
+		public EClass getCreateEReference() {
     return createEReferenceEClass;
   }
 
@@ -640,7 +692,8 @@ public class RetrieverPackageImpl extends EPackageImpl implements RetrieverPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getCreateEReference_Feature() {
+  @Override
+		public EReference getCreateEReference_Feature() {
     return (EReference)createEReferenceEClass.getEStructuralFeatures().get(0);
   }
 
@@ -649,7 +702,8 @@ public class RetrieverPackageImpl extends EPackageImpl implements RetrieverPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getCreateEReference_ValueExpression() {
+  @Override
+		public EAttribute getCreateEReference_ValueExpression() {
     return (EAttribute)createEReferenceEClass.getEStructuralFeatures().get(1);
   }
 
@@ -658,7 +712,8 @@ public class RetrieverPackageImpl extends EPackageImpl implements RetrieverPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getCreateEReference_Deferred() {
+  @Override
+		public EAttribute getCreateEReference_Deferred() {
     return (EAttribute)createEReferenceEClass.getEStructuralFeatures().get(2);
   }
 
@@ -667,7 +722,8 @@ public class RetrieverPackageImpl extends EPackageImpl implements RetrieverPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getCreateEAttribute() {
+  @Override
+		public EClass getCreateEAttribute() {
     return createEAttributeEClass;
   }
 
@@ -676,7 +732,8 @@ public class RetrieverPackageImpl extends EPackageImpl implements RetrieverPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getCreateEAttribute_Feature() {
+  @Override
+		public EReference getCreateEAttribute_Feature() {
     return (EReference)createEAttributeEClass.getEStructuralFeatures().get(0);
   }
 
@@ -685,7 +742,8 @@ public class RetrieverPackageImpl extends EPackageImpl implements RetrieverPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getCreateEAttribute_ValueExpression() {
+  @Override
+		public EAttribute getCreateEAttribute_ValueExpression() {
     return (EAttribute)createEAttributeEClass.getEStructuralFeatures().get(1);
   }
 
@@ -694,7 +752,8 @@ public class RetrieverPackageImpl extends EPackageImpl implements RetrieverPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getCreateFile() {
+  @Override
+		public EClass getCreateFile() {
     return createFileEClass;
   }
 
@@ -703,7 +762,8 @@ public class RetrieverPackageImpl extends EPackageImpl implements RetrieverPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getCreateFile_Uri() {
+  @Override
+		public EAttribute getCreateFile_Uri() {
     return (EAttribute)createFileEClass.getEStructuralFeatures().get(0);
   }
 
@@ -712,7 +772,8 @@ public class RetrieverPackageImpl extends EPackageImpl implements RetrieverPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getCreateNotifier() {
+  @Override
+		public EClass getCreateNotifier() {
     return createNotifierEClass;
   }
 
@@ -721,7 +782,8 @@ public class RetrieverPackageImpl extends EPackageImpl implements RetrieverPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getLoadResource() {
+  @Override
+		public EClass getLoadResource() {
     return loadResourceEClass;
   }
 
@@ -730,7 +792,8 @@ public class RetrieverPackageImpl extends EPackageImpl implements RetrieverPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getLoadResource_Uri() {
+  @Override
+		public EAttribute getLoadResource_Uri() {
     return (EAttribute)loadResourceEClass.getEStructuralFeatures().get(0);
   }
 
@@ -739,7 +802,8 @@ public class RetrieverPackageImpl extends EPackageImpl implements RetrieverPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getLoadResource_Create() {
+  @Override
+		public EAttribute getLoadResource_Create() {
     return (EAttribute)loadResourceEClass.getEStructuralFeatures().get(1);
   }
 
@@ -748,7 +812,8 @@ public class RetrieverPackageImpl extends EPackageImpl implements RetrieverPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getLoadResource_ClearContents() {
+  @Override
+		public EAttribute getLoadResource_ClearContents() {
     return (EAttribute)loadResourceEClass.getEStructuralFeatures().get(2);
   }
 
@@ -757,7 +822,8 @@ public class RetrieverPackageImpl extends EPackageImpl implements RetrieverPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getIf() {
+  @Override
+		public EClass getIf() {
     return ifEClass;
   }
 
@@ -766,7 +832,8 @@ public class RetrieverPackageImpl extends EPackageImpl implements RetrieverPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getIf_ConditionExpression() {
+  @Override
+		public EAttribute getIf_ConditionExpression() {
     return (EAttribute)ifEClass.getEStructuralFeatures().get(0);
   }
 
@@ -775,7 +842,8 @@ public class RetrieverPackageImpl extends EPackageImpl implements RetrieverPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getIVariableElement() {
+  @Override
+		public EClass getIVariableElement() {
     return iVariableElementEClass;
   }
 
@@ -784,7 +852,8 @@ public class RetrieverPackageImpl extends EPackageImpl implements RetrieverPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getIVariableElement_Variable() {
+  @Override
+		public EAttribute getIVariableElement_Variable() {
     return (EAttribute)iVariableElementEClass.getEStructuralFeatures().get(0);
   }
 
@@ -793,7 +862,8 @@ public class RetrieverPackageImpl extends EPackageImpl implements RetrieverPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getIVariableResultElement() {
+  @Override
+		public EClass getIVariableResultElement() {
     return iVariableResultElementEClass;
   }
 
@@ -802,7 +872,8 @@ public class RetrieverPackageImpl extends EPackageImpl implements RetrieverPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getIVariableResultElement_VariableResult() {
+  @Override
+		public EAttribute getIVariableResultElement_VariableResult() {
     return (EAttribute)iVariableResultElementEClass.getEStructuralFeatures().get(0);
   }
 
@@ -811,7 +882,8 @@ public class RetrieverPackageImpl extends EPackageImpl implements RetrieverPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public RetrieverFactory getRetrieverFactory() {
+  @Override
+		public RetrieverFactory getRetrieverFactory() {
     return (RetrieverFactory)getEFactoryInstance();
   }
 
@@ -847,6 +919,7 @@ public class RetrieverPackageImpl extends EPackageImpl implements RetrieverPacka
     createEAttribute(retrieverEClass, RETRIEVER__NAME);
     createEAttribute(retrieverEClass, RETRIEVER__DESCRIPTION);
     createEAttribute(retrieverEClass, RETRIEVER__DYNAMIC);
+    createEAttribute(retrieverEClass, RETRIEVER__DYNAMIC_PRECONDITION_EXPRESSION);
 
     urlRetrieverEClass = createEClass(URL_RETRIEVER);
     createEReference(urlRetrieverEClass, URL_RETRIEVER__OWNED_VARIABLES);
@@ -994,6 +1067,7 @@ public class RetrieverPackageImpl extends EPackageImpl implements RetrieverPacka
     initEAttribute(getRetriever_Name(), ecorePackage.getEString(), "name", null, 0, 1, Retriever.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getRetriever_Description(), ecorePackage.getEString(), "description", null, 0, 1, Retriever.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getRetriever_Dynamic(), ecorePackage.getEBoolean(), "dynamic", "false", 0, 1, Retriever.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getRetriever_DynamicPreconditionExpression(), ecorePackage.getEString(), "dynamicPreconditionExpression", null, 0, 1, Retriever.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(urlRetrieverEClass, URLRetriever.class, "URLRetriever", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getURLRetriever_OwnedVariables(), this.getURIVariable(), null, "ownedVariables", null, 0, -1, URLRetriever.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

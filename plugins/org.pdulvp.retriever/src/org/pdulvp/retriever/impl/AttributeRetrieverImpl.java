@@ -87,7 +87,8 @@ public class AttributeRetrieverImpl extends RetrieverImpl implements AttributeRe
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getValueExpression() {
+  @Override
+		public String getValueExpression() {
     return valueExpression;
   }
 
@@ -96,7 +97,8 @@ public class AttributeRetrieverImpl extends RetrieverImpl implements AttributeRe
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setValueExpression(String newValueExpression) {
+  @Override
+		public void setValueExpression(String newValueExpression) {
     String oldValueExpression = valueExpression;
     valueExpression = newValueExpression;
     if (eNotificationRequired())
@@ -108,6 +110,7 @@ public class AttributeRetrieverImpl extends RetrieverImpl implements AttributeRe
 	 * <!-- end-user-doc -->
    * @generated
    */
+	@Override
 	public AttributeRetriever getAlternative() {
     return alternative;
   }
@@ -132,6 +135,7 @@ public class AttributeRetrieverImpl extends RetrieverImpl implements AttributeRe
 	 * <!-- end-user-doc -->
    * @generated
    */
+	@Override
 	public void setAlternative(AttributeRetriever newAlternative) {
     if (newAlternative != alternative) {
       NotificationChain msgs = null;
@@ -151,7 +155,8 @@ public class AttributeRetrieverImpl extends RetrieverImpl implements AttributeRe
    * <!-- end-user-doc -->
    * @generated
    */
-  public TransformationService getService() {
+  @Override
+		public TransformationService getService() {
     if (service != null && service.eIsProxy()) {
       InternalEObject oldService = (InternalEObject)service;
       service = (TransformationService)eResolveProxy(oldService);
@@ -177,7 +182,8 @@ public class AttributeRetrieverImpl extends RetrieverImpl implements AttributeRe
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setService(TransformationService newService) {
+  @Override
+		public void setService(TransformationService newService) {
     TransformationService oldService = service;
     service = newService;
     if (eNotificationRequired())
@@ -286,7 +292,7 @@ public class AttributeRetrieverImpl extends RetrieverImpl implements AttributeRe
 	public String toString() {
     if (eIsProxy()) return super.toString();
 
-    StringBuffer result = new StringBuffer(super.toString());
+    StringBuilder result = new StringBuilder(super.toString());
     result.append(" (valueExpression: ");
     result.append(valueExpression);
     result.append(')');

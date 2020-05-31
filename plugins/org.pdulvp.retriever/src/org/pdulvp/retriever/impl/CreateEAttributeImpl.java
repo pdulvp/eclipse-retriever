@@ -80,6 +80,7 @@ public class CreateEAttributeImpl extends RetrieverImpl implements CreateEAttrib
 	 * <!-- end-user-doc -->
    * @generated
    */
+	@Override
 	public EAttribute getFeature() {
     if (feature != null && feature.eIsProxy()) {
       InternalEObject oldFeature = (InternalEObject)feature;
@@ -106,6 +107,7 @@ public class CreateEAttributeImpl extends RetrieverImpl implements CreateEAttrib
 	 * <!-- end-user-doc -->
    * @generated
    */
+	@Override
 	public void setFeature(EAttribute newFeature) {
     EAttribute oldFeature = feature;
     feature = newFeature;
@@ -118,7 +120,8 @@ public class CreateEAttributeImpl extends RetrieverImpl implements CreateEAttrib
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getValueExpression() {
+  @Override
+		public String getValueExpression() {
     return valueExpression;
   }
 
@@ -127,7 +130,8 @@ public class CreateEAttributeImpl extends RetrieverImpl implements CreateEAttrib
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setValueExpression(String newValueExpression) {
+  @Override
+		public void setValueExpression(String newValueExpression) {
     String oldValueExpression = valueExpression;
     valueExpression = newValueExpression;
     if (eNotificationRequired())
@@ -212,7 +216,7 @@ public class CreateEAttributeImpl extends RetrieverImpl implements CreateEAttrib
 	public String toString() {
     if (eIsProxy()) return super.toString();
 
-    StringBuffer result = new StringBuffer(super.toString());
+    StringBuilder result = new StringBuilder(super.toString());
     result.append(" (valueExpression: ");
     result.append(valueExpression);
     result.append(')');

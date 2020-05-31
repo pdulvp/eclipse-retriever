@@ -102,6 +102,7 @@ public class CreateEReferenceImpl extends RetrieverImpl implements CreateERefere
 	 * <!-- end-user-doc -->
    * @generated
    */
+	@Override
 	public EReference getFeature() {
     if (feature != null && feature.eIsProxy()) {
       InternalEObject oldFeature = (InternalEObject)feature;
@@ -128,6 +129,7 @@ public class CreateEReferenceImpl extends RetrieverImpl implements CreateERefere
 	 * <!-- end-user-doc -->
    * @generated
    */
+	@Override
 	public void setFeature(EReference newFeature) {
     EReference oldFeature = feature;
     feature = newFeature;
@@ -140,7 +142,8 @@ public class CreateEReferenceImpl extends RetrieverImpl implements CreateERefere
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getValueExpression() {
+  @Override
+		public String getValueExpression() {
     return valueExpression;
   }
 
@@ -149,7 +152,8 @@ public class CreateEReferenceImpl extends RetrieverImpl implements CreateERefere
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setValueExpression(String newValueExpression) {
+  @Override
+		public void setValueExpression(String newValueExpression) {
     String oldValueExpression = valueExpression;
     valueExpression = newValueExpression;
     if (eNotificationRequired())
@@ -161,7 +165,8 @@ public class CreateEReferenceImpl extends RetrieverImpl implements CreateERefere
    * <!-- end-user-doc -->
    * @generated
    */
-  public boolean isDeferred() {
+  @Override
+		public boolean isDeferred() {
     return deferred;
   }
 
@@ -170,7 +175,8 @@ public class CreateEReferenceImpl extends RetrieverImpl implements CreateERefere
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setDeferred(boolean newDeferred) {
+  @Override
+		public void setDeferred(boolean newDeferred) {
     boolean oldDeferred = deferred;
     deferred = newDeferred;
     if (eNotificationRequired())
@@ -265,7 +271,7 @@ public class CreateEReferenceImpl extends RetrieverImpl implements CreateERefere
 	public String toString() {
     if (eIsProxy()) return super.toString();
 
-    StringBuffer result = new StringBuffer(super.toString());
+    StringBuilder result = new StringBuilder(super.toString());
     result.append(" (valueExpression: ");
     result.append(valueExpression);
     result.append(", deferred: ");

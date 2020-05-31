@@ -2,6 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: org.pdulvp.retriever.edit;singleton:=true
+Automatic-Module-Name: org.pdulvp.retriever.edit
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
 Bundle-Activator: org.pdulvp.retriever.provider.RetrieverEditPlugin$Implementation

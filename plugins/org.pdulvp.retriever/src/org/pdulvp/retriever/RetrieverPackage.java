@@ -218,12 +218,21 @@ public interface RetrieverPackage extends EPackage {
   int RETRIEVER__DYNAMIC = 3;
 
   /**
+   * The feature id for the '<em><b>Dynamic Precondition Expression</b></em>' attribute.
+   * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+	int RETRIEVER__DYNAMIC_PRECONDITION_EXPRESSION = 4;
+
+		/**
    * The number of structural features of the '<em>Retriever</em>' class.
    * <!-- begin-user-doc --> <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int RETRIEVER_FEATURE_COUNT = 4;
+  int RETRIEVER_FEATURE_COUNT = 5;
 
   /**
    * The number of operations of the '<em>Retriever</em>' class.
@@ -268,6 +277,15 @@ public interface RetrieverPackage extends EPackage {
   int RETRIEVER_CONTAINER__DYNAMIC = RETRIEVER__DYNAMIC;
 
   /**
+   * The feature id for the '<em><b>Dynamic Precondition Expression</b></em>' attribute.
+   * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+	int RETRIEVER_CONTAINER__DYNAMIC_PRECONDITION_EXPRESSION = RETRIEVER__DYNAMIC_PRECONDITION_EXPRESSION;
+
+		/**
    * The feature id for the '<em><b>Owned Elements</b></em>' containment reference list.
    * <!-- begin-user-doc --> <!--
    * end-user-doc -->
@@ -336,6 +354,15 @@ public interface RetrieverPackage extends EPackage {
   int RETRIEVER_ROOT__DYNAMIC = RETRIEVER_CONTAINER__DYNAMIC;
 
   /**
+   * The feature id for the '<em><b>Dynamic Precondition Expression</b></em>' attribute.
+   * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+	int RETRIEVER_ROOT__DYNAMIC_PRECONDITION_EXPRESSION = RETRIEVER_CONTAINER__DYNAMIC_PRECONDITION_EXPRESSION;
+
+		/**
    * The feature id for the '<em><b>Owned Elements</b></em>' containment reference list.
    * <!-- begin-user-doc --> <!--
    * end-user-doc -->
@@ -404,6 +431,15 @@ public interface RetrieverPackage extends EPackage {
   int RETRIEVER_PKG__DYNAMIC = RETRIEVER_CONTAINER__DYNAMIC;
 
   /**
+   * The feature id for the '<em><b>Dynamic Precondition Expression</b></em>' attribute.
+   * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+	int RETRIEVER_PKG__DYNAMIC_PRECONDITION_EXPRESSION = RETRIEVER_CONTAINER__DYNAMIC_PRECONDITION_EXPRESSION;
+
+		/**
    * The feature id for the '<em><b>Owned Elements</b></em>' containment reference list.
    * <!-- begin-user-doc --> <!--
    * end-user-doc -->
@@ -472,6 +508,15 @@ public interface RetrieverPackage extends EPackage {
   int URL_RETRIEVER__DYNAMIC = RETRIEVER__DYNAMIC;
 
   /**
+   * The feature id for the '<em><b>Dynamic Precondition Expression</b></em>' attribute.
+   * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+	int URL_RETRIEVER__DYNAMIC_PRECONDITION_EXPRESSION = RETRIEVER__DYNAMIC_PRECONDITION_EXPRESSION;
+
+		/**
    * The feature id for the '<em><b>Owned Elements</b></em>' containment reference list.
    * <!-- begin-user-doc --> <!--
    * end-user-doc -->
@@ -618,6 +663,15 @@ public interface RetrieverPackage extends EPackage {
   int ELEMENT_RETRIEVER__DYNAMIC = RETRIEVER__DYNAMIC;
 
   /**
+   * The feature id for the '<em><b>Dynamic Precondition Expression</b></em>' attribute.
+   * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+	int ELEMENT_RETRIEVER__DYNAMIC_PRECONDITION_EXPRESSION = RETRIEVER__DYNAMIC_PRECONDITION_EXPRESSION;
+
+		/**
    * The feature id for the '<em><b>Owned Elements</b></em>' containment reference list.
    * <!-- begin-user-doc --> <!--
    * end-user-doc -->
@@ -713,6 +767,15 @@ public interface RetrieverPackage extends EPackage {
   int ATTRIBUTE_RETRIEVER__DYNAMIC = RETRIEVER__DYNAMIC;
 
   /**
+   * The feature id for the '<em><b>Dynamic Precondition Expression</b></em>' attribute.
+   * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+	int ATTRIBUTE_RETRIEVER__DYNAMIC_PRECONDITION_EXPRESSION = RETRIEVER__DYNAMIC_PRECONDITION_EXPRESSION;
+
+		/**
    * The feature id for the '<em><b>Value Expression</b></em>' attribute.
    * <!-- begin-user-doc --> <!-- end-user-doc -->
    * @generated
@@ -789,6 +852,15 @@ public interface RetrieverPackage extends EPackage {
   int TRANSFORMATION_RETRIEVER__DYNAMIC = RETRIEVER__DYNAMIC;
 
   /**
+   * The feature id for the '<em><b>Dynamic Precondition Expression</b></em>' attribute.
+   * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+	int TRANSFORMATION_RETRIEVER__DYNAMIC_PRECONDITION_EXPRESSION = RETRIEVER__DYNAMIC_PRECONDITION_EXPRESSION;
+
+		/**
    * The feature id for the '<em><b>Owned Elements</b></em>' containment reference list.
    * <!-- begin-user-doc --> <!--
    * end-user-doc -->
@@ -917,6 +989,15 @@ public interface RetrieverPackage extends EPackage {
   int REFERENCED_RETRIEVER__DYNAMIC = RETRIEVER__DYNAMIC;
 
   /**
+   * The feature id for the '<em><b>Dynamic Precondition Expression</b></em>' attribute.
+   * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+	int REFERENCED_RETRIEVER__DYNAMIC_PRECONDITION_EXPRESSION = RETRIEVER__DYNAMIC_PRECONDITION_EXPRESSION;
+
+		/**
    * The feature id for the '<em><b>Referenced Element</b></em>' reference. <!-- begin-user-doc --> <!-- end-user-doc
    * -->
    * 
@@ -987,6 +1068,15 @@ public interface RetrieverPackage extends EPackage {
   int CREATE_NOTIFIER__DYNAMIC = RETRIEVER__DYNAMIC;
 
   /**
+   * The feature id for the '<em><b>Dynamic Precondition Expression</b></em>' attribute.
+   * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+	int CREATE_NOTIFIER__DYNAMIC_PRECONDITION_EXPRESSION = RETRIEVER__DYNAMIC_PRECONDITION_EXPRESSION;
+
+		/**
    * The feature id for the '<em><b>Owned Elements</b></em>' containment reference list.
    * <!-- begin-user-doc --> <!--
    * end-user-doc -->
@@ -1103,6 +1193,15 @@ public interface RetrieverPackage extends EPackage {
   int SET_VARIABLE__DYNAMIC = CREATE_NOTIFIER__DYNAMIC;
 
   /**
+   * The feature id for the '<em><b>Dynamic Precondition Expression</b></em>' attribute.
+   * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+	int SET_VARIABLE__DYNAMIC_PRECONDITION_EXPRESSION = CREATE_NOTIFIER__DYNAMIC_PRECONDITION_EXPRESSION;
+
+		/**
    * The feature id for the '<em><b>Owned Elements</b></em>' containment reference list.
    * <!-- begin-user-doc --> <!--
    * end-user-doc -->
@@ -1197,6 +1296,15 @@ public interface RetrieverPackage extends EPackage {
   int CREATE_DIRECT_EOBJECT__DYNAMIC = CREATE_NOTIFIER__DYNAMIC;
 
   /**
+   * The feature id for the '<em><b>Dynamic Precondition Expression</b></em>' attribute.
+   * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+	int CREATE_DIRECT_EOBJECT__DYNAMIC_PRECONDITION_EXPRESSION = CREATE_NOTIFIER__DYNAMIC_PRECONDITION_EXPRESSION;
+
+		/**
    * The feature id for the '<em><b>Owned Elements</b></em>' containment reference list.
    * <!-- begin-user-doc --> <!--
    * end-user-doc -->
@@ -1292,6 +1400,15 @@ public interface RetrieverPackage extends EPackage {
   int CREATE_EOBJECT__DYNAMIC = CREATE_DIRECT_EOBJECT__DYNAMIC;
 
   /**
+   * The feature id for the '<em><b>Dynamic Precondition Expression</b></em>' attribute.
+   * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+	int CREATE_EOBJECT__DYNAMIC_PRECONDITION_EXPRESSION = CREATE_DIRECT_EOBJECT__DYNAMIC_PRECONDITION_EXPRESSION;
+
+		/**
    * The feature id for the '<em><b>Owned Elements</b></em>' containment reference list.
    * <!-- begin-user-doc --> <!--
    * end-user-doc -->
@@ -1395,6 +1512,15 @@ public interface RetrieverPackage extends EPackage {
   int CREATE_EREFERENCE__DYNAMIC = RETRIEVER__DYNAMIC;
 
   /**
+   * The feature id for the '<em><b>Dynamic Precondition Expression</b></em>' attribute.
+   * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+	int CREATE_EREFERENCE__DYNAMIC_PRECONDITION_EXPRESSION = RETRIEVER__DYNAMIC_PRECONDITION_EXPRESSION;
+
+		/**
    * The feature id for the '<em><b>Feature</b></em>' reference.
    * <!-- begin-user-doc --> <!-- end-user-doc -->
    * @generated
@@ -1470,6 +1596,15 @@ public interface RetrieverPackage extends EPackage {
   int CREATE_EATTRIBUTE__DYNAMIC = RETRIEVER__DYNAMIC;
 
   /**
+   * The feature id for the '<em><b>Dynamic Precondition Expression</b></em>' attribute.
+   * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+	int CREATE_EATTRIBUTE__DYNAMIC_PRECONDITION_EXPRESSION = RETRIEVER__DYNAMIC_PRECONDITION_EXPRESSION;
+
+		/**
    * The feature id for the '<em><b>Feature</b></em>' reference.
    * <!-- begin-user-doc --> <!-- end-user-doc -->
    * @generated
@@ -1537,6 +1672,15 @@ public interface RetrieverPackage extends EPackage {
   int CREATE_FILE__DYNAMIC = CREATE_NOTIFIER__DYNAMIC;
 
   /**
+   * The feature id for the '<em><b>Dynamic Precondition Expression</b></em>' attribute.
+   * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+	int CREATE_FILE__DYNAMIC_PRECONDITION_EXPRESSION = CREATE_NOTIFIER__DYNAMIC_PRECONDITION_EXPRESSION;
+
+		/**
    * The feature id for the '<em><b>Owned Elements</b></em>' containment reference list.
    * <!-- begin-user-doc --> <!--
    * end-user-doc -->
@@ -1622,6 +1766,15 @@ public interface RetrieverPackage extends EPackage {
   int LOAD_RESOURCE__DYNAMIC = CREATE_NOTIFIER__DYNAMIC;
 
   /**
+   * The feature id for the '<em><b>Dynamic Precondition Expression</b></em>' attribute.
+   * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+	int LOAD_RESOURCE__DYNAMIC_PRECONDITION_EXPRESSION = CREATE_NOTIFIER__DYNAMIC_PRECONDITION_EXPRESSION;
+
+		/**
    * The feature id for the '<em><b>Owned Elements</b></em>' containment reference list.
    * <!-- begin-user-doc --> <!--
    * end-user-doc -->
@@ -1733,6 +1886,15 @@ public interface RetrieverPackage extends EPackage {
   int IF__DYNAMIC = RETRIEVER__DYNAMIC;
 
   /**
+   * The feature id for the '<em><b>Dynamic Precondition Expression</b></em>' attribute.
+   * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+	int IF__DYNAMIC_PRECONDITION_EXPRESSION = RETRIEVER__DYNAMIC_PRECONDITION_EXPRESSION;
+
+		/**
    * The feature id for the '<em><b>Owned Elements</b></em>' containment reference list.
    * <!-- begin-user-doc --> <!--
    * end-user-doc -->
@@ -1911,6 +2073,17 @@ public interface RetrieverPackage extends EPackage {
   EAttribute getRetriever_Dynamic();
 
   /**
+   * Returns the meta object for the attribute '{@link org.pdulvp.retriever.Retriever#getDynamicPreconditionExpression <em>Dynamic Precondition Expression</em>}'.
+   * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Dynamic Precondition Expression</em>'.
+   * @see org.pdulvp.retriever.Retriever#getDynamicPreconditionExpression()
+   * @see #getRetriever()
+   * @generated
+   */
+	EAttribute getRetriever_DynamicPreconditionExpression();
+
+		/**
    * Returns the meta object for class '{@link org.pdulvp.retriever.URLRetriever <em>URL Retriever</em>}'. <!--
    * begin-user-doc --> <!-- end-user-doc -->
    * 
@@ -2530,6 +2703,14 @@ public interface RetrieverPackage extends EPackage {
     EAttribute RETRIEVER__DYNAMIC = eINSTANCE.getRetriever_Dynamic();
 
     /**
+     * The meta object literal for the '<em><b>Dynamic Precondition Expression</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+     * @generated
+     */
+		EAttribute RETRIEVER__DYNAMIC_PRECONDITION_EXPRESSION = eINSTANCE.getRetriever_DynamicPreconditionExpression();
+
+				/**
      * The meta object literal for the '{@link org.pdulvp.retriever.impl.URLRetrieverImpl <em>URL Retriever</em>}' class.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
      * @see org.pdulvp.retriever.impl.URLRetrieverImpl

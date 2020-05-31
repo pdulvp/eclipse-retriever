@@ -126,7 +126,8 @@ public class TransformationRetrieverImpl extends RetrieverImpl implements Transf
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Retriever> getOwnedElements() {
+  @Override
+		public EList<Retriever> getOwnedElements() {
     if (ownedElements == null) {
       ownedElements = new EObjectContainmentEList<Retriever>(Retriever.class, this, RetrieverPackage.TRANSFORMATION_RETRIEVER__OWNED_ELEMENTS);
     }
@@ -138,7 +139,8 @@ public class TransformationRetrieverImpl extends RetrieverImpl implements Transf
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<TransformationService> getOwnedServices() {
+  @Override
+		public EList<TransformationService> getOwnedServices() {
     if (ownedServices == null) {
       ownedServices = new EObjectContainmentEList<TransformationService>(TransformationService.class, this, RetrieverPackage.TRANSFORMATION_RETRIEVER__OWNED_SERVICES);
     }
@@ -150,7 +152,8 @@ public class TransformationRetrieverImpl extends RetrieverImpl implements Transf
    * <!-- end-user-doc -->
    * @generated
    */
-  public TransformationService getService() {
+  @Override
+		public TransformationService getService() {
     if (service != null && service.eIsProxy()) {
       InternalEObject oldService = (InternalEObject)service;
       service = (TransformationService)eResolveProxy(oldService);
@@ -176,7 +179,8 @@ public class TransformationRetrieverImpl extends RetrieverImpl implements Transf
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setService(TransformationService newService) {
+  @Override
+		public void setService(TransformationService newService) {
     TransformationService oldService = service;
     service = newService;
     if (eNotificationRequired())
@@ -188,7 +192,8 @@ public class TransformationRetrieverImpl extends RetrieverImpl implements Transf
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getInput() {
+  @Override
+		public String getInput() {
     return input;
   }
 
@@ -197,7 +202,8 @@ public class TransformationRetrieverImpl extends RetrieverImpl implements Transf
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setInput(String newInput) {
+  @Override
+		public void setInput(String newInput) {
     String oldInput = input;
     input = newInput;
     if (eNotificationRequired())
@@ -209,7 +215,8 @@ public class TransformationRetrieverImpl extends RetrieverImpl implements Transf
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getVariable() {
+  @Override
+		public String getVariable() {
     return variable;
   }
 
@@ -218,7 +225,8 @@ public class TransformationRetrieverImpl extends RetrieverImpl implements Transf
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setVariable(String newVariable) {
+  @Override
+		public void setVariable(String newVariable) {
     String oldVariable = variable;
     variable = newVariable;
     if (eNotificationRequired())
@@ -386,7 +394,7 @@ public class TransformationRetrieverImpl extends RetrieverImpl implements Transf
   public String toString() {
     if (eIsProxy()) return super.toString();
 
-    StringBuffer result = new StringBuffer(super.toString());
+    StringBuilder result = new StringBuilder(super.toString());
     result.append(" (input: ");
     result.append(input);
     result.append(", variable: ");

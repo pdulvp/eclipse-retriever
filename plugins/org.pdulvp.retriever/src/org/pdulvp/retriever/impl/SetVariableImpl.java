@@ -89,7 +89,8 @@ public class SetVariableImpl extends CreateNotifierImpl implements SetVariable {
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getExpression() {
+  @Override
+		public String getExpression() {
     return expression;
   }
 
@@ -98,7 +99,8 @@ public class SetVariableImpl extends CreateNotifierImpl implements SetVariable {
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setExpression(String newExpression) {
+  @Override
+		public void setExpression(String newExpression) {
     String oldExpression = expression;
     expression = newExpression;
     if (eNotificationRequired())
@@ -110,6 +112,7 @@ public class SetVariableImpl extends CreateNotifierImpl implements SetVariable {
 	 * <!-- end-user-doc -->
    * @generated
    */
+	@Override
 	public boolean isLog() {
     return log;
   }
@@ -119,6 +122,7 @@ public class SetVariableImpl extends CreateNotifierImpl implements SetVariable {
 	 * <!-- end-user-doc -->
    * @generated
    */
+	@Override
 	public void setLog(boolean newLog) {
     boolean oldLog = log;
     log = newLog;
@@ -203,7 +207,7 @@ public class SetVariableImpl extends CreateNotifierImpl implements SetVariable {
   public String toString() {
     if (eIsProxy()) return super.toString();
 
-    StringBuffer result = new StringBuffer(super.toString());
+    StringBuilder result = new StringBuilder(super.toString());
     result.append(" (expression: ");
     result.append(expression);
     result.append(", log: ");

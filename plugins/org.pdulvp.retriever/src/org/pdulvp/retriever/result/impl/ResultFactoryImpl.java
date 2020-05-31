@@ -70,6 +70,7 @@ public class ResultFactoryImpl extends EFactoryImpl implements ResultFactory {
 	 * <!-- end-user-doc -->
    * @generated
    */
+	@Override
 	public ResultRoot createResultRoot() {
     ResultRootImpl resultRoot = new ResultRootImpl();
     return resultRoot;
@@ -80,6 +81,7 @@ public class ResultFactoryImpl extends EFactoryImpl implements ResultFactory {
 	 * <!-- end-user-doc -->
    * @generated
    */
+	@Override
 	public Result createResult() {
     ResultImpl result = new ResultImpl();
     return result;
@@ -90,6 +92,7 @@ public class ResultFactoryImpl extends EFactoryImpl implements ResultFactory {
 	 * <!-- end-user-doc -->
    * @generated
    */
+	@Override
 	public URIResult createURIResult() {
     URIResultImpl uriResult = new URIResultImpl();
     return uriResult;
@@ -100,6 +103,7 @@ public class ResultFactoryImpl extends EFactoryImpl implements ResultFactory {
 	 * <!-- end-user-doc -->
    * @generated
    */
+	@Override
 	public ElementResult createElementResult() {
     ElementResultImpl elementResult = new ElementResultImpl();
     return elementResult;
@@ -110,6 +114,7 @@ public class ResultFactoryImpl extends EFactoryImpl implements ResultFactory {
 	 * <!-- end-user-doc -->
    * @generated
    */
+	@Override
 	public AttributeResult createAttributeResult() {
     AttributeResultImpl attributeResult = new AttributeResultImpl();
     return attributeResult;
@@ -120,6 +125,7 @@ public class ResultFactoryImpl extends EFactoryImpl implements ResultFactory {
 	 * <!-- end-user-doc -->
    * @generated
    */
+	@Override
 	public ResultPackage getResultPackage() {
     return (ResultPackage)getEPackage();
   }

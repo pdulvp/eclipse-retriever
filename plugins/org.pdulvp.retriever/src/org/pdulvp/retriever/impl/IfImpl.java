@@ -102,7 +102,8 @@ public class IfImpl extends RetrieverImpl implements If {
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Retriever> getOwnedElements() {
+  @Override
+		public EList<Retriever> getOwnedElements() {
     if (ownedElements == null) {
       ownedElements = new EObjectContainmentEList<Retriever>(Retriever.class, this, RetrieverPackage.IF__OWNED_ELEMENTS);
     }
@@ -114,7 +115,8 @@ public class IfImpl extends RetrieverImpl implements If {
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<TransformationService> getOwnedServices() {
+  @Override
+		public EList<TransformationService> getOwnedServices() {
     if (ownedServices == null) {
       ownedServices = new EObjectContainmentEList<TransformationService>(TransformationService.class, this, RetrieverPackage.IF__OWNED_SERVICES);
     }
@@ -126,7 +128,8 @@ public class IfImpl extends RetrieverImpl implements If {
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getConditionExpression() {
+  @Override
+		public String getConditionExpression() {
     return conditionExpression;
   }
 
@@ -135,7 +138,8 @@ public class IfImpl extends RetrieverImpl implements If {
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setConditionExpression(String newConditionExpression) {
+  @Override
+		public void setConditionExpression(String newConditionExpression) {
     String oldConditionExpression = conditionExpression;
     conditionExpression = newConditionExpression;
     if (eNotificationRequired())
@@ -282,7 +286,7 @@ public class IfImpl extends RetrieverImpl implements If {
   public String toString() {
     if (eIsProxy()) return super.toString();
 
-    StringBuffer result = new StringBuffer(super.toString());
+    StringBuilder result = new StringBuilder(super.toString());
     result.append(" (conditionExpression: ");
     result.append(conditionExpression);
     result.append(')');

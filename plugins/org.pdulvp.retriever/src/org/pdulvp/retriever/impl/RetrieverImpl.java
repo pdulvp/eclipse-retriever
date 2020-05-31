@@ -21,6 +21,7 @@ import org.pdulvp.retriever.RetrieverPackage;
  *   <li>{@link org.pdulvp.retriever.impl.RetrieverImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.pdulvp.retriever.impl.RetrieverImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.pdulvp.retriever.impl.RetrieverImpl#isDynamic <em>Dynamic</em>}</li>
+ *   <li>{@link org.pdulvp.retriever.impl.RetrieverImpl#getDynamicPreconditionExpression <em>Dynamic Precondition Expression</em>}</li>
  * </ul>
  *
  * @generated
@@ -107,6 +108,26 @@ public abstract class RetrieverImpl extends MinimalEObjectImpl.Container impleme
   protected boolean dynamic = DYNAMIC_EDEFAULT;
 
   /**
+   * The default value of the '{@link #getDynamicPreconditionExpression() <em>Dynamic Precondition Expression</em>}' attribute.
+   * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+   * @see #getDynamicPreconditionExpression()
+   * @generated
+   * @ordered
+   */
+	protected static final String DYNAMIC_PRECONDITION_EXPRESSION_EDEFAULT = null;
+
+		/**
+   * The cached value of the '{@link #getDynamicPreconditionExpression() <em>Dynamic Precondition Expression</em>}' attribute.
+   * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+   * @see #getDynamicPreconditionExpression()
+   * @generated
+   * @ordered
+   */
+	protected String dynamicPreconditionExpression = DYNAMIC_PRECONDITION_EXPRESSION_EDEFAULT;
+
+		/**
    * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
    * @generated
@@ -130,7 +151,8 @@ public abstract class RetrieverImpl extends MinimalEObjectImpl.Container impleme
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getId() {
+  @Override
+		public String getId() {
     return id;
   }
 
@@ -139,7 +161,8 @@ public abstract class RetrieverImpl extends MinimalEObjectImpl.Container impleme
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setId(String newId) {
+  @Override
+		public void setId(String newId) {
     String oldId = id;
     id = newId;
     if (eNotificationRequired())
@@ -151,6 +174,7 @@ public abstract class RetrieverImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
    * @generated
    */
+	@Override
 	public String getName() {
     return name;
   }
@@ -160,6 +184,7 @@ public abstract class RetrieverImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
    * @generated
    */
+	@Override
 	public void setName(String newName) {
     String oldName = name;
     name = newName;
@@ -172,7 +197,8 @@ public abstract class RetrieverImpl extends MinimalEObjectImpl.Container impleme
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getDescription() {
+  @Override
+		public String getDescription() {
     return description;
   }
 
@@ -181,7 +207,8 @@ public abstract class RetrieverImpl extends MinimalEObjectImpl.Container impleme
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setDescription(String newDescription) {
+  @Override
+		public void setDescription(String newDescription) {
     String oldDescription = description;
     description = newDescription;
     if (eNotificationRequired())
@@ -193,7 +220,8 @@ public abstract class RetrieverImpl extends MinimalEObjectImpl.Container impleme
    * <!-- end-user-doc -->
    * @generated
    */
-  public boolean isDynamic() {
+  @Override
+		public boolean isDynamic() {
     return dynamic;
   }
 
@@ -202,7 +230,8 @@ public abstract class RetrieverImpl extends MinimalEObjectImpl.Container impleme
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setDynamic(boolean newDynamic) {
+  @Override
+		public void setDynamic(boolean newDynamic) {
     boolean oldDynamic = dynamic;
     dynamic = newDynamic;
     if (eNotificationRequired())
@@ -210,6 +239,29 @@ public abstract class RetrieverImpl extends MinimalEObjectImpl.Container impleme
   }
 
   /**
+   * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+   * @generated
+   */
+	@Override
+	public String getDynamicPreconditionExpression() {
+    return dynamicPreconditionExpression;
+  }
+
+		/**
+   * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+   * @generated
+   */
+	@Override
+	public void setDynamicPreconditionExpression(String newDynamicPreconditionExpression) {
+    String oldDynamicPreconditionExpression = dynamicPreconditionExpression;
+    dynamicPreconditionExpression = newDynamicPreconditionExpression;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, RetrieverPackage.RETRIEVER__DYNAMIC_PRECONDITION_EXPRESSION, oldDynamicPreconditionExpression, dynamicPreconditionExpression));
+  }
+
+		/**
    * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
    * @generated
@@ -225,6 +277,8 @@ public abstract class RetrieverImpl extends MinimalEObjectImpl.Container impleme
         return getDescription();
       case RetrieverPackage.RETRIEVER__DYNAMIC:
         return isDynamic();
+      case RetrieverPackage.RETRIEVER__DYNAMIC_PRECONDITION_EXPRESSION:
+        return getDynamicPreconditionExpression();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -250,6 +304,9 @@ public abstract class RetrieverImpl extends MinimalEObjectImpl.Container impleme
       case RetrieverPackage.RETRIEVER__DYNAMIC:
         setDynamic((Boolean)newValue);
         return;
+      case RetrieverPackage.RETRIEVER__DYNAMIC_PRECONDITION_EXPRESSION:
+        setDynamicPreconditionExpression((String)newValue);
+        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -274,6 +331,9 @@ public abstract class RetrieverImpl extends MinimalEObjectImpl.Container impleme
       case RetrieverPackage.RETRIEVER__DYNAMIC:
         setDynamic(DYNAMIC_EDEFAULT);
         return;
+      case RetrieverPackage.RETRIEVER__DYNAMIC_PRECONDITION_EXPRESSION:
+        setDynamicPreconditionExpression(DYNAMIC_PRECONDITION_EXPRESSION_EDEFAULT);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -294,6 +354,8 @@ public abstract class RetrieverImpl extends MinimalEObjectImpl.Container impleme
         return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
       case RetrieverPackage.RETRIEVER__DYNAMIC:
         return dynamic != DYNAMIC_EDEFAULT;
+      case RetrieverPackage.RETRIEVER__DYNAMIC_PRECONDITION_EXPRESSION:
+        return DYNAMIC_PRECONDITION_EXPRESSION_EDEFAULT == null ? dynamicPreconditionExpression != null : !DYNAMIC_PRECONDITION_EXPRESSION_EDEFAULT.equals(dynamicPreconditionExpression);
     }
     return super.eIsSet(featureID);
   }
@@ -307,7 +369,7 @@ public abstract class RetrieverImpl extends MinimalEObjectImpl.Container impleme
 	public String toString() {
     if (eIsProxy()) return super.toString();
 
-    StringBuffer result = new StringBuffer(super.toString());
+    StringBuilder result = new StringBuilder(super.toString());
     result.append(" (id: ");
     result.append(id);
     result.append(", name: ");
@@ -316,6 +378,8 @@ public abstract class RetrieverImpl extends MinimalEObjectImpl.Container impleme
     result.append(description);
     result.append(", dynamic: ");
     result.append(dynamic);
+    result.append(", dynamicPreconditionExpression: ");
+    result.append(dynamicPreconditionExpression);
     result.append(')');
     return result.toString();
   }

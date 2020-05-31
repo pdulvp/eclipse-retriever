@@ -83,6 +83,7 @@ public class RetrieverFactoryImpl extends EFactoryImpl implements RetrieverFacto
 	 * <!-- end-user-doc -->
    * @generated
    */
+	@Override
 	public RetrieverRoot createRetrieverRoot() {
     RetrieverRootImpl retrieverRoot = new RetrieverRootImpl();
     return retrieverRoot;
@@ -93,6 +94,7 @@ public class RetrieverFactoryImpl extends EFactoryImpl implements RetrieverFacto
 	 * <!-- end-user-doc -->
    * @generated
    */
+	@Override
 	public URLRetriever createURLRetriever() {
     URLRetrieverImpl urlRetriever = new URLRetrieverImpl();
     return urlRetriever;
@@ -103,6 +105,7 @@ public class RetrieverFactoryImpl extends EFactoryImpl implements RetrieverFacto
 	 * <!-- end-user-doc -->
    * @generated
    */
+	@Override
 	public ElementRetriever createElementRetriever() {
     ElementRetrieverImpl elementRetriever = new ElementRetrieverImpl();
     return elementRetriever;
@@ -113,6 +116,7 @@ public class RetrieverFactoryImpl extends EFactoryImpl implements RetrieverFacto
 	 * <!-- end-user-doc -->
    * @generated
    */
+	@Override
 	public AttributeRetriever createAttributeRetriever() {
     AttributeRetrieverImpl attributeRetriever = new AttributeRetrieverImpl();
     return attributeRetriever;
@@ -123,7 +127,8 @@ public class RetrieverFactoryImpl extends EFactoryImpl implements RetrieverFacto
    * <!-- end-user-doc -->
    * @generated
    */
-  public URIVariable createURIVariable() {
+  @Override
+		public URIVariable createURIVariable() {
     URIVariableImpl uriVariable = new URIVariableImpl();
     return uriVariable;
   }
@@ -133,7 +138,8 @@ public class RetrieverFactoryImpl extends EFactoryImpl implements RetrieverFacto
    * <!-- end-user-doc -->
    * @generated
    */
-  public TransformationRetriever createTransformationRetriever() {
+  @Override
+		public TransformationRetriever createTransformationRetriever() {
     TransformationRetrieverImpl transformationRetriever = new TransformationRetrieverImpl();
     return transformationRetriever;
   }
@@ -143,6 +149,7 @@ public class RetrieverFactoryImpl extends EFactoryImpl implements RetrieverFacto
 	 * <!-- end-user-doc -->
    * @generated
    */
+	@Override
 	public RetrieverContainer createRetrieverContainer() {
     RetrieverContainerImpl retrieverContainer = new RetrieverContainerImpl();
     return retrieverContainer;
@@ -153,6 +160,7 @@ public class RetrieverFactoryImpl extends EFactoryImpl implements RetrieverFacto
 	 * <!-- end-user-doc -->
    * @generated
    */
+	@Override
 	public RetrieverPkg createRetrieverPkg() {
     RetrieverPkgImpl retrieverPkg = new RetrieverPkgImpl();
     return retrieverPkg;
@@ -163,6 +171,7 @@ public class RetrieverFactoryImpl extends EFactoryImpl implements RetrieverFacto
 	 * <!-- end-user-doc -->
    * @generated
    */
+	@Override
 	public ReferencedRetriever createReferencedRetriever() {
     ReferencedRetrieverImpl referencedRetriever = new ReferencedRetrieverImpl();
     return referencedRetriever;
@@ -173,6 +182,7 @@ public class RetrieverFactoryImpl extends EFactoryImpl implements RetrieverFacto
 	 * <!-- end-user-doc -->
    * @generated
    */
+	@Override
 	public TransformationService createTransformationService() {
     TransformationServiceImpl transformationService = new TransformationServiceImpl();
     return transformationService;
@@ -183,6 +193,7 @@ public class RetrieverFactoryImpl extends EFactoryImpl implements RetrieverFacto
 	 * <!-- end-user-doc -->
    * @generated
    */
+	@Override
 	public CreateEObject createCreateEObject() {
     CreateEObjectImpl createEObject = new CreateEObjectImpl();
     return createEObject;
@@ -193,7 +204,8 @@ public class RetrieverFactoryImpl extends EFactoryImpl implements RetrieverFacto
    * <!-- end-user-doc -->
    * @generated
    */
-  public CreateDirectEObject createCreateDirectEObject() {
+  @Override
+		public CreateDirectEObject createCreateDirectEObject() {
     CreateDirectEObjectImpl createDirectEObject = new CreateDirectEObjectImpl();
     return createDirectEObject;
   }
@@ -203,6 +215,7 @@ public class RetrieverFactoryImpl extends EFactoryImpl implements RetrieverFacto
 	 * <!-- end-user-doc -->
    * @generated
    */
+	@Override
 	public CreateEReference createCreateEReference() {
     CreateEReferenceImpl createEReference = new CreateEReferenceImpl();
     return createEReference;
@@ -213,6 +226,7 @@ public class RetrieverFactoryImpl extends EFactoryImpl implements RetrieverFacto
 	 * <!-- end-user-doc -->
    * @generated
    */
+	@Override
 	public CreateEAttribute createCreateEAttribute() {
     CreateEAttributeImpl createEAttribute = new CreateEAttributeImpl();
     return createEAttribute;
@@ -223,7 +237,8 @@ public class RetrieverFactoryImpl extends EFactoryImpl implements RetrieverFacto
    * <!-- end-user-doc -->
    * @generated
    */
-  public LoadResource createLoadResource() {
+  @Override
+		public LoadResource createLoadResource() {
     LoadResourceImpl loadResource = new LoadResourceImpl();
     return loadResource;
   }
@@ -233,7 +248,8 @@ public class RetrieverFactoryImpl extends EFactoryImpl implements RetrieverFacto
    * <!-- end-user-doc -->
    * @generated
    */
-  public SetVariable createSetVariable() {
+  @Override
+		public SetVariable createSetVariable() {
     SetVariableImpl setVariable = new SetVariableImpl();
     return setVariable;
   }
@@ -243,7 +259,8 @@ public class RetrieverFactoryImpl extends EFactoryImpl implements RetrieverFacto
    * <!-- end-user-doc -->
    * @generated
    */
-  public CreateFile createCreateFile() {
+  @Override
+		public CreateFile createCreateFile() {
     CreateFileImpl createFile = new CreateFileImpl();
     return createFile;
   }
@@ -253,7 +270,8 @@ public class RetrieverFactoryImpl extends EFactoryImpl implements RetrieverFacto
    * <!-- end-user-doc -->
    * @generated
    */
-  public If createIf() {
+  @Override
+		public If createIf() {
     IfImpl if_ = new IfImpl();
     return if_;
   }
@@ -263,6 +281,7 @@ public class RetrieverFactoryImpl extends EFactoryImpl implements RetrieverFacto
 	 * <!-- end-user-doc -->
    * @generated
    */
+	@Override
 	public RetrieverPackage getRetrieverPackage() {
     return (RetrieverPackage)getEPackage();
   }

@@ -79,12 +79,21 @@ public interface ResultPackage extends EPackage {
   int RESULT__OWNED_RESULTS = 1;
 
   /**
+   * The feature id for the '<em><b>Ordered Results</b></em>' reference list.
+   * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+	int RESULT__ORDERED_RESULTS = 2;
+
+		/**
    * The number of structural features of the '<em>Result</em>' class.
    * <!-- begin-user-doc --> <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int RESULT_FEATURE_COUNT = 2;
+  int RESULT_FEATURE_COUNT = 3;
 
   /**
    * The number of operations of the '<em>Result</em>' class.
@@ -123,6 +132,15 @@ public interface ResultPackage extends EPackage {
   int RESULT_ROOT__OWNED_RESULTS = RESULT__OWNED_RESULTS;
 
   /**
+   * The feature id for the '<em><b>Ordered Results</b></em>' reference list.
+   * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+	int RESULT_ROOT__ORDERED_RESULTS = RESULT__ORDERED_RESULTS;
+
+		/**
    * The number of structural features of the '<em>Root</em>' class.
    * <!-- begin-user-doc --> <!-- end-user-doc -->
    * @generated
@@ -167,6 +185,15 @@ public interface ResultPackage extends EPackage {
   int URI_RESULT__OWNED_RESULTS = RESULT__OWNED_RESULTS;
 
   /**
+   * The feature id for the '<em><b>Ordered Results</b></em>' reference list.
+   * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+	int URI_RESULT__ORDERED_RESULTS = RESULT__ORDERED_RESULTS;
+
+		/**
    * The feature id for the '<em><b>Definition</b></em>' reference.
    * <!-- begin-user-doc --> <!-- end-user-doc -->
    * @generated
@@ -242,6 +269,15 @@ public interface ResultPackage extends EPackage {
   int ELEMENT_RESULT__OWNED_RESULTS = RESULT__OWNED_RESULTS;
 
   /**
+   * The feature id for the '<em><b>Ordered Results</b></em>' reference list.
+   * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+	int ELEMENT_RESULT__ORDERED_RESULTS = RESULT__ORDERED_RESULTS;
+
+		/**
    * The feature id for the '<em><b>Definition</b></em>' reference.
    * <!-- begin-user-doc --> <!-- end-user-doc -->
    * @generated
@@ -302,6 +338,15 @@ public interface ResultPackage extends EPackage {
   int ATTRIBUTE_RESULT__OWNED_RESULTS = RESULT__OWNED_RESULTS;
 
   /**
+   * The feature id for the '<em><b>Ordered Results</b></em>' reference list.
+   * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+	int ATTRIBUTE_RESULT__ORDERED_RESULTS = RESULT__ORDERED_RESULTS;
+
+		/**
    * The feature id for the '<em><b>Element</b></em>' attribute.
    * <!-- begin-user-doc --> <!-- end-user-doc -->
    * @generated
@@ -394,6 +439,17 @@ public interface ResultPackage extends EPackage {
   EReference getResult_OwnedResults();
 
   /**
+   * Returns the meta object for the reference list '{@link org.pdulvp.retriever.result.Result#getOrderedResults <em>Ordered Results</em>}'.
+   * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+   * @return the meta object for the reference list '<em>Ordered Results</em>'.
+   * @see org.pdulvp.retriever.result.Result#getOrderedResults()
+   * @see #getResult()
+   * @generated
+   */
+	EReference getResult_OrderedResults();
+
+		/**
    * Returns the meta object for class '{@link org.pdulvp.retriever.result.URIResult <em>URI Result</em>}'. <!--
    * begin-user-doc --> <!-- end-user-doc -->
    * 
@@ -581,6 +637,14 @@ public interface ResultPackage extends EPackage {
     EReference RESULT__OWNED_RESULTS = eINSTANCE.getResult_OwnedResults();
 
     /**
+     * The meta object literal for the '<em><b>Ordered Results</b></em>' reference list feature.
+     * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+     * @generated
+     */
+		EReference RESULT__ORDERED_RESULTS = eINSTANCE.getResult_OrderedResults();
+
+				/**
      * The meta object literal for the '{@link org.pdulvp.retriever.result.impl.URIResultImpl <em>URI Result</em>}' class.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
      * @see org.pdulvp.retriever.result.impl.URIResultImpl

@@ -108,7 +108,8 @@ public class LoadResourceImpl extends CreateNotifierImpl implements LoadResource
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getUri() {
+  @Override
+		public String getUri() {
     return uri;
   }
 
@@ -117,7 +118,8 @@ public class LoadResourceImpl extends CreateNotifierImpl implements LoadResource
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setUri(String newUri) {
+  @Override
+		public void setUri(String newUri) {
     String oldUri = uri;
     uri = newUri;
     if (eNotificationRequired())
@@ -129,7 +131,8 @@ public class LoadResourceImpl extends CreateNotifierImpl implements LoadResource
    * <!-- end-user-doc -->
    * @generated
    */
-  public boolean isCreate() {
+  @Override
+		public boolean isCreate() {
     return create;
   }
 
@@ -138,7 +141,8 @@ public class LoadResourceImpl extends CreateNotifierImpl implements LoadResource
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setCreate(boolean newCreate) {
+  @Override
+		public void setCreate(boolean newCreate) {
     boolean oldCreate = create;
     create = newCreate;
     if (eNotificationRequired())
@@ -150,7 +154,8 @@ public class LoadResourceImpl extends CreateNotifierImpl implements LoadResource
    * <!-- end-user-doc -->
    * @generated
    */
-  public boolean isClearContents() {
+  @Override
+		public boolean isClearContents() {
     return clearContents;
   }
 
@@ -159,7 +164,8 @@ public class LoadResourceImpl extends CreateNotifierImpl implements LoadResource
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setClearContents(boolean newClearContents) {
+  @Override
+		public void setClearContents(boolean newClearContents) {
     boolean oldClearContents = clearContents;
     clearContents = newClearContents;
     if (eNotificationRequired())
@@ -254,7 +260,7 @@ public class LoadResourceImpl extends CreateNotifierImpl implements LoadResource
   public String toString() {
     if (eIsProxy()) return super.toString();
 
-    StringBuffer result = new StringBuffer(super.toString());
+    StringBuilder result = new StringBuilder(super.toString());
     result.append(" (uri: ");
     result.append(uri);
     result.append(", create: ");

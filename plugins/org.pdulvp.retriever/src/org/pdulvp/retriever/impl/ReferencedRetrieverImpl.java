@@ -59,6 +59,7 @@ public class ReferencedRetrieverImpl extends RetrieverImpl implements Referenced
 	 * <!-- end-user-doc -->
    * @generated
    */
+	@Override
 	public Retriever getReferencedElement() {
     if (referencedElement != null && referencedElement.eIsProxy()) {
       InternalEObject oldReferencedElement = (InternalEObject)referencedElement;
@@ -85,6 +86,7 @@ public class ReferencedRetrieverImpl extends RetrieverImpl implements Referenced
 	 * <!-- end-user-doc -->
    * @generated
    */
+	@Override
 	public void setReferencedElement(Retriever newReferencedElement) {
     Retriever oldReferencedElement = referencedElement;
     referencedElement = newReferencedElement;

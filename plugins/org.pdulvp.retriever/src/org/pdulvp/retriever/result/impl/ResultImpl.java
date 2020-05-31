@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.pdulvp.retriever.result.Result;
 import org.pdulvp.retriever.result.ResultPackage;
@@ -29,6 +30,7 @@ import org.pdulvp.retriever.result.ResultPackage;
  * <ul>
  *   <li>{@link org.pdulvp.retriever.result.impl.ResultImpl#getId <em>Id</em>}</li>
  *   <li>{@link org.pdulvp.retriever.result.impl.ResultImpl#getOwnedResults <em>Owned Results</em>}</li>
+ *   <li>{@link org.pdulvp.retriever.result.impl.ResultImpl#getOrderedResults <em>Ordered Results</em>}</li>
  * </ul>
  *
  * @generated
@@ -63,6 +65,16 @@ public class ResultImpl extends MinimalEObjectImpl.Container implements Result {
 	protected EList<Result> ownedResults;
 
 	/**
+   * The cached value of the '{@link #getOrderedResults() <em>Ordered Results</em>}' reference list.
+   * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+   * @see #getOrderedResults()
+   * @generated
+   * @ordered
+   */
+	protected EList<Result> orderedResults;
+
+	/**
    * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
    * @generated
@@ -86,7 +98,8 @@ public class ResultImpl extends MinimalEObjectImpl.Container implements Result {
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getId() {
+  @Override
+		public String getId() {
     return id;
   }
 
@@ -95,7 +108,8 @@ public class ResultImpl extends MinimalEObjectImpl.Container implements Result {
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setId(String newId) {
+  @Override
+		public void setId(String newId) {
     String oldId = id;
     id = newId;
     if (eNotificationRequired())
@@ -107,11 +121,25 @@ public class ResultImpl extends MinimalEObjectImpl.Container implements Result {
 	 * <!-- end-user-doc -->
    * @generated
    */
+	@Override
 	public EList<Result> getOwnedResults() {
     if (ownedResults == null) {
       ownedResults = new EObjectContainmentEList<Result>(Result.class, this, ResultPackage.RESULT__OWNED_RESULTS);
     }
     return ownedResults;
+  }
+
+	/**
+   * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+   * @generated
+   */
+	@Override
+	public EList<Result> getOrderedResults() {
+    if (orderedResults == null) {
+      orderedResults = new EObjectResolvingEList<Result>(Result.class, this, ResultPackage.RESULT__ORDERED_RESULTS);
+    }
+    return orderedResults;
   }
 
 	/**
@@ -140,6 +168,8 @@ public class ResultImpl extends MinimalEObjectImpl.Container implements Result {
         return getId();
       case ResultPackage.RESULT__OWNED_RESULTS:
         return getOwnedResults();
+      case ResultPackage.RESULT__ORDERED_RESULTS:
+        return getOrderedResults();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -160,6 +190,10 @@ public class ResultImpl extends MinimalEObjectImpl.Container implements Result {
         getOwnedResults().clear();
         getOwnedResults().addAll((Collection<? extends Result>)newValue);
         return;
+      case ResultPackage.RESULT__ORDERED_RESULTS:
+        getOrderedResults().clear();
+        getOrderedResults().addAll((Collection<? extends Result>)newValue);
+        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -178,6 +212,9 @@ public class ResultImpl extends MinimalEObjectImpl.Container implements Result {
       case ResultPackage.RESULT__OWNED_RESULTS:
         getOwnedResults().clear();
         return;
+      case ResultPackage.RESULT__ORDERED_RESULTS:
+        getOrderedResults().clear();
+        return;
     }
     super.eUnset(featureID);
   }
@@ -194,6 +231,8 @@ public class ResultImpl extends MinimalEObjectImpl.Container implements Result {
         return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
       case ResultPackage.RESULT__OWNED_RESULTS:
         return ownedResults != null && !ownedResults.isEmpty();
+      case ResultPackage.RESULT__ORDERED_RESULTS:
+        return orderedResults != null && !orderedResults.isEmpty();
     }
     return super.eIsSet(featureID);
   }
@@ -207,7 +246,7 @@ public class ResultImpl extends MinimalEObjectImpl.Container implements Result {
   public String toString() {
     if (eIsProxy()) return super.toString();
 
-    StringBuffer result = new StringBuffer(super.toString());
+    StringBuilder result = new StringBuilder(super.toString());
     result.append(" (id: ");
     result.append(id);
     result.append(')');

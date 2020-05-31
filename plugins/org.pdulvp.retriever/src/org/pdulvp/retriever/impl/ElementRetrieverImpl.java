@@ -142,6 +142,7 @@ public class ElementRetrieverImpl extends RetrieverImpl implements ElementRetrie
 	 * <!-- end-user-doc -->
    * @generated
    */
+	@Override
 	public EList<Retriever> getOwnedElements() {
     if (ownedElements == null) {
       ownedElements = new EObjectContainmentEList<Retriever>(Retriever.class, this, RetrieverPackage.ELEMENT_RETRIEVER__OWNED_ELEMENTS);
@@ -154,7 +155,8 @@ public class ElementRetrieverImpl extends RetrieverImpl implements ElementRetrie
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<TransformationService> getOwnedServices() {
+  @Override
+		public EList<TransformationService> getOwnedServices() {
     if (ownedServices == null) {
       ownedServices = new EObjectContainmentEList<TransformationService>(TransformationService.class, this, RetrieverPackage.ELEMENT_RETRIEVER__OWNED_SERVICES);
     }
@@ -166,7 +168,8 @@ public class ElementRetrieverImpl extends RetrieverImpl implements ElementRetrie
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getRetrieverExpression() {
+  @Override
+		public String getRetrieverExpression() {
     return retrieverExpression;
   }
 
@@ -175,7 +178,8 @@ public class ElementRetrieverImpl extends RetrieverImpl implements ElementRetrie
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setRetrieverExpression(String newRetrieverExpression) {
+  @Override
+		public void setRetrieverExpression(String newRetrieverExpression) {
     String oldRetrieverExpression = retrieverExpression;
     retrieverExpression = newRetrieverExpression;
     if (eNotificationRequired())
@@ -187,6 +191,7 @@ public class ElementRetrieverImpl extends RetrieverImpl implements ElementRetrie
 	 * <!-- end-user-doc -->
    * @generated
    */
+	@Override
 	public String getVariable() {
     return variable;
   }
@@ -196,6 +201,7 @@ public class ElementRetrieverImpl extends RetrieverImpl implements ElementRetrie
 	 * <!-- end-user-doc -->
    * @generated
    */
+	@Override
 	public void setVariable(String newVariable) {
     String oldVariable = variable;
     variable = newVariable;
@@ -208,7 +214,8 @@ public class ElementRetrieverImpl extends RetrieverImpl implements ElementRetrie
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getVariableResult() {
+  @Override
+		public String getVariableResult() {
     return variableResult;
   }
 
@@ -217,7 +224,8 @@ public class ElementRetrieverImpl extends RetrieverImpl implements ElementRetrie
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setVariableResult(String newVariableResult) {
+  @Override
+		public void setVariableResult(String newVariableResult) {
     String oldVariableResult = variableResult;
     variableResult = newVariableResult;
     if (eNotificationRequired())
@@ -408,7 +416,7 @@ public class ElementRetrieverImpl extends RetrieverImpl implements ElementRetrie
 	public String toString() {
     if (eIsProxy()) return super.toString();
 
-    StringBuffer result = new StringBuffer(super.toString());
+    StringBuilder result = new StringBuilder(super.toString());
     result.append(" (variable: ");
     result.append(variable);
     result.append(", variableResult: ");

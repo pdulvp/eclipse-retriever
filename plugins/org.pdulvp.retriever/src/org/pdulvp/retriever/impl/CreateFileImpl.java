@@ -67,7 +67,8 @@ public class CreateFileImpl extends CreateNotifierImpl implements CreateFile {
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getUri() {
+  @Override
+		public String getUri() {
     return uri;
   }
 
@@ -76,7 +77,8 @@ public class CreateFileImpl extends CreateNotifierImpl implements CreateFile {
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setUri(String newUri) {
+  @Override
+		public void setUri(String newUri) {
     String oldUri = uri;
     uri = newUri;
     if (eNotificationRequired())
@@ -150,7 +152,7 @@ public class CreateFileImpl extends CreateNotifierImpl implements CreateFile {
   public String toString() {
     if (eIsProxy()) return super.toString();
 
-    StringBuffer result = new StringBuffer(super.toString());
+    StringBuilder result = new StringBuilder(super.toString());
     result.append(" (uri: ");
     result.append(uri);
     result.append(')');

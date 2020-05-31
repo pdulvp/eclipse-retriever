@@ -76,6 +76,7 @@ public class RetrieverContainerImpl extends RetrieverImpl implements RetrieverCo
 	 * <!-- end-user-doc -->
    * @generated
    */
+	@Override
 	public EList<Retriever> getOwnedElements() {
     if (ownedElements == null) {
       ownedElements = new EObjectContainmentEList<Retriever>(Retriever.class, this, RetrieverPackage.RETRIEVER_CONTAINER__OWNED_ELEMENTS);
@@ -88,7 +89,8 @@ public class RetrieverContainerImpl extends RetrieverImpl implements RetrieverCo
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<TransformationService> getOwnedServices() {
+  @Override
+		public EList<TransformationService> getOwnedServices() {
     if (ownedServices == null) {
       ownedServices = new EObjectContainmentEList<TransformationService>(TransformationService.class, this, RetrieverPackage.RETRIEVER_CONTAINER__OWNED_SERVICES);
     }

@@ -80,6 +80,7 @@ public class ElementResultImpl extends ResultImpl implements ElementResult {
 	 * <!-- end-user-doc -->
    * @generated
    */
+	@Override
 	public ElementRetriever getDefinition() {
     if (definition != null && definition.eIsProxy()) {
       InternalEObject oldDefinition = (InternalEObject)definition;
@@ -106,6 +107,7 @@ public class ElementResultImpl extends ResultImpl implements ElementResult {
 	 * <!-- end-user-doc -->
    * @generated
    */
+	@Override
 	public void setDefinition(ElementRetriever newDefinition) {
     ElementRetriever oldDefinition = definition;
     definition = newDefinition;
@@ -118,6 +120,7 @@ public class ElementResultImpl extends ResultImpl implements ElementResult {
 	 * <!-- end-user-doc -->
    * @generated
    */
+	@Override
 	public Object getElement() {
     return element;
   }
@@ -127,6 +130,7 @@ public class ElementResultImpl extends ResultImpl implements ElementResult {
 	 * <!-- end-user-doc -->
    * @generated
    */
+	@Override
 	public void setElement(Object newElement) {
     Object oldElement = element;
     element = newElement;
@@ -213,7 +217,7 @@ public class ElementResultImpl extends ResultImpl implements ElementResult {
 	public String toString() {
     if (eIsProxy()) return super.toString();
 
-    StringBuffer result = new StringBuffer(super.toString());
+    StringBuilder result = new StringBuilder(super.toString());
     result.append(" (element: ");
     result.append(element);
     result.append(')');

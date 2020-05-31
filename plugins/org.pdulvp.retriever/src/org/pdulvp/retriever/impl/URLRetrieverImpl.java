@@ -197,6 +197,7 @@ public class URLRetrieverImpl extends RetrieverImpl implements URLRetriever {
 	 * <!-- end-user-doc -->
    * @generated
    */
+	@Override
 	public EList<Retriever> getOwnedElements() {
     if (ownedElements == null) {
       ownedElements = new EObjectContainmentEList<Retriever>(Retriever.class, this, RetrieverPackage.URL_RETRIEVER__OWNED_ELEMENTS);
@@ -209,7 +210,8 @@ public class URLRetrieverImpl extends RetrieverImpl implements URLRetriever {
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<TransformationService> getOwnedServices() {
+  @Override
+		public EList<TransformationService> getOwnedServices() {
     if (ownedServices == null) {
       ownedServices = new EObjectContainmentEList<TransformationService>(TransformationService.class, this, RetrieverPackage.URL_RETRIEVER__OWNED_SERVICES);
     }
@@ -221,7 +223,8 @@ public class URLRetrieverImpl extends RetrieverImpl implements URLRetriever {
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getUriExpression() {
+  @Override
+		public String getUriExpression() {
     return uriExpression;
   }
 
@@ -230,7 +233,8 @@ public class URLRetrieverImpl extends RetrieverImpl implements URLRetriever {
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setUriExpression(String newUriExpression) {
+  @Override
+		public void setUriExpression(String newUriExpression) {
     String oldUriExpression = uriExpression;
     uriExpression = newUriExpression;
     if (eNotificationRequired())
@@ -242,7 +246,8 @@ public class URLRetrieverImpl extends RetrieverImpl implements URLRetriever {
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getCacheControl() {
+  @Override
+		public String getCacheControl() {
     return cacheControl;
   }
 
@@ -251,7 +256,8 @@ public class URLRetrieverImpl extends RetrieverImpl implements URLRetriever {
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setCacheControl(String newCacheControl) {
+  @Override
+		public void setCacheControl(String newCacheControl) {
     String oldCacheControl = cacheControl;
     cacheControl = newCacheControl;
     if (eNotificationRequired())
@@ -263,7 +269,8 @@ public class URLRetrieverImpl extends RetrieverImpl implements URLRetriever {
    * <!-- end-user-doc -->
    * @generated
    */
-  public boolean isAsSemantic() {
+  @Override
+		public boolean isAsSemantic() {
     return asSemantic;
   }
 
@@ -272,7 +279,8 @@ public class URLRetrieverImpl extends RetrieverImpl implements URLRetriever {
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setAsSemantic(boolean newAsSemantic) {
+  @Override
+		public void setAsSemantic(boolean newAsSemantic) {
     boolean oldAsSemantic = asSemantic;
     asSemantic = newAsSemantic;
     if (eNotificationRequired())
@@ -284,6 +292,7 @@ public class URLRetrieverImpl extends RetrieverImpl implements URLRetriever {
 	 * <!-- end-user-doc -->
    * @generated
    */
+	@Override
 	public String getVariable() {
     return variable;
   }
@@ -293,6 +302,7 @@ public class URLRetrieverImpl extends RetrieverImpl implements URLRetriever {
 	 * <!-- end-user-doc -->
    * @generated
    */
+	@Override
 	public void setVariable(String newVariable) {
     String oldVariable = variable;
     variable = newVariable;
@@ -305,7 +315,8 @@ public class URLRetrieverImpl extends RetrieverImpl implements URLRetriever {
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getVariableResult() {
+  @Override
+		public String getVariableResult() {
     return variableResult;
   }
 
@@ -314,7 +325,8 @@ public class URLRetrieverImpl extends RetrieverImpl implements URLRetriever {
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setVariableResult(String newVariableResult) {
+  @Override
+		public void setVariableResult(String newVariableResult) {
     String oldVariableResult = variableResult;
     variableResult = newVariableResult;
     if (eNotificationRequired())
@@ -326,7 +338,8 @@ public class URLRetrieverImpl extends RetrieverImpl implements URLRetriever {
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<URIVariable> getOwnedVariables() {
+  @Override
+		public EList<URIVariable> getOwnedVariables() {
     if (ownedVariables == null) {
       ownedVariables = new EObjectContainmentEList<URIVariable>(URIVariable.class, this, RetrieverPackage.URL_RETRIEVER__OWNED_VARIABLES);
     }
@@ -550,7 +563,7 @@ public class URLRetrieverImpl extends RetrieverImpl implements URLRetriever {
 	public String toString() {
     if (eIsProxy()) return super.toString();
 
-    StringBuffer result = new StringBuffer(super.toString());
+    StringBuilder result = new StringBuilder(super.toString());
     result.append(" (variable: ");
     result.append(variable);
     result.append(", variableResult: ");

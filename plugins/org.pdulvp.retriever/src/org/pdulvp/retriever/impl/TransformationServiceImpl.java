@@ -90,6 +90,7 @@ public class TransformationServiceImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
    * @generated
    */
+	@Override
 	public String getClassname() {
     return classname;
   }
@@ -99,6 +100,7 @@ public class TransformationServiceImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
    * @generated
    */
+	@Override
 	public void setClassname(String newClassname) {
     String oldClassname = classname;
     classname = newClassname;
@@ -111,6 +113,7 @@ public class TransformationServiceImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
    * @generated
    */
+	@Override
 	public String getMethod() {
     return method;
   }
@@ -120,6 +123,7 @@ public class TransformationServiceImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
    * @generated
    */
+	@Override
 	public void setMethod(String newMethod) {
     String oldMethod = method;
     method = newMethod;
@@ -204,7 +208,7 @@ public class TransformationServiceImpl extends MinimalEObjectImpl.Container impl
 	public String toString() {
     if (eIsProxy()) return super.toString();
 
-    StringBuffer result = new StringBuffer(super.toString());
+    StringBuilder result = new StringBuilder(super.toString());
     result.append(" (classname: ");
     result.append(classname);
     result.append(", method: ");

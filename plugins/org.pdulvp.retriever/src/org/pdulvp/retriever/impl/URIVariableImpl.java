@@ -69,7 +69,8 @@ public class URIVariableImpl extends MinimalEObjectImpl.Container implements URI
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getName() {
+  @Override
+		public String getName() {
     return name;
   }
 
@@ -78,7 +79,8 @@ public class URIVariableImpl extends MinimalEObjectImpl.Container implements URI
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setName(String newName) {
+  @Override
+		public void setName(String newName) {
     String oldName = name;
     name = newName;
     if (eNotificationRequired())
@@ -152,7 +154,7 @@ public class URIVariableImpl extends MinimalEObjectImpl.Container implements URI
   public String toString() {
     if (eIsProxy()) return super.toString();
 
-    StringBuffer result = new StringBuffer(super.toString());
+    StringBuilder result = new StringBuilder(super.toString());
     result.append(" (name: ");
     result.append(name);
     result.append(')');

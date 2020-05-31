@@ -82,7 +82,7 @@ public class FetchRetriever {
       return;
     }
     Resource originalResource = result.eResource();
-    container.getOwnedResults().add(result);
+     container.getOrderedResults().add(result);
     originalResource.getContents().add(result);
     if (!container.getOwnedResults().isEmpty()) {
 

@@ -96,6 +96,8 @@
       <genClasses ecoreClass="retriever.ecore#//result/Result">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute retriever.ecore#//result/Result/id"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference retriever.ecore#//result/Result/ownedResults"/>
+        <genFeatures notify="false" children="true" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference retriever.ecore#//result/Result/orderedResults"/>
       </genClasses>
       <genClasses ecoreClass="retriever.ecore#//result/URIResult">
         <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference retriever.ecore#//result/URIResult/definition"/>

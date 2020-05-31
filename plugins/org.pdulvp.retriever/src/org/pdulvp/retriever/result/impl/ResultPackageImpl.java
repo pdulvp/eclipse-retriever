@@ -89,7 +89,7 @@ public class ResultPackageImpl extends EPackageImpl implements ResultPackage {
 
   /**
    * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-   * 
+   *
    * <p>This method is used to initialize {@link ResultPackage#eINSTANCE} when that field is accessed.
    * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
    * <!-- begin-user-doc -->
@@ -103,7 +103,8 @@ public class ResultPackageImpl extends EPackageImpl implements ResultPackage {
     if (isInited) return (ResultPackage)EPackage.Registry.INSTANCE.getEPackage(ResultPackage.eNS_URI);
 
     // Obtain or create and register package
-    ResultPackageImpl theResultPackage = (ResultPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof ResultPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new ResultPackageImpl());
+    Object registeredResultPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+    ResultPackageImpl theResultPackage = registeredResultPackage instanceof ResultPackageImpl ? (ResultPackageImpl)registeredResultPackage : new ResultPackageImpl();
 
     isInited = true;
 
@@ -111,7 +112,8 @@ public class ResultPackageImpl extends EPackageImpl implements ResultPackage {
     EcorePackage.eINSTANCE.eClass();
 
     // Obtain or create and register interdependencies
-    RetrieverPackageImpl theRetrieverPackage = (RetrieverPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(RetrieverPackage.eNS_URI) instanceof RetrieverPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(RetrieverPackage.eNS_URI) : RetrieverPackage.eINSTANCE);
+    Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(RetrieverPackage.eNS_URI);
+    RetrieverPackageImpl theRetrieverPackage = (RetrieverPackageImpl)(registeredPackage instanceof RetrieverPackageImpl ? registeredPackage : RetrieverPackage.eINSTANCE);
 
     // Create package meta-data objects
     theResultPackage.createPackageContents();
@@ -124,7 +126,6 @@ public class ResultPackageImpl extends EPackageImpl implements ResultPackage {
     // Mark meta-data to indicate it can't be changed
     theResultPackage.freeze();
 
-  
     // Update the registry and return the package
     EPackage.Registry.INSTANCE.put(ResultPackage.eNS_URI, theResultPackage);
     return theResultPackage;
@@ -135,7 +136,8 @@ public class ResultPackageImpl extends EPackageImpl implements ResultPackage {
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getResultRoot() {
+  @Override
+		public EClass getResultRoot() {
     return resultRootEClass;
   }
 
@@ -144,7 +146,8 @@ public class ResultPackageImpl extends EPackageImpl implements ResultPackage {
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getResult() {
+  @Override
+		public EClass getResult() {
     return resultEClass;
   }
 
@@ -153,7 +156,8 @@ public class ResultPackageImpl extends EPackageImpl implements ResultPackage {
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getResult_Id() {
+  @Override
+		public EAttribute getResult_Id() {
     return (EAttribute)resultEClass.getEStructuralFeatures().get(0);
   }
 
@@ -162,16 +166,28 @@ public class ResultPackageImpl extends EPackageImpl implements ResultPackage {
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getResult_OwnedResults() {
+  @Override
+		public EReference getResult_OwnedResults() {
     return (EReference)resultEClass.getEStructuralFeatures().get(1);
   }
 
   /**
    * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+   * @generated
+   */
+	@Override
+	public EReference getResult_OrderedResults() {
+    return (EReference)resultEClass.getEStructuralFeatures().get(2);
+  }
+
+		/**
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getURIResult() {
+  @Override
+		public EClass getURIResult() {
     return uriResultEClass;
   }
 
@@ -180,7 +196,8 @@ public class ResultPackageImpl extends EPackageImpl implements ResultPackage {
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getURIResult_Definition() {
+  @Override
+		public EReference getURIResult_Definition() {
     return (EReference)uriResultEClass.getEStructuralFeatures().get(0);
   }
 
@@ -189,7 +206,8 @@ public class ResultPackageImpl extends EPackageImpl implements ResultPackage {
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getURIResult_Uri() {
+  @Override
+		public EAttribute getURIResult_Uri() {
     return (EAttribute)uriResultEClass.getEStructuralFeatures().get(1);
   }
 
@@ -198,7 +216,8 @@ public class ResultPackageImpl extends EPackageImpl implements ResultPackage {
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getURIResult_Element() {
+  @Override
+		public EAttribute getURIResult_Element() {
     return (EAttribute)uriResultEClass.getEStructuralFeatures().get(2);
   }
 
@@ -207,7 +226,8 @@ public class ResultPackageImpl extends EPackageImpl implements ResultPackage {
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getURIResult_ExternalUri() {
+  @Override
+		public EAttribute getURIResult_ExternalUri() {
     return (EAttribute)uriResultEClass.getEStructuralFeatures().get(3);
   }
 
@@ -216,7 +236,8 @@ public class ResultPackageImpl extends EPackageImpl implements ResultPackage {
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getElementResult() {
+  @Override
+		public EClass getElementResult() {
     return elementResultEClass;
   }
 
@@ -225,7 +246,8 @@ public class ResultPackageImpl extends EPackageImpl implements ResultPackage {
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getElementResult_Definition() {
+  @Override
+		public EReference getElementResult_Definition() {
     return (EReference)elementResultEClass.getEStructuralFeatures().get(0);
   }
 
@@ -234,7 +256,8 @@ public class ResultPackageImpl extends EPackageImpl implements ResultPackage {
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getElementResult_Element() {
+  @Override
+		public EAttribute getElementResult_Element() {
     return (EAttribute)elementResultEClass.getEStructuralFeatures().get(1);
   }
 
@@ -243,7 +266,8 @@ public class ResultPackageImpl extends EPackageImpl implements ResultPackage {
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getAttributeResult() {
+  @Override
+		public EClass getAttributeResult() {
     return attributeResultEClass;
   }
 
@@ -252,7 +276,8 @@ public class ResultPackageImpl extends EPackageImpl implements ResultPackage {
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getAttributeResult_Element() {
+  @Override
+		public EAttribute getAttributeResult_Element() {
     return (EAttribute)attributeResultEClass.getEStructuralFeatures().get(0);
   }
 
@@ -261,7 +286,8 @@ public class ResultPackageImpl extends EPackageImpl implements ResultPackage {
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getAttributeResult_Definition() {
+  @Override
+		public EReference getAttributeResult_Definition() {
     return (EReference)attributeResultEClass.getEStructuralFeatures().get(1);
   }
 
@@ -270,7 +296,8 @@ public class ResultPackageImpl extends EPackageImpl implements ResultPackage {
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getAttributeResult_Value() {
+  @Override
+		public EAttribute getAttributeResult_Value() {
     return (EAttribute)attributeResultEClass.getEStructuralFeatures().get(2);
   }
 
@@ -279,7 +306,8 @@ public class ResultPackageImpl extends EPackageImpl implements ResultPackage {
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getAttributeResult_Name() {
+  @Override
+		public EAttribute getAttributeResult_Name() {
     return (EAttribute)attributeResultEClass.getEStructuralFeatures().get(3);
   }
 
@@ -288,7 +316,8 @@ public class ResultPackageImpl extends EPackageImpl implements ResultPackage {
    * <!-- end-user-doc -->
    * @generated
    */
-  public ResultFactory getResultFactory() {
+  @Override
+		public ResultFactory getResultFactory() {
     return (ResultFactory)getEFactoryInstance();
   }
 
@@ -316,6 +345,7 @@ public class ResultPackageImpl extends EPackageImpl implements ResultPackage {
     resultEClass = createEClass(RESULT);
     createEAttribute(resultEClass, RESULT__ID);
     createEReference(resultEClass, RESULT__OWNED_RESULTS);
+    createEReference(resultEClass, RESULT__ORDERED_RESULTS);
 
     uriResultEClass = createEClass(URI_RESULT);
     createEReference(uriResultEClass, URI_RESULT__DEFINITION);
@@ -376,6 +406,7 @@ public class ResultPackageImpl extends EPackageImpl implements ResultPackage {
     initEClass(resultEClass, Result.class, "Result", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getResult_Id(), ecorePackage.getEString(), "id", null, 0, 1, Result.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getResult_OwnedResults(), this.getResult(), null, "ownedResults", null, 0, -1, Result.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getResult_OrderedResults(), this.getResult(), null, "orderedResults", null, 0, -1, Result.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(uriResultEClass, URIResult.class, "URIResult", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getURIResult_Definition(), theRetrieverPackage.getURLRetriever(), null, "definition", null, 0, 1, URIResult.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
