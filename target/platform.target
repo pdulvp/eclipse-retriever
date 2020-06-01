@@ -4,8 +4,8 @@
 	<locations>
 		<location path="${eclipse_home}" type="Profile"/>
 		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
-			<repository location="http://download.eclipse.org/releases/2019-06"/>
-			<unit id="org.eclipse.sirius.specifier.feature.group" version="6.2.1.201906121145"/>
+			<repository location="http://download.eclipse.org/releases/2020-03"/>
+			<unit id="org.eclipse.sirius.specifier.feature.group" version="6.3.0.201910180815"/>
 		</location>
 		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
 			<repository location="https://download.eclipse.org/tools/orbit/downloads/drops/R20190226160451/repository"/>
@@ -21,6 +21,7 @@
 			<unit id="org.apache.batik.util" version="1.10.0.v20180703-1553"/>
 			<unit id="org.apache.batik.util.gui" version="1.9.1.v20180227-1645"/>
 			<unit id="org.apache.batik.xml" version="1.9.1.v20180227-1645"/>
+			<unit id="org.apache.commons.lang3" version="3.1.0.v201403281430"/>
 			<unit id="org.json" version="1.0.0.v201011060100"/>
 		</location>
 	</locations>

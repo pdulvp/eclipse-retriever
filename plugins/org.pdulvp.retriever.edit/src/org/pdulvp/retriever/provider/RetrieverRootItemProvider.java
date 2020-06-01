@@ -89,6 +89,7 @@ public class RetrieverRootItemProvider extends RetrieverContainerItemProvider {
 	@Override
 	public void notifyChanged(Notification notification) {
     updateChildren(notification);
+    super.notifyChanged(notification);
   }
 
 	/**
