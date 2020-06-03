@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<setup:Product
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:setup="http://www.eclipse.org/oomph/setup/1.0"
+    xmlns:setup.p2="http://www.eclipse.org/oomph/setup/p2/1.0"
+    name="org.pdulvp.retriever"
+    label="Scrapper Tool">
+  <annotation
+      source="http://www.eclipse.org/oomph/setup/BrandingInfo">
+    <detail
+        key="folderName">
+      <value>eclipse</value>
+    </detail>
+    <detail
+        key="folderName.macosx">
+      <value>Eclipse</value>
+    </detail>
+  </annotation>
+  <version name="2020-06"
+      label="2020-06"
+      requiredJavaVersion="1.8">
+    <setupTask
+        xsi:type="setup.p2:P2Task"
+        label="${scope.product.label} (${scope.product.version.label})">
+      <requirement
+          name="org.eclipse.platform.ide"/>
+      <requirement
+          name="org.eclipse.platform.feature.group"/>
+      <requirement
+          name="org.eclipse.rcp.feature.group"/>
+      <requirement
+          name="org.pdulvp.retriever.feature.feature.group"/>
+      <repository
+          url="https://download.eclipse.org/releases/2020-06"/>
+      <repository
+          url="https://pdulvp.github.io/eclipse-repository/eclipse-retriever"/>
+      <repository
+          url="https://download.eclipse.org/tools/orbit/downloads/drops/R20190226160451/repository"/>
+    </setupTask>
+    <description>Scrapping Tools for 2020-06.</description>
+  </version>
+  <description>A webscrapping tool to JSON and EMF models</description>
+</setup:Product>
