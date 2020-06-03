@@ -30,12 +30,7 @@ Once created, it will appear in the `Project Explorer`. Just double click on the
 
 **Describe how to fetch the site**
 
-![](plugins/org.pdulvp.retriever.edit/icons/full/obj16/URLRetriever.png) URL
-
-![](plugins/org.pdulvp.retriever.edit/icons/full/obj16/ElementRetriever.png) Element
-
-![](plugins/org.pdulvp.retriever.edit/icons/full/obj16/AttributeRetriever.png) Attribute
-
+Use ![](plugins/org.pdulvp.retriever.edit/icons/full/obj16/URLRetriever.png) `URL Retriever`, ![](plugins/org.pdulvp.retriever.edit/icons/full/obj16/ElementRetriever.png) `Element Retriever` and ![](plugins/org.pdulvp.retriever.edit/icons/full/obj16/AttributeRetriever.png) `Attribute Retriever` to describe how to fetch the site
 
 ![](images/fetch.png)
 
