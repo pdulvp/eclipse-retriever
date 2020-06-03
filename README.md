@@ -6,7 +6,7 @@
 
 Install and open [Eclipse-Installer](https://www.eclipse.org/downloads/download.php?file=/oomph/products/eclipse-inst-win64.exe), then just go on settings and enable `Web-Links`.
 
-Afterwards, click on ![](https://img.shields.io/badge/eclipse--install-install-red?logo=eclipse&link=eclipse%2Binstaller:https://raw.githubusercontent.com/pdulvp/eclipse-retriever/master/target/product.setup)
+Afterwards, click **twice** on ![](https://img.shields.io/badge/eclipse--install-install-red?logo=eclipse&link=eclipse%2Binstaller:https://raw.githubusercontent.com/pdulvp/eclipse-retriever/master/target/product.setup)
 
 **Advanced mode**
 
