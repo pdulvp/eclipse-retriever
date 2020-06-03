@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<viewpoint:DAnalysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" uid="_wJP8AKVyEeqll_cS_278jA" version="14.3.0.201909031200">
+  <semanticResources>wiki.retriever</semanticResources>
+  <semanticResources>retriever://https:%2F%2Fen.wikipedia.org%2Fwiki%2FThe_Highwaymen_(country_supergroup)/platform:%2Fresource%2Fwiki%2Fwiki.retriever%23551083b6-32cb-409a-8b04-c77a26dd3ba8/highwaymen.result#b56608e62ce1b0f0505d6d7f8be62a72</semanticResources>
+  <semanticResources>retriever://https:%2F%2Fen.wikipedia.org%2Fwiki%2FJohnny_Cash/platform:%2Fresource%2Fwiki%2Fwiki.retriever%23d078bcd1-9768-41b6-82e8-3a09f15d25de/artistPage.result#636660a3a0b68cea8b9ddfc882591931</semanticResources>
+  <semanticResources>retriever://https:%2F%2Fen.wikipedia.org%2Fwiki%2FWaylon_Jennings/platform:%2Fresource%2Fwiki%2Fwiki.retriever%23d078bcd1-9768-41b6-82e8-3a09f15d25de/artistPage.result#1fd54c666e4fd2ef4b13269c62cb924e</semanticResources>
+  <semanticResources>retriever://https:%2F%2Fen.wikipedia.org%2Fwiki%2FKris_Kristofferson/platform:%2Fresource%2Fwiki%2Fwiki.retriever%23d078bcd1-9768-41b6-82e8-3a09f15d25de/artistPage.result#56ae8a4148f925da977aa92f7713fed0</semanticResources>
+  <semanticResources>retriever://https:%2F%2Fen.wikipedia.org%2Fwiki%2FWillie_Nelson/platform:%2Fresource%2Fwiki%2Fwiki.retriever%23d078bcd1-9768-41b6-82e8-3a09f15d25de/artistPage.result#270aad4c36f1e101c4de5d6062649569</semanticResources>
+</viewpoint:DAnalysis>

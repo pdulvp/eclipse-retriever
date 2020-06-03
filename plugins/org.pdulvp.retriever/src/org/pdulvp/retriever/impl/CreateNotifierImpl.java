@@ -70,7 +70,6 @@ public abstract class CreateNotifierImpl extends RetrieverImpl implements Create
    * @ordered
    */
   protected String variable = VARIABLE_EDEFAULT;
-
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -122,7 +121,7 @@ public abstract class CreateNotifierImpl extends RetrieverImpl implements Create
    * @generated
    */
   @Override
-		public String getVariable() {
+  public String getVariable() {
     return variable;
   }
 
@@ -132,7 +131,7 @@ public abstract class CreateNotifierImpl extends RetrieverImpl implements Create
    * @generated
    */
   @Override
-		public void setVariable(String newVariable) {
+  public void setVariable(String newVariable) {
     String oldVariable = variable;
     variable = newVariable;
     if (eNotificationRequired())

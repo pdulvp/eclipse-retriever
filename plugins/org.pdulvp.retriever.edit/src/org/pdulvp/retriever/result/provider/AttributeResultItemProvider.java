@@ -11,7 +11,9 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.StyledString;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+import org.eclipse.emf.edit.provider.StyledString.Style;
 import org.pdulvp.retriever.result.AttributeResult;
 import org.pdulvp.retriever.result.ResultPackage;
 
@@ -170,16 +172,36 @@ public class AttributeResultItemProvider
 	@Override
 	public String getText(Object object) {
 		String label = "";
-		AttributeResult result = ((AttributeResult)object);
+		AttributeResult result = ((AttributeResult) object);
 		if (result.getDefinition() !=null) {
 			label += result.getDefinition().getName();
 		}
-		label += " = '"+result.getValue()+"'";
+		String value = result.getValue().replaceAll("[\r\n]+", "\\\\n");
+		if (value.length() > 150) {
+		  value = value.substring(0, 150)+"...";
+		}
+		label += " - "+value+""; 
 		return label;
 	}
 	
 
 	/**
+   * This returns the label styled text for the adapted class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated NOT
+   */
+  @Override
+  public Object getStyledText(Object object) {
+    StyledString result = new StyledString();
+    String value = getText(object);
+    int first = value.indexOf("-");
+    result.append(value.substring(0, first), Style.NO_STYLE);
+    result.append(value.substring(first), Style.DECORATIONS_STYLER);
+    return result;
+  }
+
+  /**
    * This handles model notifications by calling {@link #updateChildren} to update any cached
    * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
    * <!-- begin-user-doc -->

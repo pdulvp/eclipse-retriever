@@ -11,7 +11,9 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.StyledString;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+import org.eclipse.emf.edit.provider.StyledString.Style;
 import org.pdulvp.retriever.result.AttributeResult;
 import org.pdulvp.retriever.result.ElementResult;
 import org.pdulvp.retriever.result.Result;
@@ -102,9 +104,9 @@ public class ElementResultItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		
-		Object labelValue = "Element ";
-		labelValue+=" {";
+		Object labelValue = "";
+		labelValue += ((ElementResult)object).getDefinition().getName();
+		labelValue += " {";
 		for (Result result : ((ElementResult)object).getOwnedResults()) {
 			if (result instanceof AttributeResult) {
 				try {
@@ -124,6 +126,22 @@ public class ElementResultItemProvider
 	
 
 	/**
+   * This returns the label styled text for the adapted class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated NOT
+   */
+  @Override
+  public Object getStyledText(Object object) {
+    StyledString result = new StyledString();
+    String value = getText(object);
+    int first = value.indexOf("{");
+    result.append(value.substring(0, first), Style.NO_STYLE);
+    result.append(value.substring(first), Style.DECORATIONS_STYLER);
+    return result;
+  }
+
+  /**
    * This handles model notifications by calling {@link #updateChildren} to update any cached
    * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
    * <!-- begin-user-doc -->

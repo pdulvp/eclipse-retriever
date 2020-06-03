@@ -17,6 +17,7 @@ import org.eclipse.emf.edit.provider.IDisposable;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
+import org.eclipse.emf.edit.provider.IItemStyledLabelProvider;
 import org.eclipse.emf.edit.provider.INotifyChangedListener;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
@@ -68,6 +69,7 @@ public class ResultItemProviderAdapterFactory extends ResultAdapterFactory imple
     supportedTypes.add(ITreeItemContentProvider.class);
     supportedTypes.add(IItemLabelProvider.class);
     supportedTypes.add(IItemPropertySource.class);
+    supportedTypes.add(IItemStyledLabelProvider.class);
   }
 
 	/**
@@ -91,29 +93,6 @@ public class ResultItemProviderAdapterFactory extends ResultAdapterFactory imple
     }
 
     return resultRootItemProvider;
-  }
-
-	/**
-   * This keeps track of the one adapter used for all {@link org.pdulvp.retriever.result.Result} instances.
-   * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-   * @generated
-   */
-	protected ResultItemProvider resultItemProvider;
-
-	/**
-   * This creates an adapter for a {@link org.pdulvp.retriever.result.Result}.
-   * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-   * @generated
-   */
-	@Override
-	public Adapter createResultAdapter() {
-    if (resultItemProvider == null) {
-      resultItemProvider = new ResultItemProvider(this);
-    }
-
-    return resultItemProvider;
   }
 
 	/**
@@ -291,7 +270,6 @@ public class ResultItemProviderAdapterFactory extends ResultAdapterFactory imple
 	@Override
 	public void dispose() {
     if (resultRootItemProvider != null) resultRootItemProvider.dispose();
-    if (resultItemProvider != null) resultItemProvider.dispose();
     if (uriResultItemProvider != null) uriResultItemProvider.dispose();
     if (elementResultItemProvider != null) elementResultItemProvider.dispose();
     if (attributeResultItemProvider != null) attributeResultItemProvider.dispose();

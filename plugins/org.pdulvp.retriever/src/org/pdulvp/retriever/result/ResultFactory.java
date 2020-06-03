@@ -31,15 +31,6 @@ public interface ResultFactory extends EFactory {
 	ResultRoot createResultRoot();
 
 	/**
-   * Returns a new object of class '<em>Result</em>'.
-   * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-   * @return a new object of class '<em>Result</em>'.
-   * @generated
-   */
-	Result createResult();
-
-	/**
    * Returns a new object of class '<em>URI Result</em>'.
    * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

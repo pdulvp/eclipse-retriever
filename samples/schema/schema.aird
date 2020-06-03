@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<viewpoint:DAnalysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" uid="_12OhYKV8Eeqll_cS_278jA" version="14.3.0.201909031200">
+  <semanticResources>schema.retriever</semanticResources>
+  <semanticResources>platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore</semanticResources>
+  <semanticResources>schema.ecore</semanticResources>
+  <semanticResources>retriever://https:%2F%2Fen.wikipedia.org%2Fwiki%2FJohnny_Cash/platform:%2Fresource%2Fschema%2Fschema.retriever%239048e558-d065-43bc-ba0a-c69df7d70e24/artistPage.result#636660a3a0b68cea8b9ddfc882591931</semanticResources>
+</viewpoint:DAnalysis>

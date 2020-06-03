@@ -17,6 +17,7 @@ import org.eclipse.emf.edit.provider.IDisposable;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
+import org.eclipse.emf.edit.provider.IItemStyledLabelProvider;
 import org.eclipse.emf.edit.provider.INotifyChangedListener;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
@@ -68,29 +69,7 @@ public class RetrieverItemProviderAdapterFactory extends RetrieverAdapterFactory
     supportedTypes.add(ITreeItemContentProvider.class);
     supportedTypes.add(IItemLabelProvider.class);
     supportedTypes.add(IItemPropertySource.class);
-  }
-
-	/**
-   * This keeps track of the one adapter used for all {@link org.pdulvp.retriever.RetrieverRoot} instances.
-   * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-   * @generated
-   */
-	protected RetrieverRootItemProvider retrieverRootItemProvider;
-
-	/**
-   * This creates an adapter for a {@link org.pdulvp.retriever.RetrieverRoot}.
-   * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-   * @generated
-   */
-	@Override
-	public Adapter createRetrieverRootAdapter() {
-    if (retrieverRootItemProvider == null) {
-      retrieverRootItemProvider = new RetrieverRootItemProvider(this);
-    }
-
-    return retrieverRootItemProvider;
+    supportedTypes.add(IItemStyledLabelProvider.class);
   }
 
 	/**
@@ -163,29 +142,6 @@ public class RetrieverItemProviderAdapterFactory extends RetrieverAdapterFactory
   }
 
 	/**
-   * This keeps track of the one adapter used for all {@link org.pdulvp.retriever.URIVariable} instances.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected URIVariableItemProvider uriVariableItemProvider;
-
-  /**
-   * This creates an adapter for a {@link org.pdulvp.retriever.URIVariable}.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Adapter createURIVariableAdapter() {
-    if (uriVariableItemProvider == null) {
-      uriVariableItemProvider = new URIVariableItemProvider(this);
-    }
-
-    return uriVariableItemProvider;
-  }
-
-  /**
    * This keeps track of the one adapter used for all {@link org.pdulvp.retriever.TransformationRetriever} instances.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -209,29 +165,6 @@ public class RetrieverItemProviderAdapterFactory extends RetrieverAdapterFactory
   }
 
   /**
-   * This keeps track of the one adapter used for all {@link org.pdulvp.retriever.RetrieverContainer} instances.
-   * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-   * @generated
-   */
-	protected RetrieverContainerItemProvider retrieverContainerItemProvider;
-
-	/**
-   * This creates an adapter for a {@link org.pdulvp.retriever.RetrieverContainer}.
-   * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-   * @generated
-   */
-	@Override
-	public Adapter createRetrieverContainerAdapter() {
-    if (retrieverContainerItemProvider == null) {
-      retrieverContainerItemProvider = new RetrieverContainerItemProvider(this);
-    }
-
-    return retrieverContainerItemProvider;
-  }
-
-	/**
    * This keeps track of the one adapter used for all {@link org.pdulvp.retriever.RetrieverPkg} instances.
    * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -324,29 +257,6 @@ public class RetrieverItemProviderAdapterFactory extends RetrieverAdapterFactory
   }
 
 	/**
-   * This keeps track of the one adapter used for all {@link org.pdulvp.retriever.CreateDirectEObject} instances.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected CreateDirectEObjectItemProvider createDirectEObjectItemProvider;
-
-  /**
-   * This creates an adapter for a {@link org.pdulvp.retriever.CreateDirectEObject}.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Adapter createCreateDirectEObjectAdapter() {
-    if (createDirectEObjectItemProvider == null) {
-      createDirectEObjectItemProvider = new CreateDirectEObjectItemProvider(this);
-    }
-
-    return createDirectEObjectItemProvider;
-  }
-
-  /**
    * This keeps track of the one adapter used for all {@link org.pdulvp.retriever.CreateEReference} instances.
    * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -436,29 +346,6 @@ public class RetrieverItemProviderAdapterFactory extends RetrieverAdapterFactory
     }
 
     return setVariableItemProvider;
-  }
-
-  /**
-   * This keeps track of the one adapter used for all {@link org.pdulvp.retriever.CreateFile} instances.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected CreateFileItemProvider createFileItemProvider;
-
-  /**
-   * This creates an adapter for a {@link org.pdulvp.retriever.CreateFile}.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Adapter createCreateFileAdapter() {
-    if (createFileItemProvider == null) {
-      createFileItemProvider = new CreateFileItemProvider(this);
-    }
-
-    return createFileItemProvider;
   }
 
   /**
@@ -589,11 +476,8 @@ public class RetrieverItemProviderAdapterFactory extends RetrieverAdapterFactory
    */
 	@Override
 	public void dispose() {
-    if (retrieverRootItemProvider != null) retrieverRootItemProvider.dispose();
     if (retrieverPkgItemProvider != null) retrieverPkgItemProvider.dispose();
-    if (retrieverContainerItemProvider != null) retrieverContainerItemProvider.dispose();
     if (urlRetrieverItemProvider != null) urlRetrieverItemProvider.dispose();
-    if (uriVariableItemProvider != null) uriVariableItemProvider.dispose();
     if (elementRetrieverItemProvider != null) elementRetrieverItemProvider.dispose();
     if (attributeRetrieverItemProvider != null) attributeRetrieverItemProvider.dispose();
     if (transformationRetrieverItemProvider != null) transformationRetrieverItemProvider.dispose();
@@ -601,10 +485,8 @@ public class RetrieverItemProviderAdapterFactory extends RetrieverAdapterFactory
     if (referencedRetrieverItemProvider != null) referencedRetrieverItemProvider.dispose();
     if (setVariableItemProvider != null) setVariableItemProvider.dispose();
     if (createEObjectItemProvider != null) createEObjectItemProvider.dispose();
-    if (createDirectEObjectItemProvider != null) createDirectEObjectItemProvider.dispose();
     if (createEReferenceItemProvider != null) createEReferenceItemProvider.dispose();
     if (createEAttributeItemProvider != null) createEAttributeItemProvider.dispose();
-    if (createFileItemProvider != null) createFileItemProvider.dispose();
     if (loadResourceItemProvider != null) loadResourceItemProvider.dispose();
     if (ifItemProvider != null) ifItemProvider.dispose();
   }

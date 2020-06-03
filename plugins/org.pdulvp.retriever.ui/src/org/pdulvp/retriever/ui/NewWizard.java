@@ -72,11 +72,11 @@ public class NewWizard extends Wizard implements INewWizard {
 			IWorkspace workspace = ResourcesPlugin.getWorkspace();
 			IStatus status = workspace.validateNatureSet(newNatures);
 
-			IFile retriever = project.getFile("scraper.retriever");
+			IFile retriever = project.getFile(project.getName()+".retriever");
 			URI uri = getURI(retriever);
 
 			Resource resource = RetrieverResourceFactoryRegistry.INSTANCE.getFactory(uri).createResource(uri);
-			resource.getContents().add(RetrieverFactory.eINSTANCE.createRetrieverRoot());
+			resource.getContents().add(RetrieverFactory.eINSTANCE.createRetrieverPkg());
 			resource.save(new HashMap<>());
 
 			URI airduri = getURI(retriever).trimFileExtension().appendFileExtension("aird");

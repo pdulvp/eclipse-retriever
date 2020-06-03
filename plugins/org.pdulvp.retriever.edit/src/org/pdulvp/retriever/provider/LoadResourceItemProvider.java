@@ -10,7 +10,10 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.StyledString;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+import org.eclipse.emf.edit.provider.StyledString.Style;
+import org.eclipse.osgi.util.NLS;
 import org.pdulvp.retriever.LoadResource;
 import org.pdulvp.retriever.RetrieverPackage;
 
@@ -136,9 +139,23 @@ public class LoadResourceItemProvider extends CreateNotifierItemProvider {
    */
   @Override
   public String getText(Object object) {
-    String label = ((LoadResource) object).getName() + ' ' + ((LoadResource) object).getUri();
-    return label == null || label.length() == 0 ? getString("_UI_LoadResource_type")
-        : getString("_UI_LoadResource_type") + " " + label;
+    return NLS.bind("{0} - {1}", ((LoadResource) object).getVariable(), ((LoadResource) object).getUri());
+  }
+
+  /**
+   * This returns the label styled text for the adapted class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated NOT
+   */
+  @Override
+  public Object getStyledText(Object object) {
+    StyledString result = new StyledString();
+    String value = getText(object);
+    int first = value.indexOf("-");
+    result.append(value.substring(0, first), Style.NO_STYLE);
+    result.append(value.substring(first), Style.DECORATIONS_STYLER);
+    return result;
   }
 
   /**

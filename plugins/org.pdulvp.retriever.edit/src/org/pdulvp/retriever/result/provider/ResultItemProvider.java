@@ -18,10 +18,12 @@ import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
+import org.eclipse.emf.edit.provider.IItemStyledLabelProvider;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
+import org.eclipse.emf.edit.provider.StyledString;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.pdulvp.retriever.provider.RetrieverEditPlugin;
 import org.pdulvp.retriever.result.Result;
@@ -37,11 +39,7 @@ import org.pdulvp.retriever.result.ResultPackage;
 public class ResultItemProvider 
 	extends ItemProviderAdapter
 	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+		IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, IItemStyledLabelProvider {
 	/**
    * This constructs an instance from a factory and a notifier.
    * <!-- begin-user-doc -->
@@ -173,14 +171,29 @@ public class ResultItemProvider
    */
 	@Override
 	public String getText(Object object) {
-    String label = ((Result)object).getId();
-    return label == null || label.length() == 0 ?
-      getString("_UI_Result_type") :
-      getString("_UI_Result_type") + " " + label;
+    return ((StyledString)getStyledText(object)).getString();
   }
 	
 
 	/**
+   * This returns the label styled text for the adapted class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated NOT
+   */
+  @Override
+  public Object getStyledText(Object object) {
+    String label = ((Result)object).getId();
+    	StyledString styledLabel = new StyledString();
+    if (label == null || label.length() == 0) {
+      styledLabel.append(getString("_UI_Result_type"), StyledString.Style.QUALIFIER_STYLER); 
+    } else {
+      styledLabel.append(getString("_UI_Result_type"), StyledString.Style.QUALIFIER_STYLER).append(" " + label);
+    }
+    return styledLabel;
+  }
+
+  /**
    * This handles model notifications by calling {@link #updateChildren} to update any cached
    * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
    * <!-- begin-user-doc -->
@@ -212,11 +225,6 @@ public class ResultItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
     super.collectNewChildDescriptors(newChildDescriptors, object);
-
-    newChildDescriptors.add
-      (createChildParameter
-        (ResultPackage.Literals.RESULT__OWNED_RESULTS,
-         ResultFactory.eINSTANCE.createResult()));
 
     newChildDescriptors.add
       (createChildParameter

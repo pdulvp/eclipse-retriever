@@ -13,7 +13,9 @@ import org.eclipse.emf.edit.provider.AdapterFactoryItemDelegator;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.ComposedImage;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.StyledString;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+import org.eclipse.emf.edit.provider.StyledString.Style;
 import org.pdulvp.retriever.ReferencedRetriever;
 import org.pdulvp.retriever.RetrieverPackage;
 
@@ -91,7 +93,7 @@ public class ReferencedRetrieverItemProvider extends RetrieverItemProvider {
     if (ref != null) {
       List<Object> images = new ArrayList<Object>(2);
       images.add(image);
-      images.add(getResourceLocator().getImage("full/obj16/ReferencedRetriever"));
+      images.add(getResourceLocator().getImage("full/ovr16/ReferencedRetriever"));
       image = new ComposedImage(images);
     }
 
@@ -117,7 +119,24 @@ public class ReferencedRetrieverItemProvider extends RetrieverItemProvider {
 
     EObject ref = ((ReferencedRetriever) object).getReferencedElement();
 
-    return "#" + new AdapterFactoryItemDelegator(getAdapterFactory()).getText(ref);
+    return new AdapterFactoryItemDelegator(getAdapterFactory()).getText(ref);
+  }
+
+  /**
+   * This returns the label styled text for the adapted class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated NOT
+   */
+  @Override
+  public Object getStyledText(Object object) {
+    StyledString result = new StyledString();
+    String value = getText(object);
+    int first = value.indexOf("-");
+    result.append("#", Style.QUALIFIER_STYLER);
+    result.append(value.substring(0, first), Style.NO_STYLE);
+    result.append(value.substring(first), Style.DECORATIONS_STYLER);
+    return result;
   }
 
   /**

@@ -67,10 +67,6 @@ public class RetrieverAdapterFactory extends AdapterFactoryImpl {
 	protected RetrieverSwitch<Adapter> modelSwitch =
 		new RetrieverSwitch<Adapter>() {
       @Override
-      public Adapter caseRetrieverRoot(RetrieverRoot object) {
-        return createRetrieverRootAdapter();
-      }
-      @Override
       public Adapter caseRetrieverPkg(RetrieverPkg object) {
         return createRetrieverPkgAdapter();
       }
@@ -119,20 +115,12 @@ public class RetrieverAdapterFactory extends AdapterFactoryImpl {
         return createCreateEObjectAdapter();
       }
       @Override
-      public Adapter caseCreateDirectEObject(CreateDirectEObject object) {
-        return createCreateDirectEObjectAdapter();
-      }
-      @Override
       public Adapter caseCreateEReference(CreateEReference object) {
         return createCreateEReferenceAdapter();
       }
       @Override
       public Adapter caseCreateEAttribute(CreateEAttribute object) {
         return createCreateEAttributeAdapter();
-      }
-      @Override
-      public Adapter caseCreateFile(CreateFile object) {
-        return createCreateFileAdapter();
       }
       @Override
       public Adapter caseCreateNotifier(CreateNotifier object) {
@@ -175,20 +163,6 @@ public class RetrieverAdapterFactory extends AdapterFactoryImpl {
 
 
 	/**
-   * Creates a new adapter for an object of class '{@link org.pdulvp.retriever.RetrieverRoot <em>Root</em>}'.
-   * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.pdulvp.retriever.RetrieverRoot
-   * @generated
-   */
-	public Adapter createRetrieverRootAdapter() {
-    return null;
-  }
-
-	/**
    * Creates a new adapter for an object of class '{@link org.pdulvp.retriever.Retriever <em>Retriever</em>}'.
    * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -217,6 +191,20 @@ public class RetrieverAdapterFactory extends AdapterFactoryImpl {
   }
 
 	/**
+   * Creates a new adapter for an object of class '{@link org.pdulvp.retriever.URIVariable <em>URI Variable</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.pdulvp.retriever.URIVariable
+   * @generated
+   */
+  public Adapter createURIVariableAdapter() {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link org.pdulvp.retriever.ElementRetriever <em>Element Retriever</em>}'.
    * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -245,20 +233,6 @@ public class RetrieverAdapterFactory extends AdapterFactoryImpl {
   }
 
 	/**
-   * Creates a new adapter for an object of class '{@link org.pdulvp.retriever.URIVariable <em>URI Variable</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.pdulvp.retriever.URIVariable
-   * @generated
-   */
-  public Adapter createURIVariableAdapter() {
-    return null;
-  }
-
-  /**
    * Creates a new adapter for an object of class '{@link org.pdulvp.retriever.TransformationRetriever <em>Transformation Retriever</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -343,20 +317,6 @@ public class RetrieverAdapterFactory extends AdapterFactoryImpl {
   }
 
 	/**
-   * Creates a new adapter for an object of class '{@link org.pdulvp.retriever.CreateDirectEObject <em>Create Direct EObject</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.pdulvp.retriever.CreateDirectEObject
-   * @generated
-   */
-  public Adapter createCreateDirectEObjectAdapter() {
-    return null;
-  }
-
-  /**
    * Creates a new adapter for an object of class '{@link org.pdulvp.retriever.CreateEReference <em>Create EReference</em>}'.
    * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -409,20 +369,6 @@ public class RetrieverAdapterFactory extends AdapterFactoryImpl {
    * @generated
    */
   public Adapter createSetVariableAdapter() {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.pdulvp.retriever.CreateFile <em>Create File</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.pdulvp.retriever.CreateFile
-   * @generated
-   */
-  public Adapter createCreateFileAdapter() {
     return null;
   }
 

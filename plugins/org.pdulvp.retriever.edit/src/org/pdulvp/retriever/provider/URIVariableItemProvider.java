@@ -16,10 +16,12 @@ import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
+import org.eclipse.emf.edit.provider.IItemStyledLabelProvider;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
+import org.eclipse.emf.edit.provider.StyledString;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.pdulvp.retriever.RetrieverPackage;
 import org.pdulvp.retriever.URIVariable;
@@ -33,11 +35,7 @@ import org.pdulvp.retriever.URIVariable;
 public class URIVariableItemProvider 
   extends ItemProviderAdapter
   implements
-    IEditingDomainItemProvider,
-    IStructuredItemContentProvider,
-    ITreeItemContentProvider,
-    IItemLabelProvider,
-    IItemPropertySource {
+    IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, IItemStyledLabelProvider {
   /**
    * This constructs an instance from a factory and a notifier.
    * <!-- begin-user-doc -->
@@ -87,17 +85,6 @@ public class URIVariableItemProvider
   }
 
   /**
-   * This returns URIVariable.gif.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Object getImage(Object object) {
-    return overlayImage(object, getResourceLocator().getImage("full/obj16/URIVariable"));
-  }
-
-  /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -115,12 +102,27 @@ public class URIVariableItemProvider
    */
   @Override
   public String getText(Object object) {
-    String label = ((URIVariable)object).getName();
-    return label == null || label.length() == 0 ?
-      getString("_UI_URIVariable_type") :
-      getString("_UI_URIVariable_type") + " " + label;
+    return ((StyledString)getStyledText(object)).getString();
   }
   
+
+  /**
+   * This returns the label styled text for the adapted class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated NOT
+   */
+  @Override
+  public Object getStyledText(Object object) {
+    String label = ((URIVariable)object).getName();
+    	StyledString styledLabel = new StyledString();
+    if (label == null || label.length() == 0) {
+      styledLabel.append(getString("_UI_URIVariable_type"), StyledString.Style.QUALIFIER_STYLER); 
+    } else {
+      styledLabel.append(getString("_UI_URIVariable_type"), StyledString.Style.QUALIFIER_STYLER).append(" " + label);
+    }
+    return styledLabel;
+  }
 
   /**
    * This handles model notifications by calling {@link #updateChildren} to update any cached

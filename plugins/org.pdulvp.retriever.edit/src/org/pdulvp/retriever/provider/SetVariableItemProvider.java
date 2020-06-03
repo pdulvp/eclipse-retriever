@@ -10,7 +10,10 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.StyledString;
+import org.eclipse.emf.edit.provider.StyledString.Style;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+import org.eclipse.osgi.util.NLS;
 import org.pdulvp.retriever.RetrieverPackage;
 import org.pdulvp.retriever.SetVariable;
 
@@ -22,8 +25,9 @@ import org.pdulvp.retriever.SetVariable;
  */
 public class SetVariableItemProvider extends CreateNotifierItemProvider {
   /**
-   * This constructs an instance from a factory and a notifier.
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
+   * This constructs an instance from a factory and a notifier. <!--
+   * begin-user-doc --> <!-- end-user-doc -->
+   * 
    * @generated
    */
   public SetVariableItemProvider(AdapterFactory adapterFactory) {
@@ -31,8 +35,9 @@ public class SetVariableItemProvider extends CreateNotifierItemProvider {
   }
 
   /**
-   * This returns the property descriptors for the adapted class.
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
+   * This returns the property descriptors for the adapted class. <!--
+   * begin-user-doc --> <!-- end-user-doc -->
+   * 
    * @generated
    */
   @Override
@@ -47,8 +52,9 @@ public class SetVariableItemProvider extends CreateNotifierItemProvider {
   }
 
   /**
-   * This adds a property descriptor for the Expression feature.
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
+   * This adds a property descriptor for the Expression feature. <!--
+   * begin-user-doc --> <!-- end-user-doc -->
+   * 
    * @generated
    */
   protected void addExpressionPropertyDescriptor(Object object) {
@@ -70,10 +76,10 @@ public class SetVariableItemProvider extends CreateNotifierItemProvider {
   /**
    * This adds a property descriptor for the Log feature.
    * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+   * <!-- end-user-doc -->
    * @generated
    */
-	protected void addLogPropertyDescriptor(Object object) {
+  protected void addLogPropertyDescriptor(Object object) {
     itemPropertyDescriptors.add
       (createItemPropertyDescriptor
         (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
@@ -89,7 +95,7 @@ public class SetVariableItemProvider extends CreateNotifierItemProvider {
          null));
   }
 
-		/**
+  /**
    * This returns SetVariable.gif.
    * <!-- begin-user-doc --> <!-- end-user-doc -->
    * @generated
@@ -109,14 +115,27 @@ public class SetVariableItemProvider extends CreateNotifierItemProvider {
   }
 
   /**
-   * This returns the label text for the adapted class. <!-- begin-user-doc --> <!-- end-user-doc -->
+   * This returns the label text for the adapted class. <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
    * 
    * @generated NOT
    */
   @Override
   public String getText(Object object) {
-    String label = ((SetVariable) object).getVariable() + "='" + ((SetVariable) object).getExpression() + "'";
-    return label;
+    return NLS.bind("{0} - {1}", ((SetVariable) object).getVariable(), ((SetVariable) object).getExpression());
+  }
+
+  /**
+   * @generated NOT
+   */
+  @Override
+  public Object getStyledText(Object object) {
+    StyledString result = new StyledString();
+    String value = getText(object);
+    int first = value.indexOf("-");
+    result.append(value.substring(0, first), Style.NO_STYLE);
+    result.append(value.substring(first), Style.DECORATIONS_STYLER);
+    return result;
   }
 
   /**
@@ -141,7 +160,8 @@ public class SetVariableItemProvider extends CreateNotifierItemProvider {
   /**
    * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children
    * that can be created under this object.
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
    * @generated
    */
   @Override

@@ -21,7 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see org.pdulvp.retriever.result.ResultPackage#getResult()
- * @model
+ * @model abstract="true"
  * @generated
  */
 public interface Result extends EObject {

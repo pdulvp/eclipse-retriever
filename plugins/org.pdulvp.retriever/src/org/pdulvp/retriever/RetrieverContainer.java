@@ -18,7 +18,7 @@ import org.eclipse.emf.common.util.EList;
  * </ul>
  *
  * @see org.pdulvp.retriever.RetrieverPackage#getRetrieverContainer()
- * @model
+ * @model abstract="true"
  * @generated
  */
 public interface RetrieverContainer extends Retriever {

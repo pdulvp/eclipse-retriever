@@ -17,7 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see org.pdulvp.retriever.RetrieverPackage#getURIVariable()
- * @model
+ * @model abstract="true"
  * @generated
  */
 public interface URIVariable extends EObject {

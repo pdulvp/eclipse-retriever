@@ -58,7 +58,7 @@ public interface RetrieverPackage extends EPackage {
    * @see org.pdulvp.retriever.impl.RetrieverPackageImpl#getRetrieverContainer()
    * @generated
    */
-  int RETRIEVER_CONTAINER = 2;
+  int RETRIEVER_CONTAINER = 1;
 
   /**
    * The meta object id for the '{@link org.pdulvp.retriever.impl.RetrieverPkgImpl <em>Pkg</em>}' class. <!--
@@ -68,7 +68,7 @@ public interface RetrieverPackage extends EPackage {
    * @see org.pdulvp.retriever.impl.RetrieverPackageImpl#getRetrieverPkg()
    * @generated
    */
-  int RETRIEVER_PKG = 1;
+  int RETRIEVER_PKG = 0;
 
   /**
    * The meta object id for the '{@link org.pdulvp.retriever.impl.RetrieverImpl <em>Retriever</em>}' class. <!--
@@ -78,7 +78,7 @@ public interface RetrieverPackage extends EPackage {
    * @see org.pdulvp.retriever.impl.RetrieverPackageImpl#getRetriever()
    * @generated
    */
-  int RETRIEVER = 3;
+  int RETRIEVER = 2;
 
   /**
    * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -90,16 +90,6 @@ public interface RetrieverPackage extends EPackage {
   int RETRIEVER__ID = 0;
 
   /**
-   * The meta object id for the '{@link org.pdulvp.retriever.impl.RetrieverRootImpl <em>Root</em>}' class. <!--
-   * begin-user-doc --> <!-- end-user-doc -->
-   * 
-   * @see org.pdulvp.retriever.impl.RetrieverRootImpl
-   * @see org.pdulvp.retriever.impl.RetrieverPackageImpl#getRetrieverRoot()
-   * @generated
-   */
-  int RETRIEVER_ROOT = 0;
-
-  /**
    * The meta object id for the '{@link org.pdulvp.retriever.impl.URLRetrieverImpl <em>URL Retriever</em>}' class. <!--
    * begin-user-doc --> <!-- end-user-doc -->
    * 
@@ -107,7 +97,7 @@ public interface RetrieverPackage extends EPackage {
    * @see org.pdulvp.retriever.impl.RetrieverPackageImpl#getURLRetriever()
    * @generated
    */
-  int URL_RETRIEVER = 4;
+  int URL_RETRIEVER = 3;
 
   /**
    * The meta object id for the '{@link org.pdulvp.retriever.impl.ElementRetrieverImpl <em>Element Retriever</em>}' class.
@@ -116,7 +106,7 @@ public interface RetrieverPackage extends EPackage {
    * @see org.pdulvp.retriever.impl.RetrieverPackageImpl#getElementRetriever()
    * @generated
    */
-  int ELEMENT_RETRIEVER = 6;
+  int ELEMENT_RETRIEVER = 5;
 
   /**
    * The meta object id for the '{@link org.pdulvp.retriever.impl.AttributeRetrieverImpl <em>Attribute Retriever</em>}' class.
@@ -125,7 +115,7 @@ public interface RetrieverPackage extends EPackage {
    * @see org.pdulvp.retriever.impl.RetrieverPackageImpl#getAttributeRetriever()
    * @generated
    */
-  int ATTRIBUTE_RETRIEVER = 7;
+  int ATTRIBUTE_RETRIEVER = 6;
 
   /**
    * The meta object id for the '{@link org.pdulvp.retriever.impl.ReferencedRetrieverImpl <em>Referenced Retriever</em>}' class.
@@ -134,7 +124,7 @@ public interface RetrieverPackage extends EPackage {
    * @see org.pdulvp.retriever.impl.RetrieverPackageImpl#getReferencedRetriever()
    * @generated
    */
-  int REFERENCED_RETRIEVER = 10;
+  int REFERENCED_RETRIEVER = 9;
 
   /**
    * The meta object id for the '{@link org.pdulvp.retriever.impl.TransformationServiceImpl <em>Transformation Service</em>}' class.
@@ -143,7 +133,7 @@ public interface RetrieverPackage extends EPackage {
    * @see org.pdulvp.retriever.impl.RetrieverPackageImpl#getTransformationService()
    * @generated
    */
-  int TRANSFORMATION_SERVICE = 9;
+  int TRANSFORMATION_SERVICE = 8;
 
   /**
    * The meta object id for the '{@link org.pdulvp.retriever.impl.CreateEObjectImpl <em>Create EObject</em>}' class. <!--
@@ -153,7 +143,7 @@ public interface RetrieverPackage extends EPackage {
    * @see org.pdulvp.retriever.impl.RetrieverPackageImpl#getCreateEObject()
    * @generated
    */
-  int CREATE_EOBJECT = 12;
+  int CREATE_EOBJECT = 11;
 
   /**
    * The meta object id for the '{@link org.pdulvp.retriever.impl.CreateEReferenceImpl <em>Create EReference</em>}' class.
@@ -162,7 +152,7 @@ public interface RetrieverPackage extends EPackage {
    * @see org.pdulvp.retriever.impl.RetrieverPackageImpl#getCreateEReference()
    * @generated
    */
-  int CREATE_EREFERENCE = 14;
+  int CREATE_EREFERENCE = 12;
 
   /**
    * The meta object id for the '{@link org.pdulvp.retriever.impl.CreateEAttributeImpl <em>Create EAttribute</em>}' class.
@@ -171,17 +161,7 @@ public interface RetrieverPackage extends EPackage {
    * @see org.pdulvp.retriever.impl.RetrieverPackageImpl#getCreateEAttribute()
    * @generated
    */
-  int CREATE_EATTRIBUTE = 15;
-
-  /**
-   * The meta object id for the '{@link org.pdulvp.retriever.impl.URIVariableImpl <em>URI Variable</em>}' class. <!--
-   * begin-user-doc --> <!-- end-user-doc -->
-   * 
-   * @see org.pdulvp.retriever.impl.URIVariableImpl
-   * @see org.pdulvp.retriever.impl.RetrieverPackageImpl#getURIVariable()
-   * @generated
-   */
-  int URI_VARIABLE = 5;
+  int CREATE_EATTRIBUTE = 13;
 
   /**
    * The meta object id for the '{@link org.pdulvp.retriever.impl.TransformationRetrieverImpl <em>Transformation Retriever</em>}' class.
@@ -190,7 +170,7 @@ public interface RetrieverPackage extends EPackage {
    * @see org.pdulvp.retriever.impl.RetrieverPackageImpl#getTransformationRetriever()
    * @generated
    */
-  int TRANSFORMATION_RETRIEVER = 8;
+  int TRANSFORMATION_RETRIEVER = 7;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -318,83 +298,6 @@ public interface RetrieverPackage extends EPackage {
    * @ordered
    */
   int RETRIEVER_CONTAINER_OPERATION_COUNT = RETRIEVER_OPERATION_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Id</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int RETRIEVER_ROOT__ID = RETRIEVER_CONTAINER__ID;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int RETRIEVER_ROOT__NAME = RETRIEVER_CONTAINER__NAME;
-
-  /**
-   * The feature id for the '<em><b>Description</b></em>' attribute.
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int RETRIEVER_ROOT__DESCRIPTION = RETRIEVER_CONTAINER__DESCRIPTION;
-
-  /**
-   * The feature id for the '<em><b>Dynamic</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int RETRIEVER_ROOT__DYNAMIC = RETRIEVER_CONTAINER__DYNAMIC;
-
-  /**
-   * The feature id for the '<em><b>Dynamic Precondition Expression</b></em>' attribute.
-   * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-	int RETRIEVER_ROOT__DYNAMIC_PRECONDITION_EXPRESSION = RETRIEVER_CONTAINER__DYNAMIC_PRECONDITION_EXPRESSION;
-
-		/**
-   * The feature id for the '<em><b>Owned Elements</b></em>' containment reference list.
-   * <!-- begin-user-doc --> <!--
-   * end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int RETRIEVER_ROOT__OWNED_ELEMENTS = RETRIEVER_CONTAINER__OWNED_ELEMENTS;
-
-  /**
-   * The feature id for the '<em><b>Owned Services</b></em>' containment reference list.
-   * <!-- begin-user-doc --> <!--
-   * end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int RETRIEVER_ROOT__OWNED_SERVICES = RETRIEVER_CONTAINER__OWNED_SERVICES;
-
-  /**
-   * The number of structural features of the '<em>Root</em>' class.
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int RETRIEVER_ROOT_FEATURE_COUNT = RETRIEVER_CONTAINER_FEATURE_COUNT + 0;
-
-  /**
-   * The number of operations of the '<em>Root</em>' class.
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int RETRIEVER_ROOT_OPERATION_COUNT = RETRIEVER_CONTAINER_OPERATION_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -536,7 +439,8 @@ public interface RetrieverPackage extends EPackage {
 
   /**
    * The feature id for the '<em><b>Variable</b></em>' attribute.
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
@@ -553,8 +457,8 @@ public interface RetrieverPackage extends EPackage {
 
   /**
    * The feature id for the '<em><b>Owned Variables</b></em>' containment reference list.
-   * <!-- begin-user-doc --> <!--
-   * end-user-doc -->
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
@@ -604,17 +508,28 @@ public interface RetrieverPackage extends EPackage {
   int URL_RETRIEVER_OPERATION_COUNT = RETRIEVER_OPERATION_COUNT + 0;
 
   /**
+   * The meta object id for the '{@link org.pdulvp.retriever.impl.URIVariableImpl <em>URI Variable</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.pdulvp.retriever.impl.URIVariableImpl
+   * @see org.pdulvp.retriever.impl.RetrieverPackageImpl#getURIVariable()
+   * @generated
+   */
+  int URI_VARIABLE = 4;
+
+  /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
   int URI_VARIABLE__NAME = 0;
 
   /**
-   * The number of structural features of the '<em>URI Variable</em>' class. <!-- begin-user-doc --> <!-- end-user-doc
-   * -->
-   * 
+   * The number of structural features of the '<em>URI Variable</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
@@ -622,7 +537,8 @@ public interface RetrieverPackage extends EPackage {
 
   /**
    * The number of operations of the '<em>URI Variable</em>' class.
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
@@ -691,7 +607,8 @@ public interface RetrieverPackage extends EPackage {
 
   /**
    * The feature id for the '<em><b>Variable</b></em>' attribute.
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
@@ -1031,7 +948,7 @@ public interface RetrieverPackage extends EPackage {
    * @see org.pdulvp.retriever.impl.RetrieverPackageImpl#getCreateNotifier()
    * @generated
    */
-  int CREATE_NOTIFIER = 17;
+  int CREATE_NOTIFIER = 14;
 
   /**
    * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -1096,7 +1013,8 @@ public interface RetrieverPackage extends EPackage {
 
   /**
    * The feature id for the '<em><b>Variable</b></em>' attribute.
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
@@ -1120,15 +1038,6 @@ public interface RetrieverPackage extends EPackage {
   int CREATE_NOTIFIER_OPERATION_COUNT = RETRIEVER_OPERATION_COUNT + 0;
 
   /**
-   * The meta object id for the '{@link org.pdulvp.retriever.impl.CreateDirectEObjectImpl <em>Create Direct EObject</em>}' class.
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * @see org.pdulvp.retriever.impl.CreateDirectEObjectImpl
-   * @see org.pdulvp.retriever.impl.RetrieverPackageImpl#getCreateDirectEObject()
-   * @generated
-   */
-  int CREATE_DIRECT_EOBJECT = 13;
-
-  /**
    * The meta object id for the '{@link org.pdulvp.retriever.impl.LoadResourceImpl <em>Load Resource</em>}' class. <!--
    * begin-user-doc --> <!-- end-user-doc -->
    * 
@@ -1136,7 +1045,7 @@ public interface RetrieverPackage extends EPackage {
    * @see org.pdulvp.retriever.impl.RetrieverPackageImpl#getLoadResource()
    * @generated
    */
-  int LOAD_RESOURCE = 18;
+  int LOAD_RESOURCE = 15;
 
   /**
    * The meta object id for the '{@link org.pdulvp.retriever.impl.SetVariableImpl <em>Set Variable</em>}' class. <!--
@@ -1146,7 +1055,7 @@ public interface RetrieverPackage extends EPackage {
    * @see org.pdulvp.retriever.impl.RetrieverPackageImpl#getSetVariable()
    * @generated
    */
-  int SET_VARIABLE = 11;
+  int SET_VARIABLE = 10;
 
   /**
    * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -1156,16 +1065,6 @@ public interface RetrieverPackage extends EPackage {
    * @ordered
    */
   int SET_VARIABLE__ID = CREATE_NOTIFIER__ID;
-
-  /**
-   * The meta object id for the '{@link org.pdulvp.retriever.impl.CreateFileImpl <em>Create File</em>}' class. <!--
-   * begin-user-doc --> <!-- end-user-doc -->
-   * 
-   * @see org.pdulvp.retriever.impl.CreateFileImpl
-   * @see org.pdulvp.retriever.impl.RetrieverPackageImpl#getCreateFile()
-   * @generated
-   */
-  int CREATE_FILE = 16;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1221,7 +1120,8 @@ public interface RetrieverPackage extends EPackage {
 
   /**
    * The feature id for the '<em><b>Variable</b></em>' attribute.
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
@@ -1268,7 +1168,7 @@ public interface RetrieverPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int CREATE_DIRECT_EOBJECT__ID = CREATE_NOTIFIER__ID;
+  int CREATE_EOBJECT__ID = CREATE_NOTIFIER__ID;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1276,7 +1176,7 @@ public interface RetrieverPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int CREATE_DIRECT_EOBJECT__NAME = CREATE_NOTIFIER__NAME;
+  int CREATE_EOBJECT__NAME = CREATE_NOTIFIER__NAME;
 
   /**
    * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -1284,7 +1184,7 @@ public interface RetrieverPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int CREATE_DIRECT_EOBJECT__DESCRIPTION = CREATE_NOTIFIER__DESCRIPTION;
+  int CREATE_EOBJECT__DESCRIPTION = CREATE_NOTIFIER__DESCRIPTION;
 
   /**
    * The feature id for the '<em><b>Dynamic</b></em>' attribute.
@@ -1293,7 +1193,7 @@ public interface RetrieverPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int CREATE_DIRECT_EOBJECT__DYNAMIC = CREATE_NOTIFIER__DYNAMIC;
+  int CREATE_EOBJECT__DYNAMIC = CREATE_NOTIFIER__DYNAMIC;
 
   /**
    * The feature id for the '<em><b>Dynamic Precondition Expression</b></em>' attribute.
@@ -1302,7 +1202,7 @@ public interface RetrieverPackage extends EPackage {
    * @generated
    * @ordered
    */
-	int CREATE_DIRECT_EOBJECT__DYNAMIC_PRECONDITION_EXPRESSION = CREATE_NOTIFIER__DYNAMIC_PRECONDITION_EXPRESSION;
+	int CREATE_EOBJECT__DYNAMIC_PRECONDITION_EXPRESSION = CREATE_NOTIFIER__DYNAMIC_PRECONDITION_EXPRESSION;
 
 		/**
    * The feature id for the '<em><b>Owned Elements</b></em>' containment reference list.
@@ -1311,7 +1211,7 @@ public interface RetrieverPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int CREATE_DIRECT_EOBJECT__OWNED_ELEMENTS = CREATE_NOTIFIER__OWNED_ELEMENTS;
+  int CREATE_EOBJECT__OWNED_ELEMENTS = CREATE_NOTIFIER__OWNED_ELEMENTS;
 
   /**
    * The feature id for the '<em><b>Owned Services</b></em>' containment reference list.
@@ -1320,136 +1220,16 @@ public interface RetrieverPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int CREATE_DIRECT_EOBJECT__OWNED_SERVICES = CREATE_NOTIFIER__OWNED_SERVICES;
+  int CREATE_EOBJECT__OWNED_SERVICES = CREATE_NOTIFIER__OWNED_SERVICES;
 
   /**
    * The feature id for the '<em><b>Variable</b></em>' attribute.
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CREATE_DIRECT_EOBJECT__VARIABLE = CREATE_NOTIFIER__VARIABLE;
-
-  /**
-   * The feature id for the '<em><b>Class</b></em>' reference.
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CREATE_DIRECT_EOBJECT__CLASS = CREATE_NOTIFIER_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Containing Feature</b></em>' reference. <!-- begin-user-doc --> <!-- end-user-doc
-   * -->
-   * 
-   * @generated
-   * @ordered
-   */
-  int CREATE_DIRECT_EOBJECT__CONTAINING_FEATURE = CREATE_NOTIFIER_FEATURE_COUNT + 1;
-
-  /**
-   * The number of structural features of the '<em>Create Direct EObject</em>' class.
-   * <!-- begin-user-doc --> <!--
-   * end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CREATE_DIRECT_EOBJECT_FEATURE_COUNT = CREATE_NOTIFIER_FEATURE_COUNT + 2;
-
-  /**
-   * The number of operations of the '<em>Create Direct EObject</em>' class. <!-- begin-user-doc --> <!-- end-user-doc
-   * -->
-   * 
-   * @generated
-   * @ordered
-   */
-  int CREATE_DIRECT_EOBJECT_OPERATION_COUNT = CREATE_NOTIFIER_OPERATION_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Id</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CREATE_EOBJECT__ID = CREATE_DIRECT_EOBJECT__ID;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CREATE_EOBJECT__NAME = CREATE_DIRECT_EOBJECT__NAME;
-
-  /**
-   * The feature id for the '<em><b>Description</b></em>' attribute.
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CREATE_EOBJECT__DESCRIPTION = CREATE_DIRECT_EOBJECT__DESCRIPTION;
-
-  /**
-   * The feature id for the '<em><b>Dynamic</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CREATE_EOBJECT__DYNAMIC = CREATE_DIRECT_EOBJECT__DYNAMIC;
-
-  /**
-   * The feature id for the '<em><b>Dynamic Precondition Expression</b></em>' attribute.
-   * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-	int CREATE_EOBJECT__DYNAMIC_PRECONDITION_EXPRESSION = CREATE_DIRECT_EOBJECT__DYNAMIC_PRECONDITION_EXPRESSION;
-
-		/**
-   * The feature id for the '<em><b>Owned Elements</b></em>' containment reference list.
-   * <!-- begin-user-doc --> <!--
-   * end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CREATE_EOBJECT__OWNED_ELEMENTS = CREATE_DIRECT_EOBJECT__OWNED_ELEMENTS;
-
-  /**
-   * The feature id for the '<em><b>Owned Services</b></em>' containment reference list.
-   * <!-- begin-user-doc --> <!--
-   * end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CREATE_EOBJECT__OWNED_SERVICES = CREATE_DIRECT_EOBJECT__OWNED_SERVICES;
-
-  /**
-   * The feature id for the '<em><b>Variable</b></em>' attribute.
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CREATE_EOBJECT__VARIABLE = CREATE_DIRECT_EOBJECT__VARIABLE;
-
-  /**
-   * The feature id for the '<em><b>Class</b></em>' reference.
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CREATE_EOBJECT__CLASS = CREATE_DIRECT_EOBJECT__CLASS;
-
-  /**
-   * The feature id for the '<em><b>Containing Feature</b></em>' reference. <!-- begin-user-doc --> <!-- end-user-doc
-   * -->
-   * 
-   * @generated
-   * @ordered
-   */
-  int CREATE_EOBJECT__CONTAINING_FEATURE = CREATE_DIRECT_EOBJECT__CONTAINING_FEATURE;
+  int CREATE_EOBJECT__VARIABLE = CREATE_NOTIFIER__VARIABLE;
 
   /**
    * The feature id for the '<em><b>Container Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc
@@ -1458,7 +1238,24 @@ public interface RetrieverPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int CREATE_EOBJECT__CONTAINER_EXPRESSION = CREATE_DIRECT_EOBJECT_FEATURE_COUNT + 0;
+  int CREATE_EOBJECT__CONTAINER_EXPRESSION = CREATE_NOTIFIER_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Class</b></em>' reference.
+   * <!-- begin-user-doc --> <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CREATE_EOBJECT__CLASS = CREATE_NOTIFIER_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Containing Feature</b></em>' reference. <!-- begin-user-doc --> <!-- end-user-doc
+   * -->
+   * 
+   * @generated
+   * @ordered
+   */
+  int CREATE_EOBJECT__CONTAINING_FEATURE = CREATE_NOTIFIER_FEATURE_COUNT + 2;
 
   /**
    * The number of structural features of the '<em>Create EObject</em>' class. <!-- begin-user-doc --> <!-- end-user-doc
@@ -1467,7 +1264,7 @@ public interface RetrieverPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int CREATE_EOBJECT_FEATURE_COUNT = CREATE_DIRECT_EOBJECT_FEATURE_COUNT + 1;
+  int CREATE_EOBJECT_FEATURE_COUNT = CREATE_NOTIFIER_FEATURE_COUNT + 3;
 
   /**
    * The number of operations of the '<em>Create EObject</em>' class.
@@ -1475,7 +1272,7 @@ public interface RetrieverPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int CREATE_EOBJECT_OPERATION_COUNT = CREATE_DIRECT_EOBJECT_OPERATION_COUNT + 0;
+  int CREATE_EOBJECT_OPERATION_COUNT = CREATE_NOTIFIER_OPERATION_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -1644,100 +1441,6 @@ public interface RetrieverPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int CREATE_FILE__ID = CREATE_NOTIFIER__ID;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CREATE_FILE__NAME = CREATE_NOTIFIER__NAME;
-
-  /**
-   * The feature id for the '<em><b>Description</b></em>' attribute.
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CREATE_FILE__DESCRIPTION = CREATE_NOTIFIER__DESCRIPTION;
-
-  /**
-   * The feature id for the '<em><b>Dynamic</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CREATE_FILE__DYNAMIC = CREATE_NOTIFIER__DYNAMIC;
-
-  /**
-   * The feature id for the '<em><b>Dynamic Precondition Expression</b></em>' attribute.
-   * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-	int CREATE_FILE__DYNAMIC_PRECONDITION_EXPRESSION = CREATE_NOTIFIER__DYNAMIC_PRECONDITION_EXPRESSION;
-
-		/**
-   * The feature id for the '<em><b>Owned Elements</b></em>' containment reference list.
-   * <!-- begin-user-doc --> <!--
-   * end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CREATE_FILE__OWNED_ELEMENTS = CREATE_NOTIFIER__OWNED_ELEMENTS;
-
-  /**
-   * The feature id for the '<em><b>Owned Services</b></em>' containment reference list.
-   * <!-- begin-user-doc --> <!--
-   * end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CREATE_FILE__OWNED_SERVICES = CREATE_NOTIFIER__OWNED_SERVICES;
-
-  /**
-   * The feature id for the '<em><b>Variable</b></em>' attribute.
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CREATE_FILE__VARIABLE = CREATE_NOTIFIER__VARIABLE;
-
-  /**
-   * The feature id for the '<em><b>Uri</b></em>' attribute.
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CREATE_FILE__URI = CREATE_NOTIFIER_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Create File</em>' class. <!-- begin-user-doc --> <!-- end-user-doc
-   * -->
-   * 
-   * @generated
-   * @ordered
-   */
-  int CREATE_FILE_FEATURE_COUNT = CREATE_NOTIFIER_FEATURE_COUNT + 1;
-
-  /**
-   * The number of operations of the '<em>Create File</em>' class.
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CREATE_FILE_OPERATION_COUNT = CREATE_NOTIFIER_OPERATION_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Id</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
   int LOAD_RESOURCE__ID = CREATE_NOTIFIER__ID;
 
   /**
@@ -1794,7 +1497,8 @@ public interface RetrieverPackage extends EPackage {
 
   /**
    * The feature id for the '<em><b>Variable</b></em>' attribute.
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
@@ -1849,7 +1553,7 @@ public interface RetrieverPackage extends EPackage {
    * @see org.pdulvp.retriever.impl.RetrieverPackageImpl#getIf()
    * @generated
    */
-  int IF = 19;
+  int IF = 16;
 
   /**
    * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -1938,18 +1642,19 @@ public interface RetrieverPackage extends EPackage {
   int IF_OPERATION_COUNT = RETRIEVER_OPERATION_COUNT + 0;
 
   /**
-   * The meta object id for the '{@link org.pdulvp.retriever.IVariableElement <em>IVariable Element</em>}' class. <!--
-   * begin-user-doc --> <!-- end-user-doc -->
-   * 
+   * The meta object id for the '{@link org.pdulvp.retriever.IVariableElement <em>IVariable Element</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
    * @see org.pdulvp.retriever.IVariableElement
    * @see org.pdulvp.retriever.impl.RetrieverPackageImpl#getIVariableElement()
    * @generated
    */
-  int IVARIABLE_ELEMENT = 20;
+  int IVARIABLE_ELEMENT = 17;
 
   /**
    * The feature id for the '<em><b>Variable</b></em>' attribute.
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
@@ -1957,8 +1662,8 @@ public interface RetrieverPackage extends EPackage {
 
   /**
    * The number of structural features of the '<em>IVariable Element</em>' class.
-   * <!-- begin-user-doc --> <!--
-   * end-user-doc -->
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
@@ -1966,7 +1671,8 @@ public interface RetrieverPackage extends EPackage {
 
   /**
    * The number of operations of the '<em>IVariable Element</em>' class.
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
@@ -1980,7 +1686,7 @@ public interface RetrieverPackage extends EPackage {
    * @see org.pdulvp.retriever.impl.RetrieverPackageImpl#getIVariableResultElement()
    * @generated
    */
-  int IVARIABLE_RESULT_ELEMENT = 21;
+  int IVARIABLE_RESULT_ELEMENT = 18;
 
   /**
    * The feature id for the '<em><b>Variable Result</b></em>' attribute.
@@ -2008,16 +1714,6 @@ public interface RetrieverPackage extends EPackage {
    * @ordered
    */
   int IVARIABLE_RESULT_ELEMENT_OPERATION_COUNT = 0;
-
-  /**
-   * Returns the meta object for class '{@link org.pdulvp.retriever.RetrieverRoot <em>Root</em>}'.
-   * <!-- begin-user-doc
-   * --> <!-- end-user-doc -->
-   * @return the meta object for class '<em>Root</em>'.
-   * @see org.pdulvp.retriever.RetrieverRoot
-   * @generated
-   */
-  EClass getRetrieverRoot();
 
   /**
    * Returns the meta object for class '{@link org.pdulvp.retriever.Retriever <em>Retriever</em>}'.
@@ -2095,8 +1791,8 @@ public interface RetrieverPackage extends EPackage {
 
   /**
    * Returns the meta object for the containment reference list '{@link org.pdulvp.retriever.URLRetriever#getOwnedVariables <em>Owned Variables</em>}'.
-   * <!-- begin-user-doc --> <!--
-   * end-user-doc -->
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Owned Variables</em>'.
    * @see org.pdulvp.retriever.URLRetriever#getOwnedVariables()
    * @see #getURLRetriever()
@@ -2135,6 +1831,27 @@ public interface RetrieverPackage extends EPackage {
    * @generated
    */
   EAttribute getURLRetriever_AsSemantic();
+
+  /**
+   * Returns the meta object for class '{@link org.pdulvp.retriever.URIVariable <em>URI Variable</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>URI Variable</em>'.
+   * @see org.pdulvp.retriever.URIVariable
+   * @generated
+   */
+  EClass getURIVariable();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.pdulvp.retriever.URIVariable#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.pdulvp.retriever.URIVariable#getName()
+   * @see #getURIVariable()
+   * @generated
+   */
+  EAttribute getURIVariable_Name();
 
   /**
    * Returns the meta object for class '{@link org.pdulvp.retriever.ElementRetriever <em>Element Retriever</em>}'. <!--
@@ -2194,27 +1911,6 @@ public interface RetrieverPackage extends EPackage {
    * @generated
    */
   EReference getAttributeRetriever_Service();
-
-  /**
-   * Returns the meta object for class '{@link org.pdulvp.retriever.URIVariable <em>URI Variable</em>}'. <!--
-   * begin-user-doc --> <!-- end-user-doc -->
-   * 
-   * @return the meta object for class '<em>URI Variable</em>'.
-   * @see org.pdulvp.retriever.URIVariable
-   * @generated
-   */
-  EClass getURIVariable();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.pdulvp.retriever.URIVariable#getName <em>Name</em>}'. <!--
-   * begin-user-doc --> <!-- end-user-doc -->
-   * 
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see org.pdulvp.retriever.URIVariable#getName()
-   * @see #getURIVariable()
-   * @generated
-   */
-  EAttribute getURIVariable_Name();
 
   /**
    * Returns the meta object for class '{@link org.pdulvp.retriever.TransformationRetriever <em>Transformation Retriever</em>}'.
@@ -2366,33 +2062,26 @@ public interface RetrieverPackage extends EPackage {
   EAttribute getCreateEObject_ContainerExpression();
 
   /**
-   * Returns the meta object for class '{@link org.pdulvp.retriever.CreateDirectEObject <em>Create Direct EObject</em>}'.
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * @return the meta object for class '<em>Create Direct EObject</em>'.
-   * @see org.pdulvp.retriever.CreateDirectEObject
-   * @generated
-   */
-  EClass getCreateDirectEObject();
-
-  /**
-   * Returns the meta object for the reference '{@link org.pdulvp.retriever.CreateDirectEObject#getClass_ <em>Class</em>}'.
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
+   * Returns the meta object for the reference '{@link org.pdulvp.retriever.CreateEObject#getClass_ <em>Class</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
    * @return the meta object for the reference '<em>Class</em>'.
-   * @see org.pdulvp.retriever.CreateDirectEObject#getClass_()
-   * @see #getCreateDirectEObject()
+   * @see org.pdulvp.retriever.CreateEObject#getClass_()
+   * @see #getCreateEObject()
    * @generated
    */
-  EReference getCreateDirectEObject_Class();
+  EReference getCreateEObject_Class();
 
   /**
-   * Returns the meta object for the reference '{@link org.pdulvp.retriever.CreateDirectEObject#getContainingFeature <em>Containing Feature</em>}'.
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
+   * Returns the meta object for the reference '{@link org.pdulvp.retriever.CreateEObject#getContainingFeature <em>Containing Feature</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
    * @return the meta object for the reference '<em>Containing Feature</em>'.
-   * @see org.pdulvp.retriever.CreateDirectEObject#getContainingFeature()
-   * @see #getCreateDirectEObject()
+   * @see org.pdulvp.retriever.CreateEObject#getContainingFeature()
+   * @see #getCreateEObject()
    * @generated
    */
-  EReference getCreateDirectEObject_ContainingFeature();
+  EReference getCreateEObject_ContainingFeature();
 
   /**
    * Returns the meta object for class '{@link org.pdulvp.retriever.CreateEReference <em>Create EReference</em>}'. <!--
@@ -2538,27 +2227,6 @@ public interface RetrieverPackage extends EPackage {
 	EAttribute getSetVariable_Log();
 
 		/**
-   * Returns the meta object for class '{@link org.pdulvp.retriever.CreateFile <em>Create File</em>}'. <!--
-   * begin-user-doc --> <!-- end-user-doc -->
-   * 
-   * @return the meta object for class '<em>Create File</em>'.
-   * @see org.pdulvp.retriever.CreateFile
-   * @generated
-   */
-  EClass getCreateFile();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.pdulvp.retriever.CreateFile#getUri <em>Uri</em>}'. <!--
-   * begin-user-doc --> <!-- end-user-doc -->
-   * 
-   * @return the meta object for the attribute '<em>Uri</em>'.
-   * @see org.pdulvp.retriever.CreateFile#getUri()
-   * @see #getCreateFile()
-   * @generated
-   */
-  EAttribute getCreateFile_Uri();
-
-  /**
    * Returns the meta object for class '{@link org.pdulvp.retriever.CreateNotifier <em>Create Notifier</em>}'. <!--
    * begin-user-doc --> <!-- end-user-doc -->
    * 
@@ -2589,9 +2257,9 @@ public interface RetrieverPackage extends EPackage {
   EAttribute getIf_ConditionExpression();
 
   /**
-   * Returns the meta object for class '{@link org.pdulvp.retriever.IVariableElement <em>IVariable Element</em>}'. <!--
-   * begin-user-doc --> <!-- end-user-doc -->
-   * 
+   * Returns the meta object for class '{@link org.pdulvp.retriever.IVariableElement <em>IVariable Element</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
    * @return the meta object for class '<em>IVariable Element</em>'.
    * @see org.pdulvp.retriever.IVariableElement
    * @generated
@@ -2600,7 +2268,8 @@ public interface RetrieverPackage extends EPackage {
 
   /**
    * Returns the meta object for the attribute '{@link org.pdulvp.retriever.IVariableElement#getVariable <em>Variable</em>}'.
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Variable</em>'.
    * @see org.pdulvp.retriever.IVariableElement#getVariable()
    * @see #getIVariableElement()
@@ -2650,16 +2319,6 @@ public interface RetrieverPackage extends EPackage {
    * @generated
    */
   interface Literals {
-    /**
-     * The meta object literal for the '{@link org.pdulvp.retriever.impl.RetrieverRootImpl <em>Root</em>}' class. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
-     * 
-     * @see org.pdulvp.retriever.impl.RetrieverRootImpl
-     * @see org.pdulvp.retriever.impl.RetrieverPackageImpl#getRetrieverRoot()
-     * @generated
-     */
-    EClass RETRIEVER_ROOT = eINSTANCE.getRetrieverRoot();
-
     /**
      * The meta object literal for the '{@link org.pdulvp.retriever.impl.RetrieverImpl <em>Retriever</em>}' class. <!--
      * begin-user-doc --> <!-- end-user-doc -->
@@ -2720,9 +2379,9 @@ public interface RetrieverPackage extends EPackage {
     EClass URL_RETRIEVER = eINSTANCE.getURLRetriever();
 
     /**
-     * The meta object literal for the '<em><b>Owned Variables</b></em>' containment reference list feature. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
-     * 
+     * The meta object literal for the '<em><b>Owned Variables</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
     EReference URL_RETRIEVER__OWNED_VARIABLES = eINSTANCE.getURLRetriever_OwnedVariables();
@@ -2750,6 +2409,24 @@ public interface RetrieverPackage extends EPackage {
      * @generated
      */
     EAttribute URL_RETRIEVER__AS_SEMANTIC = eINSTANCE.getURLRetriever_AsSemantic();
+
+    /**
+     * The meta object literal for the '{@link org.pdulvp.retriever.impl.URIVariableImpl <em>URI Variable</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.pdulvp.retriever.impl.URIVariableImpl
+     * @see org.pdulvp.retriever.impl.RetrieverPackageImpl#getURIVariable()
+     * @generated
+     */
+    EClass URI_VARIABLE = eINSTANCE.getURIVariable();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute URI_VARIABLE__NAME = eINSTANCE.getURIVariable_Name();
 
     /**
      * The meta object literal for the '{@link org.pdulvp.retriever.impl.ElementRetrieverImpl <em>Element Retriever</em>}' class.
@@ -2800,23 +2477,6 @@ public interface RetrieverPackage extends EPackage {
      * @generated
      */
     EReference ATTRIBUTE_RETRIEVER__SERVICE = eINSTANCE.getAttributeRetriever_Service();
-
-    /**
-     * The meta object literal for the '{@link org.pdulvp.retriever.impl.URIVariableImpl <em>URI Variable</em>}' class.
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * @see org.pdulvp.retriever.impl.URIVariableImpl
-     * @see org.pdulvp.retriever.impl.RetrieverPackageImpl#getURIVariable()
-     * @generated
-     */
-    EClass URI_VARIABLE = eINSTANCE.getURIVariable();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc --> <!--
-     * end-user-doc -->
-     * @generated
-     */
-    EAttribute URI_VARIABLE__NAME = eINSTANCE.getURIVariable_Name();
 
     /**
      * The meta object literal for the '{@link org.pdulvp.retriever.impl.TransformationRetrieverImpl <em>Transformation Retriever</em>}' class.
@@ -2946,21 +2606,12 @@ public interface RetrieverPackage extends EPackage {
     EAttribute CREATE_EOBJECT__CONTAINER_EXPRESSION = eINSTANCE.getCreateEObject_ContainerExpression();
 
     /**
-     * The meta object literal for the '{@link org.pdulvp.retriever.impl.CreateDirectEObjectImpl <em>Create Direct EObject</em>}' class.
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * @see org.pdulvp.retriever.impl.CreateDirectEObjectImpl
-     * @see org.pdulvp.retriever.impl.RetrieverPackageImpl#getCreateDirectEObject()
-     * @generated
-     */
-    EClass CREATE_DIRECT_EOBJECT = eINSTANCE.getCreateDirectEObject();
-
-    /**
      * The meta object literal for the '<em><b>Class</b></em>' reference feature.
-     * <!-- begin-user-doc --> <!--
-     * end-user-doc -->
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-    EReference CREATE_DIRECT_EOBJECT__CLASS = eINSTANCE.getCreateDirectEObject_Class();
+    EReference CREATE_EOBJECT__CLASS = eINSTANCE.getCreateEObject_Class();
 
     /**
      * The meta object literal for the '<em><b>Containing Feature</b></em>' reference feature.
@@ -2968,7 +2619,7 @@ public interface RetrieverPackage extends EPackage {
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference CREATE_DIRECT_EOBJECT__CONTAINING_FEATURE = eINSTANCE.getCreateDirectEObject_ContainingFeature();
+    EReference CREATE_EOBJECT__CONTAINING_FEATURE = eINSTANCE.getCreateEObject_ContainingFeature();
 
     /**
      * The meta object literal for the '{@link org.pdulvp.retriever.impl.CreateEReferenceImpl <em>Create EReference</em>}' class.
@@ -3087,23 +2738,6 @@ public interface RetrieverPackage extends EPackage {
 		EAttribute SET_VARIABLE__LOG = eINSTANCE.getSetVariable_Log();
 
 				/**
-     * The meta object literal for the '{@link org.pdulvp.retriever.impl.CreateFileImpl <em>Create File</em>}' class.
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * @see org.pdulvp.retriever.impl.CreateFileImpl
-     * @see org.pdulvp.retriever.impl.RetrieverPackageImpl#getCreateFile()
-     * @generated
-     */
-    EClass CREATE_FILE = eINSTANCE.getCreateFile();
-
-    /**
-     * The meta object literal for the '<em><b>Uri</b></em>' attribute feature.
-     * <!-- begin-user-doc --> <!--
-     * end-user-doc -->
-     * @generated
-     */
-    EAttribute CREATE_FILE__URI = eINSTANCE.getCreateFile_Uri();
-
-    /**
      * The meta object literal for the '{@link org.pdulvp.retriever.impl.CreateNotifierImpl <em>Create Notifier</em>}' class.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
      * @see org.pdulvp.retriever.impl.CreateNotifierImpl
@@ -3132,7 +2766,8 @@ public interface RetrieverPackage extends EPackage {
 
     /**
      * The meta object literal for the '{@link org.pdulvp.retriever.IVariableElement <em>IVariable Element</em>}' class.
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @see org.pdulvp.retriever.IVariableElement
      * @see org.pdulvp.retriever.impl.RetrieverPackageImpl#getIVariableElement()
      * @generated
@@ -3141,8 +2776,8 @@ public interface RetrieverPackage extends EPackage {
 
     /**
      * The meta object literal for the '<em><b>Variable</b></em>' attribute feature.
-     * <!-- begin-user-doc --> <!--
-     * end-user-doc -->
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
     EAttribute IVARIABLE_ELEMENT__VARIABLE = eINSTANCE.getIVariableElement_Variable();

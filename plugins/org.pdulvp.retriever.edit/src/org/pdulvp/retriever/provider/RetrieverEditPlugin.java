@@ -2,6 +2,8 @@
  */
 package org.pdulvp.retriever.provider;
 
+import java.io.IOException;
+
 import org.eclipse.emf.common.EMFPlugin;
 
 import org.eclipse.emf.common.util.ResourceLocator;
@@ -86,6 +88,14 @@ public final class RetrieverEditPlugin extends EMFPlugin {
       //
       plugin = this;
     }
+
+	  /**
+	   * @generated NOT
+	   */
+		@Override
+		protected Object doGetImage(String key) throws IOException {
+		  return super.doGetImage(key + ".png");
+		}
 	}
 
 }

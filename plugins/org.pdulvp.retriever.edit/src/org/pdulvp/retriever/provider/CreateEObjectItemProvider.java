@@ -10,7 +10,9 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.StyledString;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+import org.eclipse.emf.edit.provider.StyledString.Style;
 import org.pdulvp.retriever.CreateEObject;
 import org.pdulvp.retriever.RetrieverPackage;
 
@@ -20,7 +22,7 @@ import org.pdulvp.retriever.RetrieverPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class CreateEObjectItemProvider extends CreateDirectEObjectItemProvider {
+public class CreateEObjectItemProvider extends CreateNotifierItemProvider {
   /**
    * This constructs an instance from a factory and a notifier.
    * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -41,6 +43,8 @@ public class CreateEObjectItemProvider extends CreateDirectEObjectItemProvider {
       super.getPropertyDescriptors(object);
 
       addContainerExpressionPropertyDescriptor(object);
+      addClassPropertyDescriptor(object);
+      addContainingFeaturePropertyDescriptor(object);
     }
     return itemPropertyDescriptors;
   }
@@ -62,6 +66,50 @@ public class CreateEObjectItemProvider extends CreateDirectEObjectItemProvider {
          false,
          false,
          ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+         null,
+         null));
+  }
+
+  /**
+   * This adds a property descriptor for the Class feature.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  protected void addClassPropertyDescriptor(Object object) {
+    itemPropertyDescriptors.add
+      (createItemPropertyDescriptor
+        (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+         getResourceLocator(),
+         getString("_UI_CreateEObject_class_feature"),
+         getString("_UI_PropertyDescriptor_description", "_UI_CreateEObject_class_feature", "_UI_CreateEObject_type"),
+         RetrieverPackage.Literals.CREATE_EOBJECT__CLASS,
+         true,
+         false,
+         true,
+         null,
+         null,
+         null));
+  }
+
+  /**
+   * This adds a property descriptor for the Containing Feature feature.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  protected void addContainingFeaturePropertyDescriptor(Object object) {
+    itemPropertyDescriptors.add
+      (createItemPropertyDescriptor
+        (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+         getResourceLocator(),
+         getString("_UI_CreateEObject_containingFeature_feature"),
+         getString("_UI_PropertyDescriptor_description", "_UI_CreateEObject_containingFeature_feature", "_UI_CreateEObject_type"),
+         RetrieverPackage.Literals.CREATE_EOBJECT__CONTAINING_FEATURE,
+         true,
+         false,
+         true,
+         null,
          null,
          null));
   }
@@ -93,15 +141,28 @@ public class CreateEObjectItemProvider extends CreateDirectEObjectItemProvider {
   @Override
   public String getText(Object object) {
     try {
-      String label = ((CreateEObject) object).getVariable() + " = new " + ((CreateEObject) object).getClass_().getName()
-          + "";
+      String label = ((CreateEObject) object).getVariable() + " = new " + ((CreateEObject) object).getClass_().getName();
       return label;
     } catch (Exception e) {
       String label = ((CreateEObject) object).getVariable() + " " + "<unset>";
       return label;
-
     }
+  }
 
+  /**
+   * This returns the label styled text for the adapted class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated NOT
+   */
+  @Override
+  public Object getStyledText(Object object) {
+    StyledString result = new StyledString();
+    String value = getText(object);
+    int first = value.indexOf("=");
+    result.append(value.substring(0, first), Style.NO_STYLE);
+    result.append(value.substring(first), Style.DECORATIONS_STYLER);
+    return result;
   }
 
   /**

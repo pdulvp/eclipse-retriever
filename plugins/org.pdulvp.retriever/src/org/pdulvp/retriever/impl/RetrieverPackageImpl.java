@@ -10,11 +10,9 @@ import org.eclipse.emf.ecore.EcorePackage;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.pdulvp.retriever.AttributeRetriever;
-import org.pdulvp.retriever.CreateDirectEObject;
 import org.pdulvp.retriever.CreateEAttribute;
 import org.pdulvp.retriever.CreateEObject;
 import org.pdulvp.retriever.CreateEReference;
-import org.pdulvp.retriever.CreateFile;
 import org.pdulvp.retriever.CreateNotifier;
 import org.pdulvp.retriever.ElementRetriever;
 import org.pdulvp.retriever.IVariableElement;
@@ -27,7 +25,6 @@ import org.pdulvp.retriever.RetrieverContainer;
 import org.pdulvp.retriever.RetrieverFactory;
 import org.pdulvp.retriever.RetrieverPackage;
 import org.pdulvp.retriever.RetrieverPkg;
-import org.pdulvp.retriever.RetrieverRoot;
 import org.pdulvp.retriever.SetVariable;
 import org.pdulvp.retriever.TransformationRetriever;
 import org.pdulvp.retriever.TransformationService;
@@ -43,13 +40,6 @@ import org.pdulvp.retriever.result.impl.ResultPackageImpl;
  * @generated
  */
 public class RetrieverPackageImpl extends EPackageImpl implements RetrieverPackage {
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass retrieverRootEClass = null;
-
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -139,13 +129,6 @@ public class RetrieverPackageImpl extends EPackageImpl implements RetrieverPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass createDirectEObjectEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   private EClass createEReferenceEClass = null;
 
   /**
@@ -154,13 +137,6 @@ public class RetrieverPackageImpl extends EPackageImpl implements RetrieverPacka
    * @generated
    */
   private EClass createEAttributeEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass createFileEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -265,16 +241,6 @@ public class RetrieverPackageImpl extends EPackageImpl implements RetrieverPacka
     // Update the registry and return the package
     EPackage.Registry.INSTANCE.put(RetrieverPackage.eNS_URI, theRetrieverPackage);
     return theRetrieverPackage;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-		public EClass getRetrieverRoot() {
-    return retrieverRootEClass;
   }
 
   /**
@@ -393,7 +359,7 @@ public class RetrieverPackageImpl extends EPackageImpl implements RetrieverPacka
    * @generated
    */
   @Override
-		public EReference getURLRetriever_OwnedVariables() {
+  public EReference getURLRetriever_OwnedVariables() {
     return (EReference)urlRetrieverEClass.getEStructuralFeatures().get(0);
   }
 
@@ -433,7 +399,7 @@ public class RetrieverPackageImpl extends EPackageImpl implements RetrieverPacka
    * @generated
    */
   @Override
-		public EClass getURIVariable() {
+  public EClass getURIVariable() {
     return uriVariableEClass;
   }
 
@@ -443,7 +409,7 @@ public class RetrieverPackageImpl extends EPackageImpl implements RetrieverPacka
    * @generated
    */
   @Override
-		public EAttribute getURIVariable_Name() {
+  public EAttribute getURIVariable_Name() {
     return (EAttribute)uriVariableEClass.getEStructuralFeatures().get(0);
   }
 
@@ -653,8 +619,8 @@ public class RetrieverPackageImpl extends EPackageImpl implements RetrieverPacka
    * @generated
    */
   @Override
-		public EClass getCreateDirectEObject() {
-    return createDirectEObjectEClass;
+  public EReference getCreateEObject_Class() {
+    return (EReference)createEObjectEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -663,18 +629,8 @@ public class RetrieverPackageImpl extends EPackageImpl implements RetrieverPacka
    * @generated
    */
   @Override
-		public EReference getCreateDirectEObject_Class() {
-    return (EReference)createDirectEObjectEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-		public EReference getCreateDirectEObject_ContainingFeature() {
-    return (EReference)createDirectEObjectEClass.getEStructuralFeatures().get(1);
+  public EReference getCreateEObject_ContainingFeature() {
+    return (EReference)createEObjectEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -753,26 +709,6 @@ public class RetrieverPackageImpl extends EPackageImpl implements RetrieverPacka
    * @generated
    */
   @Override
-		public EClass getCreateFile() {
-    return createFileEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-		public EAttribute getCreateFile_Uri() {
-    return (EAttribute)createFileEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
 		public EClass getCreateNotifier() {
     return createNotifierEClass;
   }
@@ -843,7 +779,7 @@ public class RetrieverPackageImpl extends EPackageImpl implements RetrieverPacka
    * @generated
    */
   @Override
-		public EClass getIVariableElement() {
+  public EClass getIVariableElement() {
     return iVariableElementEClass;
   }
 
@@ -853,7 +789,7 @@ public class RetrieverPackageImpl extends EPackageImpl implements RetrieverPacka
    * @generated
    */
   @Override
-		public EAttribute getIVariableElement_Variable() {
+  public EAttribute getIVariableElement_Variable() {
     return (EAttribute)iVariableElementEClass.getEStructuralFeatures().get(0);
   }
 
@@ -863,7 +799,7 @@ public class RetrieverPackageImpl extends EPackageImpl implements RetrieverPacka
    * @generated
    */
   @Override
-		public EClass getIVariableResultElement() {
+  public EClass getIVariableResultElement() {
     return iVariableResultElementEClass;
   }
 
@@ -873,7 +809,7 @@ public class RetrieverPackageImpl extends EPackageImpl implements RetrieverPacka
    * @generated
    */
   @Override
-		public EAttribute getIVariableResultElement_VariableResult() {
+  public EAttribute getIVariableResultElement_VariableResult() {
     return (EAttribute)iVariableResultElementEClass.getEStructuralFeatures().get(0);
   }
 
@@ -906,8 +842,6 @@ public class RetrieverPackageImpl extends EPackageImpl implements RetrieverPacka
     isCreated = true;
 
     // Create classes and their features
-    retrieverRootEClass = createEClass(RETRIEVER_ROOT);
-
     retrieverPkgEClass = createEClass(RETRIEVER_PKG);
 
     retrieverContainerEClass = createEClass(RETRIEVER_CONTAINER);
@@ -956,10 +890,8 @@ public class RetrieverPackageImpl extends EPackageImpl implements RetrieverPacka
 
     createEObjectEClass = createEClass(CREATE_EOBJECT);
     createEAttribute(createEObjectEClass, CREATE_EOBJECT__CONTAINER_EXPRESSION);
-
-    createDirectEObjectEClass = createEClass(CREATE_DIRECT_EOBJECT);
-    createEReference(createDirectEObjectEClass, CREATE_DIRECT_EOBJECT__CLASS);
-    createEReference(createDirectEObjectEClass, CREATE_DIRECT_EOBJECT__CONTAINING_FEATURE);
+    createEReference(createEObjectEClass, CREATE_EOBJECT__CLASS);
+    createEReference(createEObjectEClass, CREATE_EOBJECT__CONTAINING_FEATURE);
 
     createEReferenceEClass = createEClass(CREATE_EREFERENCE);
     createEReference(createEReferenceEClass, CREATE_EREFERENCE__FEATURE);
@@ -969,9 +901,6 @@ public class RetrieverPackageImpl extends EPackageImpl implements RetrieverPacka
     createEAttributeEClass = createEClass(CREATE_EATTRIBUTE);
     createEReference(createEAttributeEClass, CREATE_EATTRIBUTE__FEATURE);
     createEAttribute(createEAttributeEClass, CREATE_EATTRIBUTE__VALUE_EXPRESSION);
-
-    createFileEClass = createEClass(CREATE_FILE);
-    createEAttribute(createFileEClass, CREATE_FILE__URI);
 
     createNotifierEClass = createEClass(CREATE_NOTIFIER);
 
@@ -1025,7 +954,6 @@ public class RetrieverPackageImpl extends EPackageImpl implements RetrieverPacka
     // Set bounds for type parameters
 
     // Add supertypes to classes
-    retrieverRootEClass.getESuperTypes().add(this.getRetrieverContainer());
     retrieverPkgEClass.getESuperTypes().add(this.getRetrieverContainer());
     retrieverContainerEClass.getESuperTypes().add(this.getRetriever());
     urlRetrieverEClass.getESuperTypes().add(this.getRetriever());
@@ -1041,11 +969,9 @@ public class RetrieverPackageImpl extends EPackageImpl implements RetrieverPacka
     transformationRetrieverEClass.getESuperTypes().add(this.getRetrieverContainer());
     referencedRetrieverEClass.getESuperTypes().add(this.getRetriever());
     setVariableEClass.getESuperTypes().add(this.getCreateNotifier());
-    createEObjectEClass.getESuperTypes().add(this.getCreateDirectEObject());
-    createDirectEObjectEClass.getESuperTypes().add(this.getCreateNotifier());
+    createEObjectEClass.getESuperTypes().add(this.getCreateNotifier());
     createEReferenceEClass.getESuperTypes().add(this.getRetriever());
     createEAttributeEClass.getESuperTypes().add(this.getRetriever());
-    createFileEClass.getESuperTypes().add(this.getCreateNotifier());
     createNotifierEClass.getESuperTypes().add(this.getRetriever());
     createNotifierEClass.getESuperTypes().add(this.getRetrieverContainer());
     createNotifierEClass.getESuperTypes().add(this.getIVariableElement());
@@ -1054,11 +980,9 @@ public class RetrieverPackageImpl extends EPackageImpl implements RetrieverPacka
     ifEClass.getESuperTypes().add(this.getRetrieverContainer());
 
     // Initialize classes, features, and operations; add parameters
-    initEClass(retrieverRootEClass, RetrieverRoot.class, "RetrieverRoot", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
     initEClass(retrieverPkgEClass, RetrieverPkg.class, "RetrieverPkg", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-    initEClass(retrieverContainerEClass, RetrieverContainer.class, "RetrieverContainer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEClass(retrieverContainerEClass, RetrieverContainer.class, "RetrieverContainer", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getRetrieverContainer_OwnedElements(), this.getRetriever(), null, "ownedElements", null, 0, -1, RetrieverContainer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getRetrieverContainer_OwnedServices(), this.getTransformationService(), null, "ownedServices", null, 0, -1, RetrieverContainer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -1075,7 +999,7 @@ public class RetrieverPackageImpl extends EPackageImpl implements RetrieverPacka
     initEAttribute(getURLRetriever_CacheControl(), ecorePackage.getEString(), "cacheControl", null, 0, 1, URLRetriever.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getURLRetriever_AsSemantic(), ecorePackage.getEBoolean(), "asSemantic", "true", 0, 1, URLRetriever.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(uriVariableEClass, URIVariable.class, "URIVariable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEClass(uriVariableEClass, URIVariable.class, "URIVariable", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getURIVariable_Name(), ecorePackage.getEString(), "name", null, 0, 1, URIVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(elementRetrieverEClass, ElementRetriever.class, "ElementRetriever", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1104,10 +1028,8 @@ public class RetrieverPackageImpl extends EPackageImpl implements RetrieverPacka
 
     initEClass(createEObjectEClass, CreateEObject.class, "CreateEObject", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getCreateEObject_ContainerExpression(), ecorePackage.getEString(), "containerExpression", null, 0, 1, CreateEObject.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(createDirectEObjectEClass, CreateDirectEObject.class, "CreateDirectEObject", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getCreateDirectEObject_Class(), theEcorePackage.getEClass(), null, "class", null, 0, 1, CreateDirectEObject.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getCreateDirectEObject_ContainingFeature(), theEcorePackage.getEReference(), null, "containingFeature", null, 0, 1, CreateDirectEObject.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getCreateEObject_Class(), theEcorePackage.getEClass(), null, "class", null, 0, 1, CreateEObject.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getCreateEObject_ContainingFeature(), theEcorePackage.getEReference(), null, "containingFeature", null, 0, 1, CreateEObject.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(createEReferenceEClass, CreateEReference.class, "CreateEReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getCreateEReference_Feature(), theEcorePackage.getEReference(), null, "feature", null, 0, 1, CreateEReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1117,9 +1039,6 @@ public class RetrieverPackageImpl extends EPackageImpl implements RetrieverPacka
     initEClass(createEAttributeEClass, CreateEAttribute.class, "CreateEAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getCreateEAttribute_Feature(), theEcorePackage.getEAttribute(), null, "feature", null, 0, 1, CreateEAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getCreateEAttribute_ValueExpression(), ecorePackage.getEString(), "valueExpression", null, 0, 1, CreateEAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(createFileEClass, CreateFile.class, "CreateFile", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getCreateFile_Uri(), ecorePackage.getEString(), "uri", null, 0, 1, CreateFile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(createNotifierEClass, CreateNotifier.class, "CreateNotifier", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

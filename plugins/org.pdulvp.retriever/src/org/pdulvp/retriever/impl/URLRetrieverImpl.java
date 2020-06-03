@@ -66,22 +66,22 @@ public class URLRetrieverImpl extends RetrieverImpl implements URLRetriever {
   /**
    * The default value of the '{@link #getVariable() <em>Variable</em>}' attribute.
    * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+   * <!-- end-user-doc -->
    * @see #getVariable()
    * @generated
    * @ordered
    */
-	protected static final String VARIABLE_EDEFAULT = null;
+  protected static final String VARIABLE_EDEFAULT = null;
 
   /**
    * The cached value of the '{@link #getVariable() <em>Variable</em>}' attribute.
    * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+   * <!-- end-user-doc -->
    * @see #getVariable()
    * @generated
    * @ordered
    */
-	protected String variable = VARIABLE_EDEFAULT;
+  protected String variable = VARIABLE_EDEFAULT;
 
   /**
    * The default value of the '{@link #getVariableResult() <em>Variable Result</em>}' attribute.
@@ -224,6 +224,65 @@ public class URLRetrieverImpl extends RetrieverImpl implements URLRetriever {
    * @generated
    */
   @Override
+  public String getVariable() {
+    return variable;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setVariable(String newVariable) {
+    String oldVariable = variable;
+    variable = newVariable;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, RetrieverPackage.URL_RETRIEVER__VARIABLE, oldVariable, variable));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getVariableResult() {
+    return variableResult;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setVariableResult(String newVariableResult) {
+    String oldVariableResult = variableResult;
+    variableResult = newVariableResult;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, RetrieverPackage.URL_RETRIEVER__VARIABLE_RESULT, oldVariableResult, variableResult));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EList<URIVariable> getOwnedVariables() {
+    if (ownedVariables == null) {
+      ownedVariables = new EObjectContainmentEList<URIVariable>(URIVariable.class, this, RetrieverPackage.URL_RETRIEVER__OWNED_VARIABLES);
+    }
+    return ownedVariables;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
 		public String getUriExpression() {
     return uriExpression;
   }
@@ -285,65 +344,6 @@ public class URLRetrieverImpl extends RetrieverImpl implements URLRetriever {
     asSemantic = newAsSemantic;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, RetrieverPackage.URL_RETRIEVER__AS_SEMANTIC, oldAsSemantic, asSemantic));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-   * @generated
-   */
-	@Override
-	public String getVariable() {
-    return variable;
-  }
-
-	/**
-   * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-   * @generated
-   */
-	@Override
-	public void setVariable(String newVariable) {
-    String oldVariable = variable;
-    variable = newVariable;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, RetrieverPackage.URL_RETRIEVER__VARIABLE, oldVariable, variable));
-  }
-
-	/**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-		public String getVariableResult() {
-    return variableResult;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-		public void setVariableResult(String newVariableResult) {
-    String oldVariableResult = variableResult;
-    variableResult = newVariableResult;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, RetrieverPackage.URL_RETRIEVER__VARIABLE_RESULT, oldVariableResult, variableResult));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-		public EList<URIVariable> getOwnedVariables() {
-    if (ownedVariables == null) {
-      ownedVariables = new EObjectContainmentEList<URIVariable>(URIVariable.class, this, RetrieverPackage.URL_RETRIEVER__OWNED_VARIABLES);
-    }
-    return ownedVariables;
   }
 
   /**

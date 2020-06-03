@@ -11,7 +11,10 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.StyledString;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+import org.eclipse.emf.edit.provider.StyledString.Style;
+import org.eclipse.osgi.util.NLS;
 import org.pdulvp.retriever.RetrieverFactory;
 import org.pdulvp.retriever.RetrieverPackage;
 import org.pdulvp.retriever.URLRetriever;
@@ -49,6 +52,50 @@ public class URLRetrieverItemProvider extends RetrieverItemProvider {
       addAsSemanticPropertyDescriptor(object);
     }
     return itemPropertyDescriptors;
+  }
+
+  /**
+   * This adds a property descriptor for the Variable feature.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  protected void addVariablePropertyDescriptor(Object object) {
+    itemPropertyDescriptors.add
+      (createItemPropertyDescriptor
+        (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+         getResourceLocator(),
+         getString("_UI_IVariableElement_variable_feature"),
+         getString("_UI_PropertyDescriptor_description", "_UI_IVariableElement_variable_feature", "_UI_IVariableElement_type"),
+         RetrieverPackage.Literals.IVARIABLE_ELEMENT__VARIABLE,
+         true,
+         false,
+         false,
+         ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+         null,
+         null));
+  }
+
+  /**
+   * This adds a property descriptor for the Variable Result feature.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  protected void addVariableResultPropertyDescriptor(Object object) {
+    itemPropertyDescriptors.add
+      (createItemPropertyDescriptor
+        (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+         getResourceLocator(),
+         getString("_UI_IVariableResultElement_variableResult_feature"),
+         getString("_UI_PropertyDescriptor_description", "_UI_IVariableResultElement_variableResult_feature", "_UI_IVariableResultElement_type"),
+         RetrieverPackage.Literals.IVARIABLE_RESULT_ELEMENT__VARIABLE_RESULT,
+         true,
+         false,
+         false,
+         ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+         null,
+         null));
   }
 
   /**
@@ -117,49 +164,6 @@ public class URLRetrieverItemProvider extends RetrieverItemProvider {
   }
 
   /**
-   * This adds a property descriptor for the Variable feature.
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * @generated
-   */
-  protected void addVariablePropertyDescriptor(Object object) {
-    itemPropertyDescriptors.add
-      (createItemPropertyDescriptor
-        (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-         getResourceLocator(),
-         getString("_UI_IVariableElement_variable_feature"),
-         getString("_UI_PropertyDescriptor_description", "_UI_IVariableElement_variable_feature", "_UI_IVariableElement_type"),
-         RetrieverPackage.Literals.IVARIABLE_ELEMENT__VARIABLE,
-         true,
-         false,
-         false,
-         ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-         null,
-         null));
-  }
-
-  /**
-   * This adds a property descriptor for the Variable Result feature.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected void addVariableResultPropertyDescriptor(Object object) {
-    itemPropertyDescriptors.add
-      (createItemPropertyDescriptor
-        (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-         getResourceLocator(),
-         getString("_UI_IVariableResultElement_variableResult_feature"),
-         getString("_UI_PropertyDescriptor_description", "_UI_IVariableResultElement_variableResult_feature", "_UI_IVariableResultElement_type"),
-         RetrieverPackage.Literals.IVARIABLE_RESULT_ELEMENT__VARIABLE_RESULT,
-         true,
-         false,
-         false,
-         ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-         null,
-         null));
-  }
-
-  /**
    * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
    * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
    * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -216,10 +220,23 @@ public class URLRetrieverItemProvider extends RetrieverItemProvider {
    */
   @Override
   public String getText(Object object) {
-    String label = ((URLRetriever)object).getName();
-    return label == null || label.length() == 0 ?
-      getString("_UI_URLRetriever_type") :
-      label;
+    return NLS.bind("{0} - {1}", ((URLRetriever) object).getName(), ((URLRetriever) object).getUriExpression());
+  }
+
+  /**
+   * This returns the label styled text for the adapted class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated NOT
+   */
+  @Override
+  public Object getStyledText(Object object) {
+    StyledString result = new StyledString();
+    String value = getText(object);
+    int first = value.indexOf("-");
+    result.append(value.substring(0, first), Style.NO_STYLE);
+    result.append(value.substring(first), Style.DECORATIONS_STYLER);
+    return result;
   }
 
   /**
@@ -262,16 +279,6 @@ public class URLRetrieverItemProvider extends RetrieverItemProvider {
     newChildDescriptors.add
       (createChildParameter
         (RetrieverPackage.Literals.RETRIEVER_CONTAINER__OWNED_ELEMENTS,
-         RetrieverFactory.eINSTANCE.createRetrieverContainer()));
-
-    newChildDescriptors.add
-      (createChildParameter
-        (RetrieverPackage.Literals.RETRIEVER_CONTAINER__OWNED_ELEMENTS,
-         RetrieverFactory.eINSTANCE.createRetrieverRoot()));
-
-    newChildDescriptors.add
-      (createChildParameter
-        (RetrieverPackage.Literals.RETRIEVER_CONTAINER__OWNED_ELEMENTS,
          RetrieverFactory.eINSTANCE.createRetrieverPkg()));
 
     newChildDescriptors.add
@@ -307,11 +314,6 @@ public class URLRetrieverItemProvider extends RetrieverItemProvider {
     newChildDescriptors.add
       (createChildParameter
         (RetrieverPackage.Literals.RETRIEVER_CONTAINER__OWNED_ELEMENTS,
-         RetrieverFactory.eINSTANCE.createCreateDirectEObject()));
-
-    newChildDescriptors.add
-      (createChildParameter
-        (RetrieverPackage.Literals.RETRIEVER_CONTAINER__OWNED_ELEMENTS,
          RetrieverFactory.eINSTANCE.createCreateEObject()));
 
     newChildDescriptors.add
@@ -327,11 +329,6 @@ public class URLRetrieverItemProvider extends RetrieverItemProvider {
     newChildDescriptors.add
       (createChildParameter
         (RetrieverPackage.Literals.RETRIEVER_CONTAINER__OWNED_ELEMENTS,
-         RetrieverFactory.eINSTANCE.createCreateFile()));
-
-    newChildDescriptors.add
-      (createChildParameter
-        (RetrieverPackage.Literals.RETRIEVER_CONTAINER__OWNED_ELEMENTS,
          RetrieverFactory.eINSTANCE.createLoadResource()));
 
     newChildDescriptors.add
@@ -343,11 +340,6 @@ public class URLRetrieverItemProvider extends RetrieverItemProvider {
       (createChildParameter
         (RetrieverPackage.Literals.RETRIEVER_CONTAINER__OWNED_SERVICES,
          RetrieverFactory.eINSTANCE.createTransformationService()));
-
-    newChildDescriptors.add
-      (createChildParameter
-        (RetrieverPackage.Literals.URL_RETRIEVER__OWNED_VARIABLES,
-         RetrieverFactory.eINSTANCE.createURIVariable()));
   }
 
 }

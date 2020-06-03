@@ -65,14 +65,6 @@ public class RetrieverSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
     switch (classifierID) {
-      case RetrieverPackage.RETRIEVER_ROOT: {
-        RetrieverRoot retrieverRoot = (RetrieverRoot)theEObject;
-        T result = caseRetrieverRoot(retrieverRoot);
-        if (result == null) result = caseRetrieverContainer(retrieverRoot);
-        if (result == null) result = caseRetriever(retrieverRoot);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case RetrieverPackage.RETRIEVER_PKG: {
         RetrieverPkg retrieverPkg = (RetrieverPkg)theEObject;
         T result = caseRetrieverPkg(retrieverPkg);
@@ -161,21 +153,10 @@ public class RetrieverSwitch<T> extends Switch<T> {
       case RetrieverPackage.CREATE_EOBJECT: {
         CreateEObject createEObject = (CreateEObject)theEObject;
         T result = caseCreateEObject(createEObject);
-        if (result == null) result = caseCreateDirectEObject(createEObject);
         if (result == null) result = caseCreateNotifier(createEObject);
         if (result == null) result = caseRetrieverContainer(createEObject);
         if (result == null) result = caseIVariableElement(createEObject);
         if (result == null) result = caseRetriever(createEObject);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case RetrieverPackage.CREATE_DIRECT_EOBJECT: {
-        CreateDirectEObject createDirectEObject = (CreateDirectEObject)theEObject;
-        T result = caseCreateDirectEObject(createDirectEObject);
-        if (result == null) result = caseCreateNotifier(createDirectEObject);
-        if (result == null) result = caseRetrieverContainer(createDirectEObject);
-        if (result == null) result = caseIVariableElement(createDirectEObject);
-        if (result == null) result = caseRetriever(createDirectEObject);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -190,16 +171,6 @@ public class RetrieverSwitch<T> extends Switch<T> {
         CreateEAttribute createEAttribute = (CreateEAttribute)theEObject;
         T result = caseCreateEAttribute(createEAttribute);
         if (result == null) result = caseRetriever(createEAttribute);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case RetrieverPackage.CREATE_FILE: {
-        CreateFile createFile = (CreateFile)theEObject;
-        T result = caseCreateFile(createFile);
-        if (result == null) result = caseCreateNotifier(createFile);
-        if (result == null) result = caseRetrieverContainer(createFile);
-        if (result == null) result = caseIVariableElement(createFile);
-        if (result == null) result = caseRetriever(createFile);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -247,21 +218,6 @@ public class RetrieverSwitch<T> extends Switch<T> {
   }
 
 	/**
-   * Returns the result of interpreting the object as an instance of '<em>Root</em>'.
-   * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Root</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-	public T caseRetrieverRoot(RetrieverRoot object) {
-    return null;
-  }
-
-	/**
    * Returns the result of interpreting the object as an instance of '<em>Retriever</em>'.
    * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -292,6 +248,21 @@ public class RetrieverSwitch<T> extends Switch<T> {
   }
 
 	/**
+   * Returns the result of interpreting the object as an instance of '<em>URI Variable</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>URI Variable</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseURIVariable(URIVariable object) {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Element Retriever</em>'.
    * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -322,21 +293,6 @@ public class RetrieverSwitch<T> extends Switch<T> {
   }
 
 	/**
-   * Returns the result of interpreting the object as an instance of '<em>URI Variable</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>URI Variable</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseURIVariable(URIVariable object) {
-    return null;
-  }
-
-  /**
    * Returns the result of interpreting the object as an instance of '<em>Transformation Retriever</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -427,21 +383,6 @@ public class RetrieverSwitch<T> extends Switch<T> {
   }
 
 	/**
-   * Returns the result of interpreting the object as an instance of '<em>Create Direct EObject</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Create Direct EObject</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseCreateDirectEObject(CreateDirectEObject object) {
-    return null;
-  }
-
-  /**
    * Returns the result of interpreting the object as an instance of '<em>Create EReference</em>'.
    * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -498,21 +439,6 @@ public class RetrieverSwitch<T> extends Switch<T> {
    * @generated
    */
   public T caseSetVariable(SetVariable object) {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Create File</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Create File</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseCreateFile(CreateFile object) {
     return null;
   }
 

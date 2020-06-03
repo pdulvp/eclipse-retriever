@@ -55,11 +55,8 @@ public class RetrieverFactoryImpl extends EFactoryImpl implements RetrieverFacto
 	@Override
 	public EObject create(EClass eClass) {
     switch (eClass.getClassifierID()) {
-      case RetrieverPackage.RETRIEVER_ROOT: return createRetrieverRoot();
       case RetrieverPackage.RETRIEVER_PKG: return createRetrieverPkg();
-      case RetrieverPackage.RETRIEVER_CONTAINER: return createRetrieverContainer();
       case RetrieverPackage.URL_RETRIEVER: return createURLRetriever();
-      case RetrieverPackage.URI_VARIABLE: return createURIVariable();
       case RetrieverPackage.ELEMENT_RETRIEVER: return createElementRetriever();
       case RetrieverPackage.ATTRIBUTE_RETRIEVER: return createAttributeRetriever();
       case RetrieverPackage.TRANSFORMATION_RETRIEVER: return createTransformationRetriever();
@@ -67,26 +64,13 @@ public class RetrieverFactoryImpl extends EFactoryImpl implements RetrieverFacto
       case RetrieverPackage.REFERENCED_RETRIEVER: return createReferencedRetriever();
       case RetrieverPackage.SET_VARIABLE: return createSetVariable();
       case RetrieverPackage.CREATE_EOBJECT: return createCreateEObject();
-      case RetrieverPackage.CREATE_DIRECT_EOBJECT: return createCreateDirectEObject();
       case RetrieverPackage.CREATE_EREFERENCE: return createCreateEReference();
       case RetrieverPackage.CREATE_EATTRIBUTE: return createCreateEAttribute();
-      case RetrieverPackage.CREATE_FILE: return createCreateFile();
       case RetrieverPackage.LOAD_RESOURCE: return createLoadResource();
       case RetrieverPackage.IF: return createIf();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
-  }
-
-	/**
-   * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-   * @generated
-   */
-	@Override
-	public RetrieverRoot createRetrieverRoot() {
-    RetrieverRootImpl retrieverRoot = new RetrieverRootImpl();
-    return retrieverRoot;
   }
 
 	/**
@@ -128,34 +112,12 @@ public class RetrieverFactoryImpl extends EFactoryImpl implements RetrieverFacto
    * @generated
    */
   @Override
-		public URIVariable createURIVariable() {
-    URIVariableImpl uriVariable = new URIVariableImpl();
-    return uriVariable;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
 		public TransformationRetriever createTransformationRetriever() {
     TransformationRetrieverImpl transformationRetriever = new TransformationRetrieverImpl();
     return transformationRetriever;
   }
 
   /**
-   * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-   * @generated
-   */
-	@Override
-	public RetrieverContainer createRetrieverContainer() {
-    RetrieverContainerImpl retrieverContainer = new RetrieverContainerImpl();
-    return retrieverContainer;
-  }
-
-	/**
    * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
    * @generated
@@ -201,17 +163,6 @@ public class RetrieverFactoryImpl extends EFactoryImpl implements RetrieverFacto
 
 	/**
    * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-		public CreateDirectEObject createCreateDirectEObject() {
-    CreateDirectEObjectImpl createDirectEObject = new CreateDirectEObjectImpl();
-    return createDirectEObject;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
    * @generated
    */
@@ -252,17 +203,6 @@ public class RetrieverFactoryImpl extends EFactoryImpl implements RetrieverFacto
 		public SetVariable createSetVariable() {
     SetVariableImpl setVariable = new SetVariableImpl();
     return setVariable;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-		public CreateFile createCreateFile() {
-    CreateFileImpl createFile = new CreateFileImpl();
-    return createFile;
   }
 
   /**

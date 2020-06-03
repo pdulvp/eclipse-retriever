@@ -35,7 +35,7 @@ import org.pdulvp.retriever.result.ResultPackage;
  *
  * @generated
  */
-public class ResultImpl extends MinimalEObjectImpl.Container implements Result {
+public abstract class ResultImpl extends MinimalEObjectImpl.Container implements Result {
 	/**
    * The default value of the '{@link #getId() <em>Id</em>}' attribute.
    * <!-- begin-user-doc -->

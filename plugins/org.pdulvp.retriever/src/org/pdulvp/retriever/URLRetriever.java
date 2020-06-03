@@ -28,10 +28,6 @@ public interface URLRetriever extends Retriever, RetrieverContainer, IVariableEl
    * Returns the value of the '<em><b>Owned Variables</b></em>' containment reference list.
    * The list contents are of type {@link org.pdulvp.retriever.URIVariable}.
    * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Owned Variables</em>' containment reference list isn't clear,
-   * there really should be more of a description here...
-   * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Owned Variables</em>' containment reference list.
    * @see org.pdulvp.retriever.RetrieverPackage#getURLRetriever_OwnedVariables()

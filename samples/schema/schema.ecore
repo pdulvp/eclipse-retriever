@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="Artists">
+  <eSubpackages name="Johnny Cash">
+    <eSubpackages name="Albums">
+      <eClassifiers xsi:type="ecore:EClass" name="With His Hot and Blue Guitar"/>
+      <eClassifiers xsi:type="ecore:EClass" name="The Fabulous Johnny Cash"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Sings the Songs That Made Him Famous"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Greatest!"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Hymns by Johnny Cash"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Songs of Our Soil"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Ride This Train"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Sings Hank Williams"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Now, There Was a Song!"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Now Here's Johnny Cash"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Hymns from the Heart"/>
+      <eClassifiers xsi:type="ecore:EClass" name="The Sound of Johnny Cash"/>
+      <eClassifiers xsi:type="ecore:EClass" name="All Aboard the Blue Train"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Blood, Sweat and Tears (album)"/>
+      <eClassifiers xsi:type="ecore:EClass" name="The Christmas Spirit"/>
+      <eClassifiers xsi:type="ecore:EClass" name="I Walk the Line (1964 album)"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Bitter Tears: Ballads of the American Indian"/>
+      <eClassifiers xsi:type="ecore:EClass" name="The Original Sun Sound of Johnny Cash"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Orange Blossom Special (album)"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Sings the Ballads of the True West"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Everybody Loves a Nut"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Happiness Is You"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Carryin' On with Johnny Cash and June Carter"/>
+      <eClassifiers xsi:type="ecore:EClass" name="From Sea to Shining Sea"/>
+      <eClassifiers xsi:type="ecore:EClass" name="The Holy Land (album)"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Hello, I'm Johnny Cash"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Man in Black (album)"/>
+      <eClassifiers xsi:type="ecore:EClass" name="A Thing Called Love"/>
+      <eClassifiers xsi:type="ecore:EClass" name="America: A 200-Year Salute in Story and Song"/>
+      <eClassifiers xsi:type="ecore:EClass" name="The Johnny Cash Family Christmas"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Any Old Wind That Blows"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Johnny Cash and His Woman"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Ragged Old Flag"/>
+      <eClassifiers xsi:type="ecore:EClass" name="The Junkie and the Juicehead Minus Me"/>
+      <eClassifiers xsi:type="ecore:EClass" name="The Johnny Cash Children's Album"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Sings Precious Memories"/>
+      <eClassifiers xsi:type="ecore:EClass" name="John R. Cash"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Look at Them Beans"/>
+      <eClassifiers xsi:type="ecore:EClass" name="One Piece at a Time (album)"/>
+      <eClassifiers xsi:type="ecore:EClass" name="The Last Gunfighter Ballad"/>
+      <eClassifiers xsi:type="ecore:EClass" name="The Rambler (album)"/>
+      <eClassifiers xsi:type="ecore:EClass" name="I Would Like to See You Again"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Gone Girl (album)"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Silver (Johnny Cash album)"/>
+      <eClassifiers xsi:type="ecore:EClass" name="A Believer Sings the Truth"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Rockabilly Blues"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Classic Christmas (Johnny Cash album)"/>
+      <eClassifiers xsi:type="ecore:EClass" name="The Baron (album)"/>
+      <eClassifiers xsi:type="ecore:EClass" name="The Adventures of Johnny Cash"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Johnny 99"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Highwayman (The Highwaymen album)"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Rainbow (Johnny Cash album)"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Class of '55"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Heroes (Johnny Cash and Waylon Jennings album)"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Believe in Him"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Johnny Cash Is Coming to Town"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Classic Cash: Hall of Fame Series"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Water from the Wells of Home"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Highwayman 2"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Boom Chicka Boom"/>
+      <eClassifiers xsi:type="ecore:EClass" name="The Mystery of Life"/>
+      <eClassifiers xsi:type="ecore:EClass" name="American Recordings (album)"/>
+      <eClassifiers xsi:type="ecore:EClass" name="The Road Goes On Forever (The Highwaymen album)"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Unchained (Johnny Cash album)"/>
+      <eClassifiers xsi:type="ecore:EClass" name="American III: Solitary Man"/>
+      <eClassifiers xsi:type="ecore:EClass" name="American IV: The Man Comes Around"/>
+      <eClassifiers xsi:type="ecore:EClass" name="My Mother's Hymn Book"/>
+      <eClassifiers xsi:type="ecore:EClass" name="American V: A Hundred Highways"/>
+      <eClassifiers xsi:type="ecore:EClass" name="American VI: Ain't No Grave"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Out Among the Stars"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Johnny Cash with His Hot and Blue Guitar!"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Johnny Cash Sings the Songs That Made Him Famous"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Johnny Cash Sings Hank Williams"/>
+      <eClassifiers xsi:type="ecore:EClass" name="All Aboard the Blue Train with Johnny Cash"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Johnny Cash Sings the Ballads of the True West"/>
+      <eClassifiers xsi:type="ecore:EClass" name="At Folsom Prison"/>
+      <eClassifiers xsi:type="ecore:EClass" name="At San Quentin"/>
+      <eClassifiers xsi:type="ecore:EClass" name="The Johnny Cash Show (album)"/>
+      <eClassifiers xsi:type="ecore:EClass" name="P&amp;#195;&amp;#165; &amp;#195;&amp;#8211;ster&amp;#195;&amp;#165;ker"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Strawberry Cake"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Koncert v Praze (In Prague&amp;#226;&amp;#8364;&amp;#8220;Live)"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Johnny Cash at Madison Square Garden"/>
+      <eClassifiers xsi:type="ecore:EClass" name="A Concert Behind Prison Walls"/>
+      <eClassifiers xsi:type="ecore:EClass" name="I Walk the Line (soundtrack album)"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Little Fauss and Big Halsy (soundtrack)"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Greatest Hits, Vol. 1 (Johnny Cash album)"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Heart of Cash"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Greatest Hits, Vol. 2 (Johnny Cash album)"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Sunday Morning Coming Down (album)"/>
+      <eClassifiers xsi:type="ecore:EClass" name="International Superstar"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Five Feet High and Rising"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Destination Victoria Station"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Greatest Hits, Vol. 3 (Johnny Cash album)"/>
+      <eClassifiers xsi:type="ecore:EClass" name="The Unissued Johnny Cash"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Johnny &amp;#38; June"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Tall Man (album)"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Encore (Johnny Cash album)"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Biggest Hits (Johnny Cash album)"/>
+      <eClassifiers xsi:type="ecore:EClass" name="The Man in Black 1954&amp;#226;&amp;#8364;&amp;#8220;1958"/>
+      <eClassifiers xsi:type="ecore:EClass" name="The Man in Black 1959&amp;#226;&amp;#8364;&amp;#8220;1962"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Come Along and Ride This Train"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Wanted Man (Johnny Cash album)"/>
+      <eClassifiers xsi:type="ecore:EClass" name="The Man in Black 1963&amp;#226;&amp;#8364;&amp;#8220;1969"/>
+      <eClassifiers xsi:type="ecore:EClass" name="The Man in Black &amp;#226;&amp;#8364;&amp;#8220; His Greatest Hits"/>
+      <eClassifiers xsi:type="ecore:EClass" name="16 Biggest Hits (Johnny Cash album)"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Love, God, Murder"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Unearthed (Johnny Cash album)"/>
+      <eClassifiers xsi:type="ecore:EClass" name="The Legend (Johnny Cash box set)"/>
+      <eClassifiers xsi:type="ecore:EClass" name="The Legend of Johnny Cash"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Johnny Cash: Patriot"/>
+      <eClassifiers xsi:type="ecore:EClass" name="16 Biggest Hits (Johnny Cash and June Carter Cash album)"/>
+      <eClassifiers xsi:type="ecore:EClass" name="The Legend of Johnny Cash Vol. II"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Johnny Cash: The Complete Columbia Album Collection"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Man in Black: His Own Story in His Own Words"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Cash: The Autobiography"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Johnny Cash! The Man, His World, His Music"/>
+      <eClassifiers xsi:type="ecore:EClass" name="My Father and the Man in Black"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Walk the Line"/>
+      <eClassifiers xsi:type="ecore:EClass" name="The Sound Behind Johnny Cash"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Kindred Spirits: A Tribute to the Songs of Johnny Cash"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Dressed in Black: A Tribute to Johnny Cash"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Johnny's Blues: A Tribute to Johnny Cash"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Walk the Line (soundtrack)"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Fade to Black: Memories of Johnny"/>
+      <eClassifiers xsi:type="ecore:EClass" name="All Aboard: A Tribute to Johnny Cash"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Johnny Cash Remixed"/>
+      <eClassifiers xsi:type="ecore:EClass" name="We Walk the Line: A Celebration of the Music of Johnny Cash"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Forever Words"/>
+    </eSubpackages>
+  </eSubpackages>
+</ecore:EPackage>

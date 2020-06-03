@@ -56,7 +56,6 @@ public class ResultFactoryImpl extends EFactoryImpl implements ResultFactory {
 	public EObject create(EClass eClass) {
     switch (eClass.getClassifierID()) {
       case ResultPackage.RESULT_ROOT: return createResultRoot();
-      case ResultPackage.RESULT: return createResult();
       case ResultPackage.URI_RESULT: return createURIResult();
       case ResultPackage.ELEMENT_RESULT: return createElementResult();
       case ResultPackage.ATTRIBUTE_RESULT: return createAttributeResult();
@@ -74,17 +73,6 @@ public class ResultFactoryImpl extends EFactoryImpl implements ResultFactory {
 	public ResultRoot createResultRoot() {
     ResultRootImpl resultRoot = new ResultRootImpl();
     return resultRoot;
-  }
-
-	/**
-   * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-   * @generated
-   */
-	@Override
-	public Result createResult() {
-    ResultImpl result = new ResultImpl();
-    return result;
   }
 
 	/**

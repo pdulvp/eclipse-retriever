@@ -10,6 +10,7 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.StyledString;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.pdulvp.retriever.RetrieverContainer;
 import org.pdulvp.retriever.RetrieverFactory;
@@ -108,14 +109,29 @@ public class RetrieverContainerItemProvider
    */
 	@Override
 	public String getText(Object object) {
-    String label = ((RetrieverContainer)object).getName();
-    return label == null || label.length() == 0 ?
-      getString("_UI_RetrieverContainer_type") :
-      getString("_UI_RetrieverContainer_type") + " " + label;
+    return ((StyledString)getStyledText(object)).getString();
   }
 	
 
 	/**
+   * This returns the label styled text for the adapted class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated NOT
+   */
+  @Override
+  public Object getStyledText(Object object) {
+    String label = ((RetrieverContainer)object).getName();
+    	StyledString styledLabel = new StyledString();
+    if (label == null || label.length() == 0) {
+      styledLabel.append(getString("_UI_RetrieverContainer_type"), StyledString.Style.QUALIFIER_STYLER); 
+    } else {
+      styledLabel.append(getString("_UI_RetrieverContainer_type"), StyledString.Style.QUALIFIER_STYLER).append(" " + label);
+    }
+    return styledLabel;
+  }
+
+  /**
    * This handles model notifications by calling {@link #updateChildren} to update any cached
    * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
    * <!-- begin-user-doc -->
@@ -145,16 +161,6 @@ public class RetrieverContainerItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
     super.collectNewChildDescriptors(newChildDescriptors, object);
-
-    newChildDescriptors.add
-      (createChildParameter
-        (RetrieverPackage.Literals.RETRIEVER_CONTAINER__OWNED_ELEMENTS,
-         RetrieverFactory.eINSTANCE.createRetrieverContainer()));
-
-    newChildDescriptors.add
-      (createChildParameter
-        (RetrieverPackage.Literals.RETRIEVER_CONTAINER__OWNED_ELEMENTS,
-         RetrieverFactory.eINSTANCE.createRetrieverRoot()));
 
     newChildDescriptors.add
       (createChildParameter
@@ -194,11 +200,6 @@ public class RetrieverContainerItemProvider
     newChildDescriptors.add
       (createChildParameter
         (RetrieverPackage.Literals.RETRIEVER_CONTAINER__OWNED_ELEMENTS,
-         RetrieverFactory.eINSTANCE.createCreateDirectEObject()));
-
-    newChildDescriptors.add
-      (createChildParameter
-        (RetrieverPackage.Literals.RETRIEVER_CONTAINER__OWNED_ELEMENTS,
          RetrieverFactory.eINSTANCE.createCreateEObject()));
 
     newChildDescriptors.add
@@ -210,11 +211,6 @@ public class RetrieverContainerItemProvider
       (createChildParameter
         (RetrieverPackage.Literals.RETRIEVER_CONTAINER__OWNED_ELEMENTS,
          RetrieverFactory.eINSTANCE.createCreateEAttribute()));
-
-    newChildDescriptors.add
-      (createChildParameter
-        (RetrieverPackage.Literals.RETRIEVER_CONTAINER__OWNED_ELEMENTS,
-         RetrieverFactory.eINSTANCE.createCreateFile()));
 
     newChildDescriptors.add
       (createChildParameter

@@ -1,0 +1,42 @@
+{
+  "title": "The Highwaymen (country supergroup)",
+  "lastModified": " This page was last edited on 22 May 2020, at 12:31\n.",
+  "artist": [
+    {
+      "name": "Johnny Cash",
+      "artistPage": [
+        {
+          "nickname": "J. R. Cash",
+          "birthplace": "Kingsland, Arkansas"
+        }
+      ]
+    },
+    {
+      "name": "Waylon Jennings",
+      "artistPage": [
+        {
+          "nickname": "Waylon Arnold Jennings",
+          "birthplace": "Littlefield, Texas"
+        }
+      ]
+    },
+    {
+      "name": "Kris Kristofferson",
+      "artistPage": [
+        {
+          "nickname": "Kristoffer Kristofferson",
+          "birthplace": "Brownsville, Texas"
+        }
+      ]
+    },
+    {
+      "name": "Willie Nelson",
+      "artistPage": [
+        {
+          "nickname": "Willie Hugh Nelson",
+          "birthplace": "Abbott, Texas"
+        }
+      ]
+    }
+  ]
+}

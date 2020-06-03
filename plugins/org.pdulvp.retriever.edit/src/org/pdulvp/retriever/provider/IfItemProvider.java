@@ -11,7 +11,9 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.StyledString;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+import org.eclipse.emf.edit.provider.StyledString.Style;
 import org.pdulvp.retriever.If;
 import org.pdulvp.retriever.RetrieverFactory;
 import org.pdulvp.retriever.RetrieverPackage;
@@ -129,6 +131,21 @@ public class IfItemProvider extends RetrieverItemProvider {
   }
 
   /**
+   * This returns the label styled text for the adapted class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated NOT
+   */
+  @Override
+  public Object getStyledText(Object object) {
+    StyledString result = new StyledString();
+    result.append(getString("_UI_If_type"), StyledString.Style.QUALIFIER_STYLER); 
+    String value = ((If)object).getConditionExpression();
+    result.append(" "+value, Style.DECORATIONS_STYLER);
+    return result;
+  }
+
+  /**
    * This handles model notifications by calling {@link #updateChildren} to update any cached
    * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
    * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -159,16 +176,6 @@ public class IfItemProvider extends RetrieverItemProvider {
   @Override
   protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
     super.collectNewChildDescriptors(newChildDescriptors, object);
-
-    newChildDescriptors.add
-      (createChildParameter
-        (RetrieverPackage.Literals.RETRIEVER_CONTAINER__OWNED_ELEMENTS,
-         RetrieverFactory.eINSTANCE.createRetrieverContainer()));
-
-    newChildDescriptors.add
-      (createChildParameter
-        (RetrieverPackage.Literals.RETRIEVER_CONTAINER__OWNED_ELEMENTS,
-         RetrieverFactory.eINSTANCE.createRetrieverRoot()));
 
     newChildDescriptors.add
       (createChildParameter
@@ -208,11 +215,6 @@ public class IfItemProvider extends RetrieverItemProvider {
     newChildDescriptors.add
       (createChildParameter
         (RetrieverPackage.Literals.RETRIEVER_CONTAINER__OWNED_ELEMENTS,
-         RetrieverFactory.eINSTANCE.createCreateDirectEObject()));
-
-    newChildDescriptors.add
-      (createChildParameter
-        (RetrieverPackage.Literals.RETRIEVER_CONTAINER__OWNED_ELEMENTS,
          RetrieverFactory.eINSTANCE.createCreateEObject()));
 
     newChildDescriptors.add
@@ -224,11 +226,6 @@ public class IfItemProvider extends RetrieverItemProvider {
       (createChildParameter
         (RetrieverPackage.Literals.RETRIEVER_CONTAINER__OWNED_ELEMENTS,
          RetrieverFactory.eINSTANCE.createCreateEAttribute()));
-
-    newChildDescriptors.add
-      (createChildParameter
-        (RetrieverPackage.Literals.RETRIEVER_CONTAINER__OWNED_ELEMENTS,
-         RetrieverFactory.eINSTANCE.createCreateFile()));
 
     newChildDescriptors.add
       (createChildParameter

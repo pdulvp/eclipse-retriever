@@ -13,7 +13,10 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.StyledString;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+import org.eclipse.emf.edit.provider.StyledString.Style;
+import org.eclipse.osgi.util.NLS;
 import org.pdulvp.retriever.ElementRetriever;
 import org.pdulvp.retriever.RetrieverFactory;
 import org.pdulvp.retriever.RetrieverPackage;
@@ -54,34 +57,12 @@ public class ElementRetrieverItemProvider extends RetrieverItemProvider {
   }
 
 	/**
-   * This adds a property descriptor for the Retriever Expression feature.
+   * This adds a property descriptor for the Variable feature.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected void addRetrieverExpressionPropertyDescriptor(Object object) {
-    itemPropertyDescriptors.add
-      (createItemPropertyDescriptor
-        (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-         getResourceLocator(),
-         getString("_UI_ElementRetriever_retrieverExpression_feature"),
-         getString("_UI_PropertyDescriptor_description", "_UI_ElementRetriever_retrieverExpression_feature", "_UI_ElementRetriever_type"),
-         RetrieverPackage.Literals.ELEMENT_RETRIEVER__RETRIEVER_EXPRESSION,
-         true,
-         false,
-         false,
-         ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-         null,
-         null));
-  }
-
-  /**
-   * This adds a property descriptor for the Variable feature.
-   * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-   * @generated
-   */
-	protected void addVariablePropertyDescriptor(Object object) {
+  protected void addVariablePropertyDescriptor(Object object) {
     itemPropertyDescriptors.add
       (createItemPropertyDescriptor
         (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
@@ -97,7 +78,7 @@ public class ElementRetrieverItemProvider extends RetrieverItemProvider {
          null));
   }
 
-	/**
+  /**
    * This adds a property descriptor for the Variable Result feature.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -111,6 +92,28 @@ public class ElementRetrieverItemProvider extends RetrieverItemProvider {
          getString("_UI_IVariableResultElement_variableResult_feature"),
          getString("_UI_PropertyDescriptor_description", "_UI_IVariableResultElement_variableResult_feature", "_UI_IVariableResultElement_type"),
          RetrieverPackage.Literals.IVARIABLE_RESULT_ELEMENT__VARIABLE_RESULT,
+         true,
+         false,
+         false,
+         ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+         null,
+         null));
+  }
+
+  /**
+   * This adds a property descriptor for the Retriever Expression feature.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  protected void addRetrieverExpressionPropertyDescriptor(Object object) {
+    itemPropertyDescriptors.add
+      (createItemPropertyDescriptor
+        (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+         getResourceLocator(),
+         getString("_UI_ElementRetriever_retrieverExpression_feature"),
+         getString("_UI_PropertyDescriptor_description", "_UI_ElementRetriever_retrieverExpression_feature", "_UI_ElementRetriever_type"),
+         RetrieverPackage.Literals.ELEMENT_RETRIEVER__RETRIEVER_EXPRESSION,
          true,
          false,
          false,
@@ -179,14 +182,27 @@ public class ElementRetrieverItemProvider extends RetrieverItemProvider {
    */
 	@Override
 	public String getText(Object object) {
-    String label = ((ElementRetriever)object).getName();
-    return label == null || label.length() == 0 ?
-      getString("_UI_ElementRetriever_type") :
-      label;
+    return NLS.bind("{0} - {1}", ((ElementRetriever) object).getName(), ((ElementRetriever) object).getRetrieverExpression());
   }
 	
 
 	/**
+   * This returns the label styled text for the adapted class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated NOT
+   */
+  @Override
+  public Object getStyledText(Object object) {
+    StyledString result = new StyledString();
+    String value = getText(object);
+    int first = value.indexOf("-");
+    result.append(value.substring(0, first), Style.NO_STYLE);
+    result.append(value.substring(first), Style.DECORATIONS_STYLER);
+    return result;
+  }
+
+  /**
    * This handles model notifications by calling {@link #updateChildren} to update any cached
    * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
    * <!-- begin-user-doc -->
@@ -221,16 +237,6 @@ public class ElementRetrieverItemProvider extends RetrieverItemProvider {
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
     super.collectNewChildDescriptors(newChildDescriptors, object);
-
-    newChildDescriptors.add
-      (createChildParameter
-        (RetrieverPackage.Literals.RETRIEVER_CONTAINER__OWNED_ELEMENTS,
-         RetrieverFactory.eINSTANCE.createRetrieverContainer()));
-
-    newChildDescriptors.add
-      (createChildParameter
-        (RetrieverPackage.Literals.RETRIEVER_CONTAINER__OWNED_ELEMENTS,
-         RetrieverFactory.eINSTANCE.createRetrieverRoot()));
 
     newChildDescriptors.add
       (createChildParameter
@@ -270,11 +276,6 @@ public class ElementRetrieverItemProvider extends RetrieverItemProvider {
     newChildDescriptors.add
       (createChildParameter
         (RetrieverPackage.Literals.RETRIEVER_CONTAINER__OWNED_ELEMENTS,
-         RetrieverFactory.eINSTANCE.createCreateDirectEObject()));
-
-    newChildDescriptors.add
-      (createChildParameter
-        (RetrieverPackage.Literals.RETRIEVER_CONTAINER__OWNED_ELEMENTS,
          RetrieverFactory.eINSTANCE.createCreateEObject()));
 
     newChildDescriptors.add
@@ -286,11 +287,6 @@ public class ElementRetrieverItemProvider extends RetrieverItemProvider {
       (createChildParameter
         (RetrieverPackage.Literals.RETRIEVER_CONTAINER__OWNED_ELEMENTS,
          RetrieverFactory.eINSTANCE.createCreateEAttribute()));
-
-    newChildDescriptors.add
-      (createChildParameter
-        (RetrieverPackage.Literals.RETRIEVER_CONTAINER__OWNED_ELEMENTS,
-         RetrieverFactory.eINSTANCE.createCreateFile()));
 
     newChildDescriptors.add
       (createChildParameter

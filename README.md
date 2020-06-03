@@ -1,0 +1,105 @@
+# Webscrapper to JSON or EMF model
+
+## Installation
+
+Install the update site on an Eclipse platform. (TBD)
+
+## How to use it
+
+**Create a new project**
+
+![](images\new-project.png)
+
+Once created, it will appear in the `Project Explorer`. Just double click on the `.retriever` file to open the editor.
+
+![](images\wiki-project.png)
+
+**Describe how to fetch the site**
+
+![](plugins\org.pdulvp.retriever.edit\icons\full\obj16\URLRetriever.png) URL
+
+![](plugins\org.pdulvp.retriever.edit\icons\full\obj16\ElementRetriever.png) Element
+
+![](plugins\org.pdulvp.retriever.edit\icons\full\obj16\AttributeRetriever.png) Attribute
+
+
+![](images\fetch.png)
+
+In this sample, we will retrieve from a Wikipedia page, its `title`, the `lastModified` date and `artists` of the music supergroup described in the page.
+
+**Run it**
+
+- Select the top ![](plugins\org.pdulvp.retriever.edit\icons\full\obj16\URLRetriever.png) `URL element`
+
+- On the main toolbar, just click on ![](plugins\org.pdulvp.retriever.ui\icons\obj16\fetch.gif) `Fetch`
+
+Result appears on the bottom.
+
+![](images\result.png)
+
+By doubleclicking on the - Select the top ![](plugins\org.pdulvp.retriever.edit\icons\full\obj16\URIResult.png) `URL element`, the JSON editor opens.
+
+![](images\result-json.png)
+
+**Fetch sub pages**
+
+Retrieved links are relative, by using ![](plugins\org.pdulvp.retriever.edit\icons\full\obj16\SetVariable.png) `Set Variable`, we can compute a `fullURL`.
+
+Then we add a child ![](plugins\org.pdulvp.retriever.edit\icons\full\obj16\URLRetriever.png) `URL element` towards this `fullURL` and retrieve some attributes from the sub page.
+
+![](images\sub-page.png)
+
+By ![](plugins\org.pdulvp.retriever.ui\icons\obj16\fetch.gif) `Fetch` again, the result becomes:
+
+![](images\result-sub-page.png)
+
+or as JSON: 
+
+![](images\result-sub-page-json.png)
+
+**Models manipulation**
+
+![](plugins\org.pdulvp.retriever.edit\icons\full\obj16\LoadResource.png) `LoadResource` allows to create/load a resource from workspace.
+
+![](plugins\org.pdulvp.retriever.edit\icons\full\obj16\SetVariable.png) `resource:<variable>.root` expression allows to retrieve the root of a resource.
+
+![](plugins\org.pdulvp.retriever.edit\icons\full\obj16\CreateEObject.png) `CreateEObject` allows to create the given EObject.
+
+![](plugins\org.pdulvp.retriever.edit\icons\full\obj16\CreateEAttribute.png) `CreateEAttribute` allows to set the given attribute on an EObject.
+
+![](plugins\org.pdulvp.retriever.edit\icons\full\obj16\CreateEReference.png) `CreateEReference` allows to set the given reference on an EObject.
+
+For instance, load the resource `schema.ecore`, retrieve the `root` element. If the resource is empty, create a root element called `Artists`
+
+![](images\emf-root.png)
+
+With the following example, we will create an EClass into `schema.ecore` for each album on the page.
+
+![](images\emf-fetch-artist-page.png)
+![](images\emf-ecore-cash.png)
+
+If fetched again, new albums will be added to the file.
+
+**Reuse retrievers**
+
+![](plugins\org.pdulvp.retriever.edit\icons\full\obj16\ReferencedRetriever.png) `ReferencedRetriever` allows to reuse a retriever. According to variables, it may behave differently.
+
+For instance, if we update our - Select the top ![](plugins\org.pdulvp.retriever.edit\icons\full\obj16\URLRetriever.png) `URL Retriever` from 
+![](images\retriever-artist-cash.png)
+
+to 
+
+![](images\reuse-retriever.png)
+
+The ecore will contain both artist albums.
+
+![](images\ecore-all-albums.png)
+
+**Additional operators**
+
+![](plugins\org.pdulvp.retriever.edit\icons\full\obj16\URLRetriever.png) `If` allowing to process only if the `conditionExpression` is true
+
+![](plugins\org.pdulvp.retriever.edit\icons\full\obj16\TransformationService.png) `TransformationService` allowing to define a service from a `java` class and method, to text-processing fetched results using `java`.
+
+![](plugins\org.pdulvp.retriever.edit\icons\full\obj16\TransformationRetriever.png) `TransformationRetriever` allowing to retrieve an element, but passed directly to a `TransformationService` `[TO IMPROVE / TO DELETE / TBD]`
+

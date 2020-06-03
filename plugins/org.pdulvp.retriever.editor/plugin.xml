@@ -16,7 +16,7 @@
             name="%_UI_RetrieverModelWizard_label"
             class="org.pdulvp.retriever.presentation.RetrieverModelWizard"
             category="org.eclipse.emf.ecore.Wizard.category.ID"
-            icon="icons/full/obj16/RetrieverModelFile.gif">
+            icon="icons/full/obj16/RetrieverModelFile.png">
          <description>%_UI_RetrieverModelWizard_description</description>
          <selection class="org.eclipse.core.resources.IResource"/>
       </wizard>
@@ -27,7 +27,7 @@
       <editor
             id="org.pdulvp.retriever.presentation.RetrieverEditorID"
             name="%_UI_RetrieverEditor_label"
-            icon="icons/full/obj16/RetrieverModelFile.gif"
+            icon="icons/full/obj16/RetrieverModelFile.png"
             extensions="retriever"
             class="org.pdulvp.retriever.presentation.RetrieverEditor"
             contributorClass="org.pdulvp.retriever.presentation.RetrieverActionBarContributor">
@@ -44,7 +44,7 @@
             name="%_UI_ResultModelWizard_label"
             class="org.pdulvp.retriever.result.presentation.ResultModelWizard"
             category="org.eclipse.emf.ecore.Wizard.category.ID"
-            icon="icons/full/obj16/ResultModelFile.gif">
+            icon="icons/full/obj16/ResultModelFile.png">
          <description>%_UI_ResultModelWizard_description</description>
          <selection class="org.eclipse.core.resources.IResource"/>
       </wizard>
@@ -55,7 +55,7 @@
       <editor
             id="org.pdulvp.retriever.result.presentation.ResultEditorID"
             name="%_UI_ResultEditor_label"
-            icon="icons/full/obj16/ResultModelFile.gif"
+            icon="icons/full/obj16/ResultModelFile.png"
             extensions="result"
             class="org.pdulvp.retriever.result.presentation.ResultEditor"
             contributorClass="org.pdulvp.retriever.result.presentation.ResultActionBarContributor">

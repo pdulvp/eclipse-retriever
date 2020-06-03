@@ -8,6 +8,7 @@ import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 import org.pdulvp.retriever.RetrieverPackage;
 import org.pdulvp.retriever.URIVariable;
 
@@ -24,7 +25,7 @@ import org.pdulvp.retriever.URIVariable;
  *
  * @generated
  */
-public class URIVariableImpl extends MinimalEObjectImpl.Container implements URIVariable {
+public abstract class URIVariableImpl extends MinimalEObjectImpl.Container implements URIVariable {
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -70,7 +71,7 @@ public class URIVariableImpl extends MinimalEObjectImpl.Container implements URI
    * @generated
    */
   @Override
-		public String getName() {
+  public String getName() {
     return name;
   }
 
@@ -80,7 +81,7 @@ public class URIVariableImpl extends MinimalEObjectImpl.Container implements URI
    * @generated
    */
   @Override
-		public void setName(String newName) {
+  public void setName(String newName) {
     String oldName = name;
     name = newName;
     if (eNotificationRequired())

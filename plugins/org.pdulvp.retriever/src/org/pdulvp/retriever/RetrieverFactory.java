@@ -22,15 +22,6 @@ public interface RetrieverFactory extends EFactory {
 	RetrieverFactory eINSTANCE = org.pdulvp.retriever.impl.RetrieverFactoryImpl.init();
 
 	/**
-   * Returns a new object of class '<em>Root</em>'.
-   * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-   * @return a new object of class '<em>Root</em>'.
-   * @generated
-   */
-	RetrieverRoot createRetrieverRoot();
-
-	/**
    * Returns a new object of class '<em>URL Retriever</em>'.
    * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -58,15 +49,6 @@ public interface RetrieverFactory extends EFactory {
 	AttributeRetriever createAttributeRetriever();
 
 	/**
-   * Returns a new object of class '<em>URI Variable</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>URI Variable</em>'.
-   * @generated
-   */
-  URIVariable createURIVariable();
-
-  /**
    * Returns a new object of class '<em>Transformation Retriever</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -76,15 +58,6 @@ public interface RetrieverFactory extends EFactory {
   TransformationRetriever createTransformationRetriever();
 
   /**
-   * Returns a new object of class '<em>Container</em>'.
-   * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-   * @return a new object of class '<em>Container</em>'.
-   * @generated
-   */
-	RetrieverContainer createRetrieverContainer();
-
-	/**
    * Returns a new object of class '<em>Pkg</em>'.
    * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -121,15 +94,6 @@ public interface RetrieverFactory extends EFactory {
 	CreateEObject createCreateEObject();
 
 	/**
-   * Returns a new object of class '<em>Create Direct EObject</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Create Direct EObject</em>'.
-   * @generated
-   */
-  CreateDirectEObject createCreateDirectEObject();
-
-  /**
    * Returns a new object of class '<em>Create EReference</em>'.
    * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -164,15 +128,6 @@ public interface RetrieverFactory extends EFactory {
    * @generated
    */
   SetVariable createSetVariable();
-
-  /**
-   * Returns a new object of class '<em>Create File</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Create File</em>'.
-   * @generated
-   */
-  CreateFile createCreateFile();
 
   /**
    * Returns a new object of class '<em>If</em>'.

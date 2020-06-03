@@ -56,6 +56,8 @@ import org.eclipse.emf.edit.domain.IEditingDomainProvider;
 import org.eclipse.emf.edit.provider.AdapterFactoryItemDelegator;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
 import org.eclipse.emf.edit.provider.ReflectiveItemProviderAdapterFactory;
+import org.eclipse.emf.edit.provider.StyledString;
+import org.eclipse.emf.edit.provider.StyledString.Style;
 import org.eclipse.emf.edit.provider.resource.ResourceItemProviderAdapterFactory;
 import org.eclipse.emf.edit.ui.action.EditingDomainActionBarContributor;
 import org.eclipse.emf.edit.ui.celleditor.AdapterFactoryTreeEditor;
@@ -78,8 +80,11 @@ import org.eclipse.jface.action.Separator;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.dialogs.ProgressMonitorDialog;
 import org.eclipse.jface.util.LocalSelectionTransfer;
+import org.eclipse.jface.viewers.DelegatingStyledCellLabelProvider;
+import org.eclipse.jface.viewers.DelegatingStyledCellLabelProvider.IStyledLabelProvider;
 import org.eclipse.jface.viewers.DoubleClickEvent;
 import org.eclipse.jface.viewers.IDoubleClickListener;
+import org.eclipse.jface.viewers.ILabelProviderListener;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.ISelectionProvider;
@@ -102,6 +107,7 @@ import org.eclipse.swt.dnd.FileTransfer;
 import org.eclipse.swt.dnd.Transfer;
 import org.eclipse.swt.events.ControlAdapter;
 import org.eclipse.swt.events.ControlEvent;
+import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.graphics.Point;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Menu;
@@ -1059,21 +1065,60 @@ public class RetrieverEditor
         	}
         });
 
-        selectionViewer.setLabelProvider(new AdapterFactoryLabelProvider(adapterFactory) {
-        	@Override
-        	public String getText(Object object) {
-        	  if (object instanceof ResourceSet) {
-              return "Scraper Editor";
+        AdapterFactoryLabelProvider label =  new AdapterFactoryLabelProvider(adapterFactory) {
+          @Override
+          public String getText(Object object) {
+            if (object instanceof ResourceSet) {
+              return "Scrapper Editor";
             }
-        	  if (object instanceof RetrieverResourceImpl) {
+            if (object instanceof RetrieverResourceImpl) {
               return getPartName();
             }
-        	  if (object instanceof ResultResourceImpl) {
-        			return RetrieverScheme.getURI(((ResultResourceImpl) object).getURI());
-        		}
-        		return super.getText(object);
-        	}
-        });
+            if (object instanceof ResultResourceImpl) {
+              return RetrieverScheme.getURI(((ResultResourceImpl) object).getURI());
+            }
+            return super.getText(object);
+          }
+          
+          @Override
+          public org.eclipse.jface.viewers.StyledString getStyledText(Object object) {
+            return super.getStyledText(object);
+          }
+          
+        };
+        
+        selectionViewer.setLabelProvider(new DelegatingStyledCellLabelProvider(new IStyledLabelProvider() {
+          
+          @Override
+          public void removeListener(ILabelProviderListener listener) {
+            
+          }
+          
+          @Override
+          public boolean isLabelProperty(Object element, String property) {
+            return false;
+          }
+          
+          @Override
+          public void dispose() {
+            
+          }
+          
+          @Override
+          public void addListener(ILabelProviderListener listener) {
+            
+          }
+          
+          @Override
+          public org.eclipse.jface.viewers.StyledString getStyledText(Object element) {
+            return label.getStyledText(element);
+          }
+          
+          @Override
+          public Image getImage(Object element) {
+            return label.getImage(element);
+          }
+        }));
         selectionViewer.setInput(editingDomain.getResourceSet());
         selectionViewer.setSelection(new StructuredSelection(editingDomain.getResourceSet().getResources().get(0)), true);
         viewerPane.setTitle(editingDomain.getResourceSet());

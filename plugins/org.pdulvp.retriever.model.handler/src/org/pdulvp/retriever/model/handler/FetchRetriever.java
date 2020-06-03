@@ -23,8 +23,11 @@ import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EFactory;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EcoreFactory;
+import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
@@ -504,21 +507,24 @@ public class FetchRetriever {
     }
   }
 
-  public void createEObject(CreateEObject object, Result container, IContext context) {
+  public void createEObject(CreateEObject object, Notifier container2, Result container, IContext context) {
     try {
+      Notifier parent = container2;
       String containerValue = object.getContainerExpression();
-      Collection<Object> aaa = evaluateExpression(container, containerValue, context);
-      if (aaa.isEmpty()) {
-        LogHelper.error("no parent found");
+      if (containerValue != null && containerValue.length()>0) {
+        Collection<Object> aaa = evaluateExpression(container, containerValue, context);
+        if (aaa.isEmpty()) {
+          LogHelper.error("no parent found");
+        }
+        parent = (Notifier) aaa.iterator().next();
       }
-      Notifier parent = (Notifier) aaa.iterator().next();
       createDirectEObject(object, parent, container, context);
     } catch (Exception e) {
       e.printStackTrace();
     }
   }
 
-  public void createDirectEObject(CreateDirectEObject object, Notifier container, Result container2, IContext context) {
+  public void createDirectEObject(CreateEObject object, Notifier container, Result container2, IContext context) {
     EClass clazz = object.getClass_();
     EPackage pkg = (EPackage) clazz.eContainer();
     EObject created = pkg.getEFactoryInstance().create(clazz);
@@ -545,7 +551,6 @@ public class FetchRetriever {
       }
     }
     __retrievers(object, created, container2, childContext);
-
   }
 
   public void setVariable(SetVariable object, Notifier retriever, Result result, IContext context) {
@@ -592,10 +597,7 @@ public class FetchRetriever {
       createFile((CreateFile) create, (URIResult) container, context);
 
     } else if (create instanceof CreateEObject) {
-      createEObject((CreateEObject) create, container, context);
-
-    } else if (create instanceof CreateDirectEObject) {
-      createDirectEObject((CreateDirectEObject) create, containe2r, container, context);
+      createEObject((CreateEObject) create, containe2r, container, context);
 
     } else if (create instanceof SetVariable) {
       setVariable((SetVariable) create, containe2r, container, context);

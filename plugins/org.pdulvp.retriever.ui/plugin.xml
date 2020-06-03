@@ -9,25 +9,44 @@
             defaultHandler="org.pdulvp.retriever.ui.commands.Fetch"
             id="org.pdulvp.retriever.ui.commands.Fetch"
             name="Fetch">
+            
       </command>
       
    </extension>
    
    <extension
+         point="org.eclipse.ui.commandImages">
+      <image
+            commandId="org.pdulvp.retriever.ui.commands.Fetch"
+            icon="icons/obj16/fetch.gif">
+      </image>
+   </extension>
+   
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="org.eclipse.ui.resourcePerspective">
+         <newWizardShortcut
+               id="org.pdulvp.retriever.ui.wizard">
+         </newWizardShortcut>
+      </perspectiveExtension>
+   </extension>
+   
+   <extension
          point="org.eclipse.ui.menus">
-      <menuContribution
-         allPopups="true"
-         locationURI="popup:org.eclipse.ui.popup.any?after=additions">
-         
-          <menu
-               label="Retriever">
-               
+      
+   <menuContribution
+	    locationURI="toolbar:org.eclipse.ui.main.toolbar?after=additions">
+	 <toolbar
+	       id="com.sample.example.toolbars.sampleToolbar">
+	       
          <command commandId="org.pdulvp.retriever.ui.commands.Fetch">
          </command>
-         </menu>
-         
-         
-      </menuContribution>
+	    
+	 </toolbar>
+	 
+	 </menuContribution>
+	 
    </extension>
       
    <extension
@@ -56,7 +75,7 @@
   <extension
         point="org.eclipse.ui.newWizards">
         <category
-       		name="Scraper"
+       		name="Scrapper"
             id="org.pdulvp.retriever.ui.category">
         </category>
      <wizard
@@ -64,7 +83,7 @@
            category="org.pdulvp.retriever.ui.category"
            id="org.pdulvp.retriever.ui.wizard"
            icon="icons/obj16/project.gif"
-           name="Scraping Project">
+           name="Scrapping Project">
      </wizard>
   </extension>
   <extension

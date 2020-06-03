@@ -6,11 +6,10 @@
     rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
     complianceLevel="8.0" copyrightFields="false" editPluginID="org.pdulvp.retriever.edit"
     usedGenPackages="../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore" operationReflection="true"
-    importOrganizing="true">
+    importOrganizing="true" styleProviders="true">
   <foreignModel>retriever.ecore</foreignModel>
   <genPackages prefix="Retriever" basePackage="org.pdulvp" resource="XMI" disposableProviderFactory="true"
       ecorePackage="retriever.ecore#/">
-    <genClasses ecoreClass="retriever.ecore#//RetrieverRoot"/>
     <genClasses ecoreClass="retriever.ecore#//RetrieverPkg"/>
     <genClasses ecoreClass="retriever.ecore#//RetrieverContainer">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference retriever.ecore#//RetrieverContainer/ownedElements"/>
@@ -29,7 +28,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute retriever.ecore#//URLRetriever/cacheControl"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute retriever.ecore#//URLRetriever/asSemantic"/>
     </genClasses>
-    <genClasses ecoreClass="retriever.ecore#//URIVariable">
+    <genClasses image="false" ecoreClass="retriever.ecore#//URIVariable">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute retriever.ecore#//URIVariable/name"/>
     </genClasses>
     <genClasses ecoreClass="retriever.ecore#//ElementRetriever">
@@ -58,10 +57,8 @@
     </genClasses>
     <genClasses ecoreClass="retriever.ecore#//CreateEObject">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute retriever.ecore#//CreateEObject/containerExpression"/>
-    </genClasses>
-    <genClasses ecoreClass="retriever.ecore#//CreateDirectEObject">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference retriever.ecore#//CreateDirectEObject/class"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference retriever.ecore#//CreateDirectEObject/containingFeature"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference retriever.ecore#//CreateEObject/class"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference retriever.ecore#//CreateEObject/containingFeature"/>
     </genClasses>
     <genClasses ecoreClass="retriever.ecore#//CreateEReference">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference retriever.ecore#//CreateEReference/feature"/>
@@ -71,9 +68,6 @@
     <genClasses ecoreClass="retriever.ecore#//CreateEAttribute">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference retriever.ecore#//CreateEAttribute/feature"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute retriever.ecore#//CreateEAttribute/valueExpression"/>
-    </genClasses>
-    <genClasses ecoreClass="retriever.ecore#//CreateFile">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute retriever.ecore#//CreateFile/uri"/>
     </genClasses>
     <genClasses image="false" ecoreClass="retriever.ecore#//CreateNotifier"/>
     <genClasses ecoreClass="retriever.ecore#//LoadResource">

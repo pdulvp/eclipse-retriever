@@ -10,7 +10,9 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.StyledString;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+import org.eclipse.emf.edit.provider.StyledString.Style;
 import org.pdulvp.retriever.CreateEAttribute;
 import org.pdulvp.retriever.RetrieverPackage;
 
@@ -115,13 +117,29 @@ public class CreateEAttributeItemProvider extends RetrieverItemProvider {
   @Override
   public String getText(Object object) {
     try {
-      String label = ((CreateEAttribute) object).getFeature().getName() + " = '"
-          + ((CreateEAttribute) object).getValueExpression() + "'" + "";
+      String label = ((CreateEAttribute) object).getFeature().getName() + " - "
+          + ((CreateEAttribute) object).getValueExpression();
       return label;
     } catch (Exception e) {
-      String label = "<noname> = '" + ((CreateEAttribute) object).getValueExpression() + "'" + "";
+      String label = "<noname> - " + ((CreateEAttribute) object).getValueExpression();
       return label;
     }
+  }
+
+  /**
+   * This returns the label styled text for the adapted class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated NOT
+   */
+  @Override
+  public Object getStyledText(Object object) {
+    StyledString result = new StyledString();
+    String value = getText(object);
+    int first = value.indexOf("-");
+    result.append(value.substring(0, first), Style.NO_STYLE);
+    result.append(value.substring(first), Style.DECORATIONS_STYLER);
+    return result;
   }
 
   /**

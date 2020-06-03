@@ -13,7 +13,10 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.StyledString;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+import org.eclipse.emf.edit.provider.StyledString.Style;
+import org.eclipse.osgi.util.NLS;
 import org.pdulvp.retriever.AttributeRetriever;
 import org.pdulvp.retriever.RetrieverFactory;
 import org.pdulvp.retriever.RetrieverPackage;
@@ -155,10 +158,21 @@ public class AttributeRetrieverItemProvider extends RetrieverItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = "Attribute : "+((AttributeRetriever)object).getName();
-		return label;
+	  return NLS.bind("{0} - {1}", ((AttributeRetriever) object).getName(), ((AttributeRetriever) object).getValueExpression());
 	}
 	
+	/**
+   * @generated NOT
+   */
+  @Override
+  public Object getStyledText(Object object) {
+    StyledString result = new StyledString();
+    String value = getText(object);
+    int first = value.indexOf("-");
+    result.append(value.substring(0, first), Style.NO_STYLE);
+    result.append(value.substring(first), Style.DECORATIONS_STYLER);
+    return result;
+  }
 
 	/**
    * This handles model notifications by calling {@link #updateChildren} to update any cached

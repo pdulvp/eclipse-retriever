@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="ASCII"?>
+<retriever:RetrieverPkg xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:retriever="http://org.pdulvp/retriever" id="48b3adbb-4ab0-4b97-bc8b-8f63e3e87858">
+  <ownedElements xsi:type="retriever:URLRetriever" id="9048e558-d065-43bc-ba0a-c69df7d70e24" name="artistPage" uriExpression="pql:url">
+    <ownedElements xsi:type="retriever:AttributeRetriever" id="f22ece3a-6552-4c38-ba6e-7d41f250d757" name="title2" valueExpression="xpath://h1/text()"/>
+    <ownedElements xsi:type="retriever:SetVariable" id="91785f75-e250-4091-87c8-b4bfdfbb6937" variable="title" expression="xpath:string(//h1/text())"/>
+    <ownedElements xsi:type="retriever:LoadResource" id="201ab66b-bbe5-4a6f-b762-3a0cabc1e474" name="" variable="schemaResource" uri="platform:/resource/schema/schema.ecore">
+      <ownedElements xsi:type="retriever:SetVariable" id="578ed86f-d4fe-4941-816e-f47971568575" variable="root" expression="resource:schemaResource.root"/>
+      <ownedElements xsi:type="retriever:If" id="b12824d4-ea43-49fa-94ef-cbf134c7eac5" conditionExpression="variable:root.isNull">
+        <ownedElements xsi:type="retriever:CreateEObject" id="eacd1d90-76a7-4611-8121-ff2556bcbfb0" variable="root" containerExpression="pql:schemaResource">
+          <ownedElements xsi:type="retriever:CreateEAttribute" id="7337e7cc-a114-4180-a9bc-f05f362ca277" name="name" valueExpression="Artists">
+            <feature href="http://www.eclipse.org/emf/2002/Ecore#//ENamedElement/name"/>
+          </ownedElements>
+          <class href="http://www.eclipse.org/emf/2002/Ecore#//EPackage"/>
+        </ownedElements>
+      </ownedElements>
+      <ownedElements xsi:type="retriever:SetVariable" id="211ffeea-97bb-461b-8dd6-031515dc0dcf" variable="artist" expression="pql:root.eSubpackages->select(p | p.name = title)->first()"/>
+      <ownedElements xsi:type="retriever:If" id="3e08e077-2fe1-4e3a-95b7-a2156e6de61b" conditionExpression="variable:artist.isNull">
+        <ownedElements xsi:type="retriever:CreateEObject" id="f71e8e86-1a11-48e3-b166-e4fd2251c66f" variable="artist" containerExpression="pql:root">
+          <ownedElements xsi:type="retriever:CreateEAttribute" id="95508da0-0da9-4e8d-a80d-e8214ba0828c" name="name" valueExpression="pql:title">
+            <feature href="http://www.eclipse.org/emf/2002/Ecore#//ENamedElement/name"/>
+          </ownedElements>
+          <class href="http://www.eclipse.org/emf/2002/Ecore#//EPackage"/>
+          <containingFeature href="http://www.eclipse.org/emf/2002/Ecore#//EPackage/eSubpackages"/>
+        </ownedElements>
+      </ownedElements>
+      <ownedElements xsi:type="retriever:SetVariable" id="9e2b4d30-2d31-49ef-9951-f149622f30e2" variable="albums" expression="pql:artist.eSubpackages->select(p | p.name = 'Albums')->first()"/>
+      <ownedElements xsi:type="retriever:If" id="6c6f421a-22d1-4535-861b-195537279425" conditionExpression="variable:albums.isNull">
+        <ownedElements xsi:type="retriever:CreateEObject" id="18b1edcc-ec0e-4106-bf65-327f426891b5" variable="albums" containerExpression="pql:artist">
+          <ownedElements xsi:type="retriever:CreateEAttribute" id="432f0234-06e5-4b8e-9882-0f60a6ce1465" name="name" valueExpression="Albums">
+            <feature href="http://www.eclipse.org/emf/2002/Ecore#//ENamedElement/name"/>
+          </ownedElements>
+          <class href="http://www.eclipse.org/emf/2002/Ecore#//EPackage"/>
+          <containingFeature href="http://www.eclipse.org/emf/2002/Ecore#//EPackage/eSubpackages"/>
+        </ownedElements>
+      </ownedElements>
+      <ownedElements xsi:type="retriever:ElementRetriever" id="a18189ee-56c1-426f-bab7-719e67c6f2d0" name="element" variable="element" variableResult="elementResult" retrieverExpression="xpath://li/i/a">
+        <ownedElements xsi:type="retriever:AttributeRetriever" id="d52bf239-b54e-4f7e-b64e-eaa5ddd37daf" name="title" valueExpression="xpath:@title"/>
+        <ownedElements xsi:type="retriever:SetVariable" id="cdff73aa-f34a-40ca-bd9c-5fb2f857f27d" variable="title" expression="xpath:string(@title)"/>
+        <ownedElements xsi:type="retriever:SetVariable" id="0fd2f525-440e-4799-bfcd-82ec5798ad41" variable="entry" expression="pql:albums.eClassifiers->select(p | p.name = title)->first()"/>
+        <ownedElements xsi:type="retriever:If" id="473fd95c-2c53-4e02-9e9b-6156d089064c" conditionExpression="variable:entry.isNull">
+          <ownedElements xsi:type="retriever:CreateEObject" id="4c1c9e74-470d-4a4f-8f04-b2870ed71852" variable="entry" containerExpression="pql:albums">
+            <ownedElements xsi:type="retriever:CreateEAttribute" id="d2975b9f-2f40-41f7-b235-2e4d64887d51" name="toto" description="//Same as pql:title, retrieving variable title, but by reading the result element attributes" valueExpression="pql:elementResult.ownedResults->select(x | x.name = 'title')->first().value">
+              <feature href="http://www.eclipse.org/emf/2002/Ecore#//ENamedElement/name"/>
+            </ownedElements>
+            <class href="http://www.eclipse.org/emf/2002/Ecore#//EClass"/>
+            <containingFeature href="http://www.eclipse.org/emf/2002/Ecore#//EPackage/eClassifiers"/>
+          </ownedElements>
+        </ownedElements>
+      </ownedElements>
+    </ownedElements>
+  </ownedElements>
+  <ownedElements xsi:type="retriever:URLRetriever" id="2563858d-b4eb-49ed-b471-ead234792c90" name="cash" variableResult="result" uriExpression="https://en.wikipedia.org/wiki/Johnny_Cash">
+    <ownedElements xsi:type="retriever:SetVariable" id="39a76b26-a6ae-4847-9ea6-8c3564e99e49" variable="url" expression="pql:result.definition.uriExpression"/>
+    <ownedElements xsi:type="retriever:ReferencedRetriever" id="cf5a2021-f520-4ec3-9b00-89186112ed46" referencedElement="9048e558-d065-43bc-ba0a-c69df7d70e24"/>
+  </ownedElements>
+  <ownedElements xsi:type="retriever:URLRetriever" id="e29bb55a-d6cf-40a7-bd5f-166ca04b0133" name="nelson" variableResult="result" uriExpression="https://en.wikipedia.org/wiki/Willie_Nelson">
+    <ownedElements xsi:type="retriever:SetVariable" id="39a76b26-a6ae-4847-9ea6-8c3564e99e49" variable="url" expression="pql:result.definition.uriExpression"/>
+    <ownedElements xsi:type="retriever:ReferencedRetriever" id="cf5a2021-f520-4ec3-9b00-89186112ed46" referencedElement="9048e558-d065-43bc-ba0a-c69df7d70e24"/>
+  </ownedElements>
+</retriever:RetrieverPkg>

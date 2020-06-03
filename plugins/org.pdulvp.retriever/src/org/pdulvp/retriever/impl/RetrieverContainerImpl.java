@@ -31,7 +31,7 @@ import org.pdulvp.retriever.TransformationService;
  *
  * @generated
  */
-public class RetrieverContainerImpl extends RetrieverImpl implements RetrieverContainer {
+public abstract class RetrieverContainerImpl extends RetrieverImpl implements RetrieverContainer {
 	/**
    * The cached value of the '{@link #getOwnedElements() <em>Owned Elements</em>}' containment reference list.
    * <!-- begin-user-doc -->

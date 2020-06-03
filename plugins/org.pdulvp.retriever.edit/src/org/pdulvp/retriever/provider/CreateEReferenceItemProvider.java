@@ -10,6 +10,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.StyledString;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.pdulvp.retriever.CreateEReference;
 import org.pdulvp.retriever.RetrieverPackage;
@@ -145,6 +146,24 @@ public class CreateEReferenceItemProvider extends RetrieverItemProvider {
       String label = "<noname> = '" + ((CreateEReference) object).getValueExpression() + "'" + "";
       return label;
     }
+  }
+
+  /**
+   * This returns the label styled text for the adapted class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated NOT
+   */
+  @Override
+  public Object getStyledText(Object object) {
+    String label = ((CreateEReference)object).getName();
+    	StyledString styledLabel = new StyledString();
+    if (label == null || label.length() == 0) {
+      styledLabel.append(getString("_UI_CreateEReference_type"), StyledString.Style.QUALIFIER_STYLER); 
+    } else {
+      styledLabel.append(getString("_UI_CreateEReference_type"), StyledString.Style.QUALIFIER_STYLER).append(" " + label);
+    }
+    return styledLabel;
   }
 
   /**
