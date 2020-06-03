@@ -30,15 +30,6 @@
       
    </extension>
    
-  <extension
-         id="id2"
-         point="org.eclipse.sirius.common.expressionInterpreter">
-      
-      <expressionInterpreterProvider
-            interpreterProviderClass="org.pdulvp.retriever.model.handler.interpreter.PQLInterpreter">
-      </expressionInterpreterProvider>
-   </extension>
-   
    
   <extension
          id="id2"

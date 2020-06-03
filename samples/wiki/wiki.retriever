@@ -4,12 +4,12 @@
     <ownedElements xsi:type="retriever:AttributeRetriever" id="bc0d3b28-6f7b-4d67-9ea5-ba5035bbfab3" name="title" valueExpression="xpath://h1/text()"/>
     <ownedElements xsi:type="retriever:AttributeRetriever" id="7b086174-1105-49e9-a4bf-0c962d97dfcd" name="lastModified" valueExpression="xpath://li[@id='footer-info-lastmod']/text()"/>
     <ownedElements xsi:type="retriever:AttributeRetriever" id="f4123f54-56c0-4eaa-b74a-6f97a256a967" name="link" valueExpression="xpath:@href"/>
-    <ownedElements xsi:type="retriever:AttributeRetriever" id="255cc572-5bc4-4a20-904d-5d33c0f3b320" name="fullurl" valueExpression="pql:fullurl"/>
+    <ownedElements xsi:type="retriever:AttributeRetriever" id="255cc572-5bc4-4a20-904d-5d33c0f3b320" name="fullurl" valueExpression="aql:fullurl"/>
     <ownedElements xsi:type="retriever:ElementRetriever" id="74bdbd79-1650-4992-a7ad-61ae92cb3913" name="artist" retrieverExpression="xpath:.//table[contains(@class,'infobox')]/tbody/tr[last()]//li/a">
       <ownedElements xsi:type="retriever:SetVariable" id="c59b88f6-8fd2-4641-8920-7e29ad2ff87a" variable="url" expression="xpath:string(@href)"/>
-      <ownedElements xsi:type="retriever:SetVariable" id="948d3994-6b4f-43ee-802f-b01d8ed62e1c" variable="fullurl" expression="pql:'https://en.wikipedia.org'+url"/>
+      <ownedElements xsi:type="retriever:SetVariable" id="948d3994-6b4f-43ee-802f-b01d8ed62e1c" variable="fullurl" expression="aql:'https://en.wikipedia.org'+url"/>
       <ownedElements xsi:type="retriever:AttributeRetriever" id="4ef7f225-8e48-4293-94b6-dc24ae54b26d" name="name" valueExpression="xpath:text()"/>
-      <ownedElements xsi:type="retriever:URLRetriever" id="d078bcd1-9768-41b6-82e8-3a09f15d25de" name="artistPage" uriExpression="pql:fullurl">
+      <ownedElements xsi:type="retriever:URLRetriever" id="d078bcd1-9768-41b6-82e8-3a09f15d25de" name="artistPage" uriExpression="aql:fullurl">
         <ownedElements xsi:type="retriever:AttributeRetriever" id="e600c004-0f9d-4036-8cee-f1c83e673d81" name="nickname" valueExpression="xpath:.//div[contains(@class,'nickname')]/text()"/>
         <ownedElements xsi:type="retriever:AttributeRetriever" id="b269cc6e-b3b7-4257-8dd3-93cbdb836741" name="birthplace" valueExpression="xpath:.//div[contains(@class,'birthplace')]/a/text()"/>
       </ownedElements>

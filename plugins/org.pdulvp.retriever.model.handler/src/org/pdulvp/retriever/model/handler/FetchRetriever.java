@@ -1,11 +1,9 @@
 package org.pdulvp.retriever.model.handler;
 
 import java.io.ByteArrayInputStream;
-import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.HashMap;
 import java.util.Iterator;
 import java.util.UUID;
 import java.util.stream.Collectors;
@@ -15,23 +13,17 @@ import org.eclipse.core.resources.IContainer;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.ResourcesPlugin;
-import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Path;
-import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EFactory;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.EcoreFactory;
-import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.emf.ecore.resource.impl.ResourceImpl;
 import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.sirius.business.api.session.Session;
 import org.eclipse.sirius.business.api.session.SessionManager;
@@ -41,7 +33,6 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 import org.json.XML;
 import org.pdulvp.retriever.AttributeRetriever;
-import org.pdulvp.retriever.CreateDirectEObject;
 import org.pdulvp.retriever.CreateEAttribute;
 import org.pdulvp.retriever.CreateEObject;
 import org.pdulvp.retriever.CreateEReference;
@@ -462,6 +453,10 @@ public class FetchRetriever {
     try {
       IInterpreter it = InterpreterUtil.getInterpreter(result);
       it.setVariable("context", context);
+      for (String var : context.getVariables()) {
+        it.unSetVariable(var);
+        it.setVariable(var, context.getVariable(var));
+      }
       Object a = it.evaluate(result, expression);
       if (a != null) {
         if (a instanceof Collection) {
