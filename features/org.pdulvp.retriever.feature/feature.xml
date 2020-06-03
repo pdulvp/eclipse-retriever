@@ -42,7 +42,6 @@
       <import plugin="org.htmlcleaner" version="2.1.6" match="greaterOrEqual"/>
       <import plugin="org.eclipse.ui"/>
       <import plugin="org.eclipse.ui.forms"/>
-      <import plugin="org.eclipse.sirius.ui"/>
       <import plugin="org.eclipse.core.expressions"/>
       <import plugin="org.eclipse.e4.core.commands"/>
    </requires>

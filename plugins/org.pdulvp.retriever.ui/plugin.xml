@@ -66,13 +66,6 @@
    </extension>
    
   <extension
-        id="uiSessionFactory"
-        point="org.eclipse.sirius.ui.uiSessionFactory">
-     <uiSessionFactory
-           class="org.pdulvp.retriever.ui.sirius.UISessionFactory">
-     </uiSessionFactory>
-  </extension>
-  <extension
         point="org.eclipse.ui.newWizards">
         <category
        		name="Scrapper"

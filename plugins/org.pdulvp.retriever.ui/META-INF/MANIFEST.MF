@@ -13,7 +13,6 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.sirius.common,
  org.pdulvp.retriever,
  org.pdulvp.retriever.model.handler,
- org.eclipse.sirius.ui,
  org.eclipse.core.expressions,
  org.eclipse.e4.core.commands,
  org.eclipse.ui.ide
