@@ -40,12 +40,12 @@ public class RetrieverScheme {
 	String project = domain.getResourceSet().getResources().get(0).getURI().segment(1);
     String a = URI.decode(filename.segment(filename.segmentCount() - 1));
     a = a.substring(0, a.lastIndexOf("."));
-    return "/"+project+"/." + RETRIEVER + "/" + a + "/" + filename.fragment() + "." + "result";
+    return "/"+project+"/.cache/" + a + "/" + filename.fragment() + "." + "result";
   }
 
   public static String getExternalFilename(URIResult result, TransactionalEditingDomain domain) {
 	String project = domain.getResourceSet().getResources().get(0).getURI().segment(1);
-    return "/"+project+"/." + RETRIEVER + "/" + result.getDefinition().getName() + "/"
+    return "/"+project+"/.cache/" + result.getDefinition().getName() + "/"
         + MD5(result.getUri() + result.getDefinition().getName()) + ".external";
   }
 
