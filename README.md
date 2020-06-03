@@ -12,6 +12,8 @@ Afterwards, click **twice** on ![](https://img.shields.io/badge/eclipse--install
 
 Install [Eclipse-Installer](https://www.eclipse.org/downloads/download.php?file=/oomph/products/eclipse-inst-win64.exe). 
 
+`Advanced mode` > `Add user products` > and choose [Setup file](https://raw.githubusercontent.com/pdulvp/eclipse-retriever/master/target/product.setup)
+
 **In an existing Eclipse platform**
 
 `Help` > `Install new Software` > and choose [Update site](https://pdulvp.github.io/eclipse-repository/eclipse-retriever)
