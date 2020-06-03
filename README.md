@@ -94,13 +94,14 @@ With the following example, we will create an EClass into `schema.ecore` for eac
 ![](images/emf-fetch-artist-page.png)
 ![](images/emf-ecore-cash.png)
 
-If fetched again, new albums will be added to the file.
+> If we fetch again, new albums released since then will be added to the file.
 
 **Reuse retrievers**
 
 ![](plugins/org.pdulvp.retriever.edit/icons/full/obj16/ReferencedRetriever.png) `ReferencedRetriever` allows to reuse a retriever. According to variables, it may behave differently.
 
 For instance, if we update our top ![](plugins/org.pdulvp.retriever.edit/icons/full/obj16/URLRetriever.png) `artistPage` from 
+
 ![](images/retriever-artist-cash.png)
 
 to 
