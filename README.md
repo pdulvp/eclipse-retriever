@@ -29,7 +29,7 @@ In this sample, we will retrieve from a Wikipedia page, its `title`, the `lastMo
 
 **Run it**
 
-- Select the top ![](plugins/org.pdulvp.retriever.edit/icons/full/obj16/URLRetriever.png) `URL element`
+- Select the top ![](plugins/org.pdulvp.retriever.edit/icons/full/obj16/URLRetriever.png) `highwaymen` element
 
 - On the main toolbar, just click on ![](plugins/org.pdulvp.retriever.ui/icons/obj16/fetch.gif) `Fetch`
 
@@ -37,13 +37,15 @@ Result appears on the bottom.
 
 ![](images/result.png)
 
-By doubleclicking on the - Select the top ![](plugins/org.pdulvp.retriever.edit/icons/full/obj16/URIResult.png) `URL element`, the JSON editor opens.
+By doubleclicking on the top ![](plugins/org.pdulvp.retriever.edit/icons/full/obj16/URIResult.png) `highwaymen`, the JSON editor opens.
 
 ![](images/result-json.png)
 
 **Fetch sub pages**
 
-Retrieved links are relative, by using ![](plugins/org.pdulvp.retriever.edit/icons/full/obj16/SetVariable.png) `Set Variable`, we can compute a `fullURL`.
+From an element, we can fetch sub pages. 
+
+Here, retrieved `links` are relative, by using ![](plugins/org.pdulvp.retriever.edit/icons/full/obj16/SetVariable.png) `Set Variable`, we can compute a `fullURL`.
 
 Then we add a child ![](plugins/org.pdulvp.retriever.edit/icons/full/obj16/URLRetriever.png) `URL element` towards this `fullURL` and retrieve some attributes from the sub page.
 
@@ -61,8 +63,6 @@ or as JSON:
 
 ![](plugins/org.pdulvp.retriever.edit/icons/full/obj16/LoadResource.png) `LoadResource` allows to create/load a resource from workspace.
 
-![](plugins/org.pdulvp.retriever.edit/icons/full/obj16/SetVariable.png) `resource:<variable>.root` expression allows to retrieve the root of a resource.
-
 ![](plugins/org.pdulvp.retriever.edit/icons/full/obj16/CreateEObject.png) `CreateEObject` allows to create the given EObject.
 
 ![](plugins/org.pdulvp.retriever.edit/icons/full/obj16/CreateEAttribute.png) `CreateEAttribute` allows to set the given attribute on an EObject.
@@ -72,6 +72,13 @@ or as JSON:
 For instance, load the resource `schema.ecore`, retrieve the `root` element. If the resource is empty, create a root element called `Artists`
 
 ![](images/emf-root.png)
+
+Some expressions used above
+
+- ![](plugins/org.pdulvp.retriever.edit/icons/full/obj16/SetVariable.png) `resource:<variable>.root` expression allows to retrieve the root of a resource.
+
+- ![](plugins/org.pdulvp.retriever.edit/icons/full/obj16/SetVariable.png) `variable:<variable>.isNull` returns whether the variable is `null` or not.
+
 
 With the following example, we will create an EClass into `schema.ecore` for each album on the page.
 
@@ -84,14 +91,14 @@ If fetched again, new albums will be added to the file.
 
 ![](plugins/org.pdulvp.retriever.edit/icons/full/obj16/ReferencedRetriever.png) `ReferencedRetriever` allows to reuse a retriever. According to variables, it may behave differently.
 
-For instance, if we update our - Select the top ![](plugins/org.pdulvp.retriever.edit/icons/full/obj16/URLRetriever.png) `URL Retriever` from 
+For instance, if we update our top ![](plugins/org.pdulvp.retriever.edit/icons/full/obj16/URLRetriever.png) `artistPage` from 
 ![](images/retriever-artist-cash.png)
 
 to 
 
 ![](images/reuse-retriever.png)
 
-The ecore will contain both artist albums.
+We can now fetch two different pages. The ecore will contain both artist albums.
 
 ![](images/ecore-all-albums.png)
 
