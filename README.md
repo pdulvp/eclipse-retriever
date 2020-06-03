@@ -2,7 +2,13 @@
 
 ## Installation
 
-Install the update site on an Eclipse platform. (TBD)
+Install the update site on an Eclipse platform:
+
+[Install](eclipse+installer:https://raw.githubusercontent.com/pdulvp/eclipse-retriever/master/target/product.setup)
+
+eclipse+installer:https://raw.githubusercontent.com/pdulvp/eclipse-retriever/master/target/product.setup
+
+[Update site](https://pdulvp.github.io/eclipse-repository/eclipse-retriever)
 
 ## How to use it
 
