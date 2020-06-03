@@ -2,13 +2,19 @@
 
 ## Installation
 
-Install the update site on an Eclipse platform:
+**Standard mode**
 
-[Install](eclipse+installer:https://raw.githubusercontent.com/pdulvp/eclipse-retriever/master/target/product.setup)
+Install and open [Eclipse-Installer](https://www.eclipse.org/downloads/download.php?file=/oomph/products/eclipse-inst-win64.exe), then just go on settings and enable `Web-Links`.
 
-eclipse+installer:https://raw.githubusercontent.com/pdulvp/eclipse-retriever/master/target/product.setup
+Afterwards, click on ![](https://img.shields.io/badge/eclipse--install-install-red?logo=eclipse&link=eclipse%2Binstaller:https://raw.githubusercontent.com/pdulvp/eclipse-retriever/master/target/product.setup)
 
-[Update site](https://pdulvp.github.io/eclipse-repository/eclipse-retriever)
+**Advanced mode**
+
+Install [Eclipse-Installer](https://www.eclipse.org/downloads/download.php?file=/oomph/products/eclipse-inst-win64.exe). 
+
+**In an existing Eclipse platform**
+
+`Help` > `Install new Software` > and choose [Update site](https://pdulvp.github.io/eclipse-repository/eclipse-retriever)
 
 ## How to use it
 
