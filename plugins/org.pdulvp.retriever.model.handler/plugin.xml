@@ -2,7 +2,6 @@
 <?eclipse version="3.4"?>
 <plugin>
 
-    
     <extension
          point="org.eclipse.emf.transaction.editingDomains">
       <editingDomain
@@ -11,41 +10,35 @@
       </editingDomain>
    </extension>
    
-   
    <extension
-         id="capellaEditingDomainFactoryId"
-         name="Capella Editing Domain Factory"
+         id="editingDomainFactoryId"
+         name="Editing Domain Factory"
          point="org.eclipse.sirius.common.editingDomainFactory">
       <editingDomainFactory
             class="org.pdulvp.retriever.model.handler.RetrieverEditingDomainFactory"
             override="org.eclipse.sirius.LocalSessionEditingDomainFactory">
       </editingDomainFactory>
    </extension>
+   
    <extension
          id="id1"
          point="org.eclipse.sirius.common.expressionInterpreter">
       <expressionInterpreterProvider
             interpreterProviderClass="org.pdulvp.retriever.model.handler.interpreter.XPathInterpreter">
       </expressionInterpreterProvider>
-      
    </extension>
-   
    
   <extension
          id="id2"
          point="org.eclipse.sirius.common.expressionInterpreter">
-      
       <expressionInterpreterProvider
             interpreterProviderClass="org.pdulvp.retriever.model.handler.interpreter.DefinitionInterpreter">
       </expressionInterpreterProvider>
    </extension>
    
-   
-   
   <extension
          id="id2"
          point="org.eclipse.sirius.common.expressionInterpreter">
-      
       <expressionInterpreterProvider
             interpreterProviderClass="org.pdulvp.retriever.model.handler.interpreter.AttributeResultInterpreter">
       </expressionInterpreterProvider>
@@ -54,7 +47,6 @@
   <extension
          id="id2"
          point="org.eclipse.sirius.common.expressionInterpreter">
-      
       <expressionInterpreterProvider
             interpreterProviderClass="org.pdulvp.retriever.model.handler.interpreter.ResourceInterpreter">
       </expressionInterpreterProvider>
@@ -63,7 +55,6 @@
   <extension
          id="id2"
          point="org.eclipse.sirius.common.expressionInterpreter">
-      
       <expressionInterpreterProvider
             interpreterProviderClass="org.pdulvp.retriever.model.handler.interpreter.EvalInterpreter">
       </expressionInterpreterProvider>
@@ -72,7 +63,6 @@
   <extension
          id="id2"
          point="org.eclipse.sirius.common.expressionInterpreter">
-      
       <expressionInterpreterProvider
             interpreterProviderClass="org.pdulvp.retriever.model.handler.interpreter.JavaInterpreter">
       </expressionInterpreterProvider>
@@ -81,7 +71,6 @@
   <extension
          id="id2"
          point="org.eclipse.sirius.common.expressionInterpreter">
-      
       <expressionInterpreterProvider
             interpreterProviderClass="org.pdulvp.retriever.model.handler.interpreter.VariableInterpreter">
       </expressionInterpreterProvider>
@@ -90,7 +79,6 @@
    <extension
          id="id3"
          point="org.eclipse.sirius.common.expressionInterpreter">
-      
       <expressionInterpreterProvider
             interpreterProviderClass="org.pdulvp.retriever.model.handler.interpreter.IncrementInterpreter">
       </expressionInterpreterProvider>
